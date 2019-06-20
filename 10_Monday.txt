@@ -1,0 +1,17 @@
+Recursion:-
+  --BaseCase
+  --Assumption
+  --SelfCase
+
+SubSequences:-
+  --Subsequences(strings)
+       --non-continuous(order will be specified--not mandatory)
+       --O(2^n)
+  --Substrings(strings)
+       --continuous(order will be specified--not mandatory)
+       --O(n^2)
+  --Subset(array)
+       --non-continuous(order is required)
+  --SubArray(array)
+       --continuous(order is required)
+       
