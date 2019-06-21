@@ -6,7 +6,7 @@ void countMazePath(int endrow, int endcol, int curr_row, int curr_col, string os
 	if(curr_row == endrow and curr_col == endcol) {
 		cout<<osf<<endl;
 		return ;
-	} 
+	}
 	if(curr_row>endrow or curr_col>endcol) {
 		return ;
 	}
@@ -18,6 +18,6 @@ void countMazePath(int endrow, int endcol, int curr_row, int curr_col, string os
 int main(int argc, char const *argv[])
 {
 	/* code */
-	countMazePath(2, 2, 0, 0, "");
+	countMazePath(3, 3, 0, 0, "");
 	return 0;
 }
