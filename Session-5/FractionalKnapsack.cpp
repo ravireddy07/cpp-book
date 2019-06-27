@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 class Item {
@@ -14,14 +14,7 @@ bool cmp(Item a, Item b) {
 	return r1<r2;
 }
 
-
-
-
-
-
-int main(int argc, char const *argv[])
-{
-	/* code */
+int main(int argc, char const *argv[]) {
 	int n;
 	cin>>n;
 	Item arr[n];
