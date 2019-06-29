@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int countStrings(int n) {
-	int a[n], b[n];
+long long int countStrings(long long int n) {
+	long long int a[n], b[n];
 	a[0] = b[0] = 1;
 	for (int i=1;i<n;i++) {
 		a[i] = a[i-1] + b[i-1];
@@ -12,7 +12,7 @@ int countStrings(int n) {
 }
 
 int main() {
-	int t,n;
+	long long int t,n;
 	cin>>t;
 	while(t--){
 		cin>>n;
