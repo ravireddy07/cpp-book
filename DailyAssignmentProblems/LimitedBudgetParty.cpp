@@ -2,22 +2,24 @@
 #include<iostream>
 using namespace std;
 
+#define ll long long int
+
 int main(int argc, char const *argv[]) {
-    int T;
+    ll T;
     cin>>T;
-    for(int i=0;i<T;i++) {
-        int N,Cos;
-        vector<int> vect;
+    for(ll i=0;i<T;i++) {
+        ll N,Cos;
+        vector<ll> vect;
         cin>>N>>Cos;
-        for(int j=0;j<N;j++) {
-            int X;
+        for(ll j=0;j<N;j++) {
+            ll X;
             cin>>X;
-            vec.push_back(X);
+            vect.push_back(X);
         }
-        int count=0,result=0;
-        for(int j=0;j<N;j++) {
+        ll count=0,result=0;
+        for(ll j=0;j<N;j++) {
             count=0;
-            for(int k=j;k<N;k++) {
+            for(ll k=j;k<N;k++) {
                 if((vect[k]+count)<Cos) {
                     count=count+vect[k];
                 }
