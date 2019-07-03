@@ -2,22 +2,21 @@
 using namespace std;
 
 void GenPar(int n, int var1, int var2, string str) {
-    if(closeB == n) {
+    if(var2 == n) {
         cout<<str<<endl;
         return;
     }
-    if(var1 > var2) {
+    if(var1>var2) {
         GenPar(n, var1, var2+1, str+')');
     }
-    if(openB < n) {
+    if(var1<n) {
         GenPar(n, var1+1, var2, str+'(');
     }
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
     int n;
     cin>>n;
-    GenPar(n, 0, 0, "");
+    GenPar(n, 0, 0,"");
     return 0;
 }
