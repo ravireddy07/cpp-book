@@ -3,14 +3,14 @@
 using namespace std;
 
 #define ll long long int
-#define max 100
+#define max 500
 
 int Fun(int no[],int no_size,int x) {
   int multi;
   int carr = 0;
   for(int i=0;i<no_size;i++) {
     multi = (no[i]*x)+carr;
-    no[i] = product%10;
+    no[i] = multi%10;
     carr = multi/10;
   }
   while(carr) {
@@ -26,7 +26,7 @@ void Fact(int n) {
   int no[max], no_size=1, x;
   no[0]=1;
   for(x=2;x<=n;x++) {
-    no_size=mult(no,no_size,x);
+    no_size=Fun(no,no_size,x);
   }
   for(int i=no_size-1;i>=0;i--) {
     cout<<no[i];

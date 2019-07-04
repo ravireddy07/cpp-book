@@ -1,31 +1,35 @@
-#include <iostream>
-#define ll long long int
+#include<iostream>
+#include<algorithm>
 using namespace std;
 
-bool cmp(pair<ll, ll> a, pair<ll, ll> b) {
-	return a.second < b.second;
+struct act{
+    int beg; int end;
+};
+
+bool comp(act a,act b) {
+    if(a.end==b.end) return a.beg<b.beg;
+    return a.end<b.end;
 }
 
-int main(int argc, char const *argv[])
-{
+int main() {
 	int n;
 	cin>>n;
-	pair<ll,ll> arr[n];
-	for(int i=0;i<n;i++) {
-		int a, b;
-		cin>>a>>b;
-		arr[i].first = a-b;
-		arr[i].second = a+b;
-	}
-	sort(arr, arr+n, cmp);
-	int consider = 0;
-	int result = 1;
-	for(int i=1;i<n;i++) {
-		if(arr[i].first >= arr[consider].second) {
-			result++;
-			consider = i;
+	act arr[n];
+	int c,r;
+	 for(int i=0;i<n;++i) {
+		 cin>>c>>r;
+		 arr[i].beg=c-r;
+		 arr[i].end=c+r;
+	 }
+	 sort(arr,arr+n,comp);
+	 int curr=arr[0].end;
+	 int done=1;
+	 for(int i=1;i<n;++i) {
+		 if(arr[i].beg>=curr) {
+			 done++;
+			 curr=arr[i].end;
+			}
 		}
-	}
-	cout<<result;
-	return 0;
+		cout<<n-done<<endl;
+		return 0;
 }

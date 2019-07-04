@@ -9,13 +9,13 @@ int GCD(int one,int two) {
     if(one%two == 0) {
       return two;
     }
-    return GCD(two,one%y=two);
+    return GCD(two,one % two);
 }
 
 int main() {
   int t;
   cin>>t;
-  while(t--) {
+  for(int i=0;i<t;i++) {
     int n;
     cin>>n;
     if(a[n] != 0) {
