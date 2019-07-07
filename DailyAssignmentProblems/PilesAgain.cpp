@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
+#include<iomanip>
 using namespace std;
-#include <iomanip>
+//
 #define pb push_back
 #define f first
 #define s second
