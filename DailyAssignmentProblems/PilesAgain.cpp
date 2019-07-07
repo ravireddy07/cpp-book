@@ -1,4 +1,6 @@
 #include<bits/stdc++.h>
+#include<iostream>
+#include<algorithm>
 #include<iomanip>
 using namespace std;
 //
@@ -95,9 +97,8 @@ int main() {
             }
         }
         if(ans==0)
-            cout<<"Second";
+            cout<<"Second"<<endl;
         else
-            cout<<"First";
-        cout<<"\n";
+            cout<<"First"<<endl;
     }
 }

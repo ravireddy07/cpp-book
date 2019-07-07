@@ -30,7 +30,7 @@ int main() {
     string str1,str2,str3;
     cin>>str1>>str2>>str3;
 
-    cout<<LCS(str1, str2, str3, str1.length(), str2.length(), str3.length());
+    cout<<LCS(str1, str2, str3, str1.length(), str2.length(), str3.length())<<endl;
   }
 	return 0;
 }
