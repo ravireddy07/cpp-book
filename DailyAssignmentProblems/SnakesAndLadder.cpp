@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
 class Graph {
@@ -11,7 +12,7 @@ public:
 		m[u].push_back(v);
 	}
 
-	int BFS_Distance(int src, int destination) {
+	int SnakeLadder(int src, int destination) {
 		int distance[101];
 		int i;
 		for(i=0; i<= 100; i++)
@@ -39,10 +40,12 @@ public:
 
 };
 
+
+
 int main() {
-	int T, i;
-	cin>>T;
-	while(T--) {
+	int t, i;
+	cin>>t;
+	for(int i=0;i<t;i++) {
 		Graph* g = new Graph();
 		int N;
 		cin>>N;
@@ -51,12 +54,14 @@ int main() {
 			cin>>start>>end;
 			g->movement[start] = end;
 		}
+
 		int M;
 		cin>>M;
 		for(i=0; i<M; i++) {
 			cin>>start>>end;
 			g->movement[start] = end;
 		}
+
 		int u, dice, v;
 		for(u=1; u<=100; u++)	{
 			for(dice = 1; dice <= 6; dice++) {
@@ -67,7 +72,8 @@ int main() {
 				g->addEdge(u, v);
 			}
 		}
-		cout<<g->BFS_Distance(1, 100)<<endl;
+
+		cout<<g->SnakeLadder(1, 100)<<endl;
 		delete g;
 	}
 }

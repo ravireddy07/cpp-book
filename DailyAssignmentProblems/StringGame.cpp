@@ -12,7 +12,7 @@ int main() {
   ios_base::sync_with_stdio(0);
   int t;
   cin>>t;
-  while(t--) {
+  for(int ii=0;ii<t;ii++) {
     string s;
     cin>>s;
     int st=1,sr=1,n=s.length();
