@@ -1,12 +1,9 @@
 #include<bits/stdc++.h>
 #include<iostream>
-#define nn 100100
-#define yes "YES"
-#define no "NO"
 
 using namespace std;
-​
-int dp0[nn],dp1[nn];
+
+int dp0[100100],dp1[100100];
 
 int main() {
   ios_base::sync_with_stdio(0);
@@ -36,9 +33,10 @@ int main() {
       }
     }
     if(!dp0[n-1]) {
-      cout<<yes<<endl;
+      cout<<"Yes"<<endl;
       continue;
     }
+
     int flag=0;
     for(int i=0;i<n-1;i++) {
       if(dp0[i]^dp1[i+1])
@@ -47,9 +45,9 @@ int main() {
       break;
     }
     if(flag)
-      cout<<yes<<endl;
+       cout<<"Yes"<<endl;
     else
-      cout<<no<<endl;
-    }
-    return 0;
+       cout<<"No"<<endl;
+  }
+  return 0;
 }
