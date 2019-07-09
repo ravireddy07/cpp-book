@@ -3,11 +3,8 @@
 #include<algorithm>
 #include<iomanip>
 using namespace std;
-//
-#define pb push_back
-#define f first
-#define s second
-#define mp make_pair
+
+
 #define SZ(x) ((int)(x.size()))
 #define FOI(i, a, n) for( i = int(a); i <= int(n); i++)
 #define FOD(i, a, n) for( i = int(a); i >= int(n); i--)
@@ -21,19 +18,11 @@ using namespace std;
 #define Mod 1000000007
 #define ll long long int
 typedef long double lf;
-typedef pair < ll, ll > pii;
-typedef vector < ll > vi;
+typedef pair<ll,ll> pii;
+typedef vector<ll> vi;
 typedef vector<vi> vvi;
 typedef complex<double> base;
 
-
-const int N = 1e5 + 5;
-const int lgN = 1e6+5;
-const int te = 3e8+1;
-const ll MOD = 998244353;
-const lf pi = 3.141592653589793238462643383;
-const ll IMAX = LLONG_MAX;
-const double PI = 3.141592653589793;
 
 template<class T>
 using max_pq = priority_queue<T>;
@@ -78,20 +67,16 @@ using namespace std;
 int main() {
     ll t;
     cin>>t;
-    while(t--)
-    {
+    for(int i=0;i<t;i++) {
         ll n;
         cin>>n;
         ll ans=0;
         ll i;
-        FOI(i,0,n-1)
-        {
+        FOI(i,0,n-1) {
             ll x;
             cin>>x;
-            if(i!=0)
-            {
-             if(x%2!=0)
-             {
+            if(i!=0) {
+              if(x%2!=0) {
                 ans=ans xor i;
              }
             }

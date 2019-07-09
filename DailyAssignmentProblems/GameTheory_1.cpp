@@ -3,14 +3,11 @@ using namespace std;
 #define ll long long
 ll table[1000004];
 
-unordered_set calculatedivisors(long long n)
-{
+unordered_set calculatedivisors(long long n) {
 unordered_set tt;
 
-for(ll i=2;i*i<=n;i++)
-{
-if(n%i==0)
-{
+for(ll i=2;i*i<=n;i++) {
+if(n%i==0) {
     if(n/i!=i)
     tt.insert(n/i);
     tt.insert(i);
@@ -20,17 +17,18 @@ tt.insert(1);
 
 return tt;
 }
-ll calculatemex(unordered_set Set)
-{
-ll Mex = 0;
 
-while (Set.find(Mex) != Set.end())
-	Mex++;
+ll calculatemex(unordered_set Set) {
+  ll Mex = 0;
 
-return (Mex);
+  while (Set.find(Mex) != Set.end()) {
+    Mex++;
+  }
+  return (Mex);
 }
-int calculategrundy(int n)
-{
+
+
+int calculategrundy(int n) {
 if(n==0)
 return 0;
 if(n==1)
@@ -50,9 +48,9 @@ table[n]=xx;
 return xx;
 }
 
-int main()
-{ int t;
-cin>>t;
+int main() { 
+  int t;
+  cin>>t;
 while(t–)
 { memset(table,0,sizeof(table));
 
