@@ -1,9 +1,10 @@
 #include<bits/stdc++.h> 
 using namespace std; 
 
+#define ll long long int
+
 // Find the first digit 
-int LastTwoDigit(long long int num) 
-{ 
+int LastTwoDigit(ll num) { 
 	// Get the last digit from the number 
 	int one = num % 10; 
 
@@ -26,21 +27,20 @@ int LastTwoDigit(long long int num)
 	return num; 
 } 
 
-// Driver program 
-int main() 
-{ 
+ 
+int main() { 
 	int n = 10; 
-	long long int num = 1; 
+	ll num = 1; 
 
 	// pow function used 
 	num = pow(2, n); 
 
-	cout << "Last " << 2; 
+	cout<<"Last "<<2; 
 
-	cout << " digits of " << 2; 
+	cout<<" digits of "<<2; 
 
-	cout << "^" << n << " = "; 
+	cout<<"^"<<n<<" = "; 
 
-	cout << LastTwoDigit(num) << endl; 
+	cout<<LastTwoDigit(num)<<endl; 
 	return 0; 
 } 
