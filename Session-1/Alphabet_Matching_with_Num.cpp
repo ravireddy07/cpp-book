@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 void codes(string str, string osf, char *arr){
@@ -21,10 +21,12 @@ void codes(string str, string osf, char *arr){
         }
     }
 }
+
+
 int main() {
     char mapping[27] = {'#', 'a', 'b', 'c', 'd', 'e','f', 'g', 'h', 'i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     string str;
     cin>>str;
-    codes(str, "",mapping);
+    codes(str, "", mapping);
     return 0;
 }
