@@ -12,6 +12,7 @@ int game(int *arr, int n, char start) {
 		}
 	}
 	cout<<start<<" will win"<<endl;
+
 	if(odd > even) {
 		return odd;
 	} else {
@@ -19,8 +20,7 @@ int game(int *arr, int n, char start) {
 	}
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
 	int n;
 	cin>>n;
 	char start;
