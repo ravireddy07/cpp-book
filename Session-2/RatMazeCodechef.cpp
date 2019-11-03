@@ -1,5 +1,3 @@
-// cb.lk/lpu/rat
-// 0 in visited array shows that the index has not been visited
 #include <iostream>
 using namespace std;
 
@@ -22,9 +20,8 @@ void ratInMaze(int **maze, int **visited, int n, int i, int j) {
 	// Backtracking
 
 	visited[i][j] = 1;
-	// Work
 
-	//UP
+
 	if(isItSafe(i-1, j, n) and maze[i-1][j] == 0 and visited[i-1][j]==0){
 		ratInMaze(maze, visited, n, i-1, j);
 	}
