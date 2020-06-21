@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+#define ll int
 #define MAX_CHAR 26
 
 int toNum(char c) {
@@ -18,7 +18,7 @@ int CountAnagram(string str) {
 		}
 	}
 	int result = 0;
-	for(auto it=mp.begin();it!=mp.end();it++) {
+	for(ll it=mp.begin();it!=mp.end();it++) {
 		int freq = it->second;
 		result += ((freq)*(freq-1))/2;
 	}

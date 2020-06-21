@@ -1,4 +1,7 @@
-#include <iostream>
+#include<iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
 using namespace std;
 
 void codes(string str, string osf, char *arr) {
@@ -12,7 +15,7 @@ void codes(string str, string osf, char *arr) {
 	int one = str[0] - '0';
 	int two = 0;
 	if(str.size()>=2) {
-		two = stoi(str.substr(0, 2));
+		two = std::stoi(str.substr(0, 2));
 		// work
 		codes(str.substr(1), osf+arr[one], arr);
 		if(two<=26) {

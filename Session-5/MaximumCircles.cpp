@@ -1,3 +1,20 @@
+/*
+Prolem Statement: There are n circles arranged on x-y plane. All of them have their centers on x-axis. 
+You have to remove some of them, such that no two circles are overlapping after that. 
+Find the minimum number of circles that need to be removed.
+
+Input:
+4
+1 1
+2 1
+3 1
+4 1
+
+Output:
+2
+
+*/
+
 #include<iostream>
 #include<algorithm>
 using namespace std;

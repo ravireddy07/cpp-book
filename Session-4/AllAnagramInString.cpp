@@ -20,10 +20,10 @@ vector<int> allAnagram(string s1, string s2) {
     return result;
   }
   if(s1.size() < 1) return result;
-  for(int i-0;i<s2.size();i++) {
+  for(int i=0;i<s2.size();i++) {
     hash2[s2[i] -'a']++;
   }
-  for(int i-0;i<s2.size();i++) {
+  for(int i=0;i<s2.size();i++) {
     hash1[s1[i] -'a']++;
   }
   if(IsAnagram(hash1, hash2)) {
