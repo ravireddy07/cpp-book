@@ -1,3 +1,16 @@
+/*
+Examples:
+addWord("bad")
+addWord("dad")
+addWord("mad")
+search("pad") -> false
+search("bad") -> true
+search(".ad") -> true
+search("b..") -> true
+*/
+#include<iostream>
+using namespace std;
+
 class WordDictionary
 {
 public:

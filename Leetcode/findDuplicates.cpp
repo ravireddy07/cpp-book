@@ -1,5 +1,16 @@
+/*
+Input:
+[4, 3, 2, 7, 8, 2, 3, 1]
+
+Output:
+[2, 3]
+
+Must be O(N).
+*/
+
 #include<iostream>
 #include<vector>
+#include<math.h>
 using namespace std;
 /*
 //using unordered maps
@@ -23,9 +34,9 @@ public:
         if (nums.empty())return {};
         vector<int>ans;
         for (int i=0;i<nums.size();i++) {
-            if (nums[abs(nums[i])-1]<0)
-                ans.push_back(abs(nums[i]));
-            nums[abs(nums[i])-1]=-nums[abs(nums[i])-1];
+            if (nums[std::abs(nums[i])-1]<0)
+                ans.push_back(std::abs(nums[i]));
+            nums[std::abs(nums[i])-1]=-nums[std::abs(nums[i])-1];
         }
         return ans;
     }
