@@ -46,10 +46,24 @@ public:
 
         return candiesDistributed;
     }
-} a;
+};
 
 int main()
 {
-    vector<int> result;
-    result = a.distributeCandies(7, 4);
+    Solution a;
+    vector<int> show;
+    show = a.distributeCandies(7, 4);
+    cout << "[";
+    for (int i = 0; i < show.size(); i++)
+    {
+        if (i == show.size() - 1)
+        {
+            cout << show[i];
+        }
+        else
+        {
+            cout << show[i] << ", ";
+        }
+    }
+    cout << "]";
 }
