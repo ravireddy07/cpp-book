@@ -1,4 +1,5 @@
 //Problem Link:  https://leetcode.com/problems/valid-number/
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -51,8 +52,6 @@ public:
 int main()
 {
     Solution a;
-    string input = "0";
-    bool result = a.isNumber(input);
-    cout << result << endl;
+    cout << a.isNumber("0") << endl;
     return 0;
 }
