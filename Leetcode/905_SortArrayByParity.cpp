@@ -1,5 +1,4 @@
-//  Discussion thread Link:
-
+//  https://leetcode.com/problems/sort-array-by-parity/
 //  https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/551/week-3-august-15th-august-21st/3431/discuss/804079/C++-Simple-Solution-or-Top-98.84-in-12-ms-Runtime-or-12ms-and-60ms-Solution-Difference
 
 #include <iostream>

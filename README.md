@@ -1,2 +1,3 @@
-# DynamicProgramming_C-
-C++ Dynamic Programming Preparation Classes Codes
+# Competative Programming Problems
+
+Problem Solutions from Different Platforms.

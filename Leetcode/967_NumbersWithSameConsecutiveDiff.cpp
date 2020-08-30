@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/numbers-with-same-consecutive-differences/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -152,10 +154,11 @@ public:
         fun(k, n);
         return v;
     }
-} a;
+};
 
 int main()
 {
+    Solution a;
     vector<int> show;
     int N = 2, K = 3;
     show = a.numsSameConsecDiff(N, K);

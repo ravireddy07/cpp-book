@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/goat-latin/
+
 // Leet Code Disscusion Thread: https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/551/week-3-august-15th-august-21st/3429/discuss/801081/C++-Simple-Brute-Force-Method-0ms-100-or-Simple-Understanding-or-Just-do-what-is-asked
 
 /*
