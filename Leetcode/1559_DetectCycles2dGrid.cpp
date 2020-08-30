@@ -1,6 +1,5 @@
-// Discussion Thread Link:
-
-//https://leetcode.com/problems/detect-cycles-in-2d-grid/discuss/806106/Best-MethodProcess-using-DFS-or-Top-80-in-Run-Time-or-O(mn)-Complexity
+// https://leetcode.com/problems/detect-cycles-in-2d-grid/
+// https://leetcode.com/problems/detect-cycles-in-2d-grid/discuss/806106/Best-MethodProcess-using-DFS-or-Top-80-in-Run-Time-or-O(mn)-Complexity
 
 #include <iostream>
 #include <vector>
