@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
