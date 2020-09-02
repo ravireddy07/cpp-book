@@ -33,7 +33,6 @@ public:
 int main()
 {
     Solution a;
-    int input = 2;
-    cout << a.isHappy(input) << endl;
+    cout << a.isHappy(2) << endl;
     return 0;
 }
