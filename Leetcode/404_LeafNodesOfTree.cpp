@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
+// https://leetcode.com/problems/sum-of-left-leaves
 
 /**
  * Definition for a binary tree node.
