@@ -17,45 +17,60 @@ public:
         {
             if (s[i] == 'I')
             {
-                if (s[i + 1] == 'V')
+                if (i + 1 != s.length())
                 {
-                    sum += 4;
-                    i++;
-                }
-                else if (s[i + 1] == 'X')
-                {
-                    sum += 9;
-                    i++;
+                    if (s[i + 1] == 'V')
+                    {
+                        sum += 4;
+                        i++;
+                    }
+                    else if (s[i + 1] == 'X')
+                    {
+                        sum += 9;
+                        i++;
+                    }
+                    else
+                        sum += 1;
                 }
                 else
                     sum += 1;
             }
             else if (s[i] == 'X')
             {
-                if (s[i + 1] == 'L')
+                if (i + 1 != s.length())
                 {
-                    sum += 40;
-                    i++;
-                }
-                else if (s[i + 1] == 'C')
-                {
-                    sum += 90;
-                    i++;
+                    if (s[i + 1] == 'L')
+                    {
+                        sum += 40;
+                        i++;
+                    }
+                    else if (s[i + 1] == 'C')
+                    {
+                        sum += 90;
+                        i++;
+                    }
+                    else
+                        sum += 10;
                 }
                 else
                     sum += 10;
             }
             else if (s[i] == 'C')
             {
-                if (s[i + 1] == 'D')
+                if (i + 1 != s.length())
                 {
-                    sum += 400;
-                    i++;
-                }
-                else if (s[i + 1] == 'M')
-                {
-                    sum += 900;
-                    i++;
+                    if (s[i + 1] == 'D')
+                    {
+                        sum += 400;
+                        i++;
+                    }
+                    else if (s[i + 1] == 'M')
+                    {
+                        sum += 900;
+                        i++;
+                    }
+                    else
+                        sum += 100;
                 }
                 else
                     sum += 100;
@@ -76,6 +91,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.romanToInt("XIII") << endl;
+    cout << a.romanToInt("IV") << endl;
     return 0;
 }
