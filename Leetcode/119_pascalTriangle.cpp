@@ -1,5 +1,5 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 /*
@@ -48,17 +48,32 @@ vector<int> getRow(int rowIndex) {
 
 /* Time Complexcity: O(K)   Space Complexcity: O(K) */
 
-vector<int> getRow(int rowIndex) {
-    vector<int> ans(rowIndex+1);
+vector<int> getRow(int rowIndex)
+{
+    vector<int> ans(rowIndex + 1);
     ans[0] = 1;
-    for (int index=1; index<rowIndex+1; index++)
-        ans[index]=(long)ans[index-1]*(rowIndex-index+1)/index;
+    for (int index = 1; index < rowIndex + 1; index++)
+        ans[index] = (long)ans[index - 1] * (rowIndex - index + 1) / index;
     return ans;
 }
 
-
-int main() {
+int main()
+{
     int n;
-    cin>>n;
-    vector<int> result = getRow(n);
+    cin >> n;
+    vector<int> show = getRow(n);
+    cout << "[";
+    for (int i = 0; i < show.size(); i++)
+    {
+        if (i == show.size() - 1)
+        {
+            cout << show[i];
+        }
+        else
+        {
+            cout << show[i] << ", ";
+        }
+    }
+    cout << "]";
+    return 0;
 }
