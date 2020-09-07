@@ -17,7 +17,6 @@ public:
             if (nums[i])
                 swap(nums[i], nums[j++]);
         }
-
         /*
         cout << "[";
         for (int i = 0; i < nums.size(); i++)
@@ -40,6 +39,6 @@ int main()
 {
     Solution a;
     vector<int> input = {0, 1, 0, 3, 12};
-    a.moveZeroes(input);
+    cout << a.moveZeroes(input) << endl;
     return 0;
 }
