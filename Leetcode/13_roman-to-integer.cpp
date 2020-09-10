@@ -2,6 +2,7 @@
 
 // https://leetcode.com/problems/roman-to-integer/discuss/829390/C%2B%2B-Simple-4ms-Solution-or-Beats-99-Faster-Solution-or-O(n)-Complexity
 
+// including commented code is standard code
 #include <iostream>
 using namespace std;
 
@@ -17,63 +18,63 @@ public:
         {
             if (s[i] == 'I')
             {
-                if (i + 1 != s.length())
+                //if (i + 1 != s.length())
+                //{
+                if (s[i + 1] == 'V')
                 {
-                    if (s[i + 1] == 'V')
-                    {
-                        sum += 4;
-                        i++;
-                    }
-                    else if (s[i + 1] == 'X')
-                    {
-                        sum += 9;
-                        i++;
-                    }
-                    else
-                        sum += 1;
+                    sum += 4;
+                    i++;
+                }
+                else if (s[i + 1] == 'X')
+                {
+                    sum += 9;
+                    i++;
                 }
                 else
                     sum += 1;
+                //}
+                //else
+                //sum += 1;
             }
             else if (s[i] == 'X')
             {
-                if (i + 1 != s.length())
+                //if (i + 1 != s.length())
+                //{
+                if (s[i + 1] == 'L')
                 {
-                    if (s[i + 1] == 'L')
-                    {
-                        sum += 40;
-                        i++;
-                    }
-                    else if (s[i + 1] == 'C')
-                    {
-                        sum += 90;
-                        i++;
-                    }
-                    else
-                        sum += 10;
+                    sum += 40;
+                    i++;
+                }
+                else if (s[i + 1] == 'C')
+                {
+                    sum += 90;
+                    i++;
                 }
                 else
                     sum += 10;
+                //}
+                //else
+                //sum += 10;
             }
             else if (s[i] == 'C')
             {
-                if (i + 1 != s.length())
+                //if (i + 1 != s.length())
+                //{
+                if (s[i + 1] == 'D')
                 {
-                    if (s[i + 1] == 'D')
-                    {
-                        sum += 400;
-                        i++;
-                    }
-                    else if (s[i + 1] == 'M')
-                    {
-                        sum += 900;
-                        i++;
-                    }
-                    else
-                        sum += 100;
+                    sum += 400;
+                    i++;
+                }
+                else if (s[i + 1] == 'M')
+                {
+                    sum += 900;
+                    i++;
                 }
                 else
                     sum += 100;
+                //}
+                //else
+                //sum += 100;
             }
             else if (s[i] == 'V')
                 sum += 5;
