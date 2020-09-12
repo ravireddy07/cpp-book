@@ -12,9 +12,7 @@ public:
         int n = S.length(), mod = 1e9 + 7;
         vector<vector<int>> res(n + 1, vector<int>(n + 1));
         for (int j = 0; j <= n; j++)
-        {
             res[0][j] = 1;
-        }
         for (int i = 0; i < n; i++)
         {
             if (S[i] == 'I')
