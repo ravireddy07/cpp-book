@@ -1,3 +1,34 @@
+/*
+cout << "[";
+    for (int i = 0; i < show.size(); i++)
+    {
+        if (i == show.size() - 1)
+        {
+            cout << show[i];
+        }
+        else
+        {
+            cout << show[i] << ", ";
+        }
+    }
+    cout << "]";
+*/
+
+/*cout << "[";
+    for (int i = 0; i < output.size(); i++)
+    {
+        cout << "[";
+        for (int j = 0; j < output[0].size(); j++)
+        {
+            if (i == output[0].size() - 1)
+                cout << output[i][j];
+            else
+                cout << output[i][j] << ", ";
+        }
+        cout << "]" << endl;
+    }
+    cout << "]";*/
+
 #include <iostream>
 using namespace std;
 
