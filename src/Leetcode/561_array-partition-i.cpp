@@ -1,0 +1,32 @@
+// https://leetcode.com/problems/array-partition-i/
+
+// https://leetcode.com/problems/array-partition-i/discuss/850851/C%2B%2B-Best-Solution-or-Explanation-with-another-Example
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution
+{
+public:
+    int arrayPairSum(vector<int> &nums)
+    {
+        sort(nums.begin(), nums.end());
+        int sum = 0, count = 0;
+        for (int i = nums.size() - 1; i >= 0; i -= 2)
+            if (count != nums.size() / 2)
+            {
+                sum += min(nums[i], nums[i - 1]);
+                count++;
+            }
+        return sum;
+    }
+};
+
+int main()
+{
+    Solution a;
+    vector<int> input = {1, 4, 3, 2};
+    cout << a.arrayPairSum(input) << endl;
+    return 0;
+}
