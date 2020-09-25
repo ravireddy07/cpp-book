@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/excel-sheet-column-number/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
