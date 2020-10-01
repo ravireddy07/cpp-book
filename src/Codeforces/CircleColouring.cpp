@@ -16,12 +16,11 @@ int main()
 {
     int t;
     cin >> t;
-    while (t)
+    while (t--)
     {
-        t--;
         int n;
         cin >> n;
-        int a[n], b[n], c[n], res[n];
+        vector<int> a(n), b(n), c(n);
         for (int i = 0; i < n; i++)
             cin >> a[i];
         for (int i = 0; i < n; i++)
@@ -29,30 +28,20 @@ int main()
         for (int i = 0; i < n; i++)
             cin >> c[i];
 
-        for (int i = 0; i < n; i++)
+        int first = a[0];
+        cout << first;
+        int prev = first;
+        for (int i = 1; i < n; i++)
         {
-            if (i != 0)
+            for (int x : {a[i], b[i], c[i]})
             {
-                if (a[i] != res[i - 1])
-                    res[i] = a[i];
-                else if (b[i] != res[i - 1])
-                    res[i] = b[i];
-                else if (c[i] != res[i - 1])
-                    res[i] = c[i];
+                if (x != prev && x != first)
+                {
+                    prev = x;
+                    cout << " " << x;
+                    break;
+                }
             }
-            else if (a[i] != a[i + 1])
-                res[i] = a[i];
-            else if (a[i] != b[i + 1])
-                res[i] = a[i];
-            else if (a[i] != c[i + 1])
-                res[i] = a[i];
-        }
-        for (int i = 0; i < sizeof(res) / sizeof(res[0]); i++)
-        {
-            if (i == (sizeof(res) / sizeof(res[0])) - 1)
-                cout << res[i];
-            else
-                cout << res[i] << " ";
         }
         cout << endl;
     }
