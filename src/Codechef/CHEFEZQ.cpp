@@ -1,54 +1,41 @@
 // https://www.codechef.com/OCT20B/problems/CHEFEZQ
-/*
+
 #include <bits/stdc++.h>
 using namespace std;
 
-void test()
-{
-    int n, k;
-    //scanf("%d%d", &n, &k);
-    cin >> n >> k;
-    vector<int> q(n);
-    int sum = 0;
-    for (int i = 0; i < n; ++i)
-    {
-        //scanf("%d", &q[i]);
-        cin >> q[i];
-        sum += q[i];
-    }
-    cout << sum / k + 1 << endl;
-    return;
-}
-
-void test1()
+void tets()
 {
     int n, k;
     cin >> n >> k;
-    vector<int> v(n);
+    int v[n];
     for (int i = 0; i < n; ++i)
-    {
         cin >> v[i];
-    }
 
-    int rem = 0;
-    int days = 1;
-    for (int i = 0; i < n; ++i)
+    int total = 0;
+    int left = 0;
+    int days = 0, s = 1;
+    for (int i = 0; i < sizeof(v) / sizeof(v[0]); ++i)
     {
-        rem += v[i] - k;
-        if (rem < 0)
+        total += v[i];
+        if (total < k)
         {
-            cout << days << endl;
-            return;
+            cout << days + 1 << endl;
+            s = 0;
+            break;
         }
+        else
+            total -= k;
         days++;
     }
-    cout << days + (rem / k) << endl;
-}
 
-// https://www.codechef.com/OCT20B/problems/CHEFEZQ
-*/
-#include <bits/stdc++.h>
-using namespace std;
+    if (total > k)
+    {
+        days += total / k;
+        cout << days + 1 << endl;
+    }
+    else if (s)
+        cout << days << endl;
+}
 
 int main()
 {
@@ -61,20 +48,32 @@ int main()
         int v[n];
         for (int i = 0; i < n; ++i)
             cin >> v[i];
-
-        int rem = 0;
-        int days = 1;
-        for (int i = 0; i < n; ++i)
+        if (n == 1)
         {
-            rem += v[i] - k;
-            if (rem < 0)
-            {
-                cout << days << endl;
-                return;
-            }
-            days++;
+            cout << (v[0] / k) + 1 << endl;
+            continue;
         }
-        cout << days + (rem / k) << endl;
+
+        int total = 0;
+        int left = 0;
+        int day = 0, s = 1;
+        for (int i = 0; i < sizeof(v) / sizeof(v[0]); ++i)
+        {
+            day += 1;
+            if (v[i] + left < k)
+            {
+                cout << day << endl;
+                s = 0;
+                break;
+            }
+            total = v[i] + left;
+            left = total - k;
+        }
+        if (s)
+        {
+            day += left / k;
+            cout << day + 1 << endl;
+        }
     }
     return 0;
 }
