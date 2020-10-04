@@ -2,40 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
-void tets()
-{
-    int n, k;
-    cin >> n >> k;
-    int v[n];
-    for (int i = 0; i < n; ++i)
-        cin >> v[i];
-
-    int total = 0;
-    int left = 0;
-    int days = 0, s = 1;
-    for (int i = 0; i < sizeof(v) / sizeof(v[0]); ++i)
-    {
-        total += v[i];
-        if (total < k)
-        {
-            cout << days + 1 << endl;
-            s = 0;
-            break;
-        }
-        else
-            total -= k;
-        days++;
-    }
-
-    if (total > k)
-    {
-        days += total / k;
-        cout << days + 1 << endl;
-    }
-    else if (s)
-        cout << days << endl;
-}
+#define ll long long int
 
 int main()
 {
@@ -45,33 +12,32 @@ int main()
     {
         int n, k;
         cin >> n >> k;
-        int v[n];
+        int in[n];
         for (int i = 0; i < n; ++i)
-            cin >> v[i];
+            cin >> in[i];
         if (n == 1)
         {
-            cout << (v[0] / k) + 1 << endl;
+            cout << (in[0] / k) + 1 << endl;
             continue;
         }
 
-        int total = 0;
-        int left = 0;
-        int day = 0, s = 1;
-        for (int i = 0; i < sizeof(v) / sizeof(v[0]); ++i)
+        ll total = 0;
+        ll day = 0;
+        int dayFound = 0;
+        for (int i = 0; i < sizeof(in) / sizeof(in[0]); ++i)
         {
             day += 1;
-            if (v[i] + left < k)
+            if (in[i] + total < k)
             {
                 cout << day << endl;
-                s = 0;
+                dayFound = 1;
                 break;
             }
-            total = v[i] + left;
-            left = total - k;
+            total = (in[i] + total) - k;
         }
-        if (s)
+        if (!dayFound)
         {
-            day += left / k;
+            day += total / k;
             cout << day + 1 << endl;
         }
     }
