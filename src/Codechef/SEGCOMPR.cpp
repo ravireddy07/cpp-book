@@ -4,18 +4,14 @@
 using namespace std;
 #define ll long long int
 
-int hs(int n)
+int hs(int num)
 {
-    if (n == 0)
+    if (!num)
         return 0;
-    int msb = 0;
-    n /= 2;
-    while (n != 0)
-    {
-        n /= 2;
-        msb++;
-    }
-    return (1 << msb);
+    int ret = 1;
+    while (num >>= 1)
+        ret <<= 1;
+    return ret;
 }
 
 int main()
@@ -29,25 +25,24 @@ int main()
         vector<int> v(n);
         for (int i = 0; i < v.size(); i++)
             cin >> v[i];
-        ll res = 0, j = 0, i = 0;
+        ll res = 0;
 
         while (v.size() > 1)
         {
             if (v[0] != v[1])
             {
-                j = max(v[0], v[1]);
-                res += hs(j);
-                v.push_back(res);
+                res = hs(v[0]) + hs(v[1]);
                 v.erase(v.begin(), v.begin() + 2);
+                v.push_back(res);
             }
             else
             {
-                v.push_back(0);
                 v.erase(v.begin(), v.begin() + 2);
+                v.push_back(0);
             }
         }
         cout << endl
-             << v[0] << endl;
+             << (v[0] * n) << endl;
     }
     return 0;
 }
