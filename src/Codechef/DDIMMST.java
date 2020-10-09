@@ -19,10 +19,19 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String nd[] = br.readLine().split(" ");
+        /*
+         * String nd[] = br.readLine().split(" "); int n = Integer.parseInt(nd[0]); int
+         * d = Integer.parseInt(nd[1]);
+         */
+        String line;
+        if ((line = br.readLine()) == null) {
+            return;
+        }
+        String ff = line.substring(0, line.indexOf(" "));
+        String ss = line.substring(line.indexOf(" ") + 1);
 
-        int n = Integer.parseInt(nd[0]);
-        int d = Integer.parseInt(nd[1]);
+        int n = Integer.parseInt(ff);
+        int d = Integer.parseInt(ss);
 
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
 
@@ -85,10 +94,10 @@ public class Main {
                 }
             }
         }
-        pri(parent, graph, v);
+        printMST(parent, graph, v);
     }
 
-    private static void pri(int[] parent, long[][] graph, int v) {
+    private static void printMST(int[] parent, long[][] graph, int v) {
         long sum = 0;
         for (int i = 1; i < v; ++i) {
             sum += graph[parent[i]][i];
