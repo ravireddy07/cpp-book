@@ -19,10 +19,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        /*
-         * String nd[] = br.readLine().split(" "); int n = Integer.parseInt(nd[0]); int
-         * d = Integer.parseInt(nd[1]);
-         */
         String line;
         if ((line = br.readLine()) == null) {
             return;
