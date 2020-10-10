@@ -6,111 +6,102 @@ import java.io.*;
 import java.io.BufferedReader;
 
 public class Main {
-    static class Edge {
-        int src, dest;
+    static long getDiff(ArrayList<Integer> line1, ArrayList<Integer> line2) {
+        long res = 0;
+        for (int i = 0; i < line1.size(); ++i)
+            res += Math.abs(line1.get(i) - line2.get(i));
+        return res;
+    }
+    
+    static class Node {
+        int val1, val2;
         long weight;
 
-        Edge(int src, int dest, long weight) {
-            this.src = src;
-            this.dest = dest;
-            this.weight = weight;
+        Node(int v1, int v2, long w) {
+            this.val1 = v1;
+            this.val2 = v2;
+            this.weight = w;
         }
+    }
+    
+    static long getValue(long[] key, boolean[] tree, int s) {
+        long val = Integer.MIN_VALUE;
+        int res = -1;
+
+        for (int i = 0; i < s; ++i) {
+            if (tree[i] == false && key[i] > val) {
+                val = key[i];
+                res = i;
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String line;
-        if ((line = br.readLine()) == null) {
+
+        String input;
+        if ((input = br.readLine()) == null)
             return;
-        }
-        String ff = line.substring(0, line.indexOf(" "));
-        String ss = line.substring(line.indexOf(" ") + 1);
+        
+        String nn = input.substring(0, input.indexOf(" "));
+        int n = Integer.parseInt(nn);
 
-        int n = Integer.parseInt(ff);
-        int d = Integer.parseInt(ss);
-
-        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+        String dd = input.substring(input.indexOf(" ") + 1);
+        int d = Integer.parseInt(dd);
+        
+        ArrayList<ArrayList<Integer>> DSpace = new ArrayList<>();
+        ArrayList<Node> aDiff = new ArrayList<>();
+        long g[][] = new long[n][n];
+        int parent[] = new int[g.length];
+        long key[] = new long[g.length];
+        boolean tree[] = new boolean[g.length];
 
         for (int i = 0; i < n; ++i) {
-            String str[] = br.readLine().split(" ");
-            ArrayList<Integer> values = new ArrayList<>();
-            for (int k = 0; k < str.length; ++k) {
-                values.add(Integer.parseInt(str[k]));
-            }
-            list.add(values);
+            String in[] = br.readLine().split(" ");
+            ArrayList<Integer> temp = new ArrayList<>();
+            for (int k = 0; k < in.length; ++k)
+                temp.add(Integer.parseInt(in[k]));
+            DSpace.add(temp);
         }
 
-        ArrayList<Edge> edges = new ArrayList<>();
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n-1; ++i) {
             for (int j = i + 1; j < n; ++j) {
-                long weight = (diff(list.get(i), list.get(j)));
-                Edge curr = new Edge(i, j, weight);
-                edges.add(curr);
+                long w = (getDiff(DSpace.get(i), DSpace.get(j)));
+                Node f = new Node(i, j, w);
+                aDiff.add(f);
             }
         }
 
-        long graph[][] = new long[n][n];
-
-        for (int i = 0; i < edges.size(); ++i) {
-            graph[edges.get(i).src][edges.get(i).dest] = edges.get(i).weight;
-            graph[edges.get(i).dest][edges.get(i).src] = edges.get(i).weight;
+        for (int i = 0; i < aDiff.size(); ++i) {
+            g[aDiff.get(i).val1][aDiff.get(i).val2] = aDiff.get(i).weight;
+            g[aDiff.get(i).val2][aDiff.get(i).val1] = aDiff.get(i).weight;
         }
 
-        printMST(graph);
-    }
-
-    private static long diff(ArrayList<Integer> x, ArrayList<Integer> y) {
-        long diff = 0;
-        for (int i = 0; i < x.size(); ++i) {
-            diff += Math.abs(x.get(i) - y.get(i));
-        }
-        return diff;
-    }
-
-    private static void printMST(long graph[][]) {
-        int v = graph.length;
-        int parent[] = new int[v];
-        long key[] = new long[v];
-        boolean mstSet[] = new boolean[v];
-
-        for (int i = 0; i < v; ++i) {
+        for (int i = 0; i < g.length; ++i) {
             key[i] = Integer.MIN_VALUE;
-            mstSet[i] = false;
+            tree[i] = false;
         }
+
         key[0] = 0;
         parent[0] = -1;
 
-        for (int count = 0; count < v - 1; ++count) {
-            long u = maxKey(key, mstSet, v);
-            mstSet[(int) u] = true;
-            for (int j = 0; j < v; ++j) {
-                if (graph[(int) u][j] != 0 && mstSet[j] == false && graph[(int) u][j] > key[j]) {
-                    parent[j] = (int) u;
-                    key[j] = graph[(int) u][j];
+        for (int i = 0; i < g.length - 1; ++i) {
+            long ans = getValue(key, tree, g.length);
+            tree[(int) ans] = true;
+            for (int j = 0; j < g.length; ++j) {
+                if (g[(int) ans][j] != 0 && tree[j] == false && g[(int) ans][j] > key[j]) {
+                    parent[j] = (int) ans;
+                    key[j] = g[(int) ans][j];
                 }
             }
         }
-        printMST(parent, graph, v);
-    }
 
-    private static void printMST(int[] parent, long[][] graph, int v) {
-        long sum = 0;
-        for (int i = 1; i < v; ++i) {
-            sum += graph[parent[i]][i];
-        }
-        System.out.println(sum);
-    }
+        long res = 0;
+        for (int i = 1; i < g.length; ++i)
+            res += g[parent[(int) i]][(int) i];
 
-    private static long maxKey(long[] key, boolean[] mstSet, int v) {
-        long max = Integer.MIN_VALUE;
-        int index = -1;
-
-        for (int i = 0; i < v; ++i) {
-            if (mstSet[i] == false && key[i] > max) {
-                max = key[i];
-                index = i;
-            }
-        }
-        return index;
+        System.out.print(res + "\n");
+        return;
     }
 }
