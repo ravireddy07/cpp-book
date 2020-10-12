@@ -1,8 +1,9 @@
 // https://codeforces.com/contest/1427/problem/B
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+/*
 void test() {
     int n,k;
     cin >> n >> k;
@@ -69,19 +70,73 @@ void test() {
         }
     }
     cout << res << endl;
-    /*
-    for (int i = 0; i < n; i++)
-        cout << in[i] << " ";
-    cout << endl;
-    */
+    
+    //for (int i = 0; i < n; i++)
+        //cout << in[i] << " ";
+    //cout << endl;
+    
     return;
 }
+*/
+char s[1000123];
 
-int main() {
-    long t;
-    cin>>t;
-    while(t--) {
-        test();
+void test()
+{
+    int n, k;
+    cin >> n >> k;
+    cin >> s;
+    assert(n == (int)strlen(s));
+    vector<int> blocks;
+    for (int i = 0; i < n; i++)
+    {
+        bool start = (i > 0);
+        if (s[i] == 'W')
+            continue;
+        int len = 1;
+        while (i + 1 < n && s[i + 1] == 'L')
+        {
+            len++;
+            i++;
+        }
+        if (start && i != n - 1)
+            blocks.push_back(len);
     }
+    sort(blocks.begin(), blocks.end());
+    int ans = 0, remaining = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == 'W')
+            ans++;
+        else
+            remaining++;
+
+        if (s[i] == 'W' && i > 0 && s[i - 1] == 'W')
+            ans++;
+    }
+
+    if (remaining == n && k > 0)
+        ans--;
+
+    for (int x : blocks)
+    {
+        if (k >= x)
+        {
+            k -= x;
+            ans += 2 * x + 1;
+            remaining -= x;
+        }
+        else
+            break;
+    }
+    ans += 2 * min(k, remaining);
+    cout << ans << endl;
+}
+
+int main()
+{
+    long t;
+    cin >> t;
+    while (t--)
+        test();
     return 0;
 }
