@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/string-to-integer-atoi/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -12,6 +12,7 @@ public:
         long long p = 0;
         while (i < str.length() && str[i] == ' ')
             i++;
+
         if (i < str.length() && str[i] == '+')
             i++;
         else if (i < str.length() && str[i] == '-')
@@ -19,6 +20,7 @@ public:
             flag = 1;
             i++;
         }
+
         for (; i < str.length(); i++)
         {
             if (p == 0 && (str[i] < 48 || str[i] > 57))
@@ -36,6 +38,7 @@ public:
             else
                 break;
         }
+
         if (flag)
             return -p;
         return p;

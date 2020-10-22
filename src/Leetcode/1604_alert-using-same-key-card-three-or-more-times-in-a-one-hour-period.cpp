@@ -74,6 +74,7 @@ public:
         sort(res.begin(), res.end());
         return res;
     }
+
     int transfer(string &str)
     {
         int res = 0;

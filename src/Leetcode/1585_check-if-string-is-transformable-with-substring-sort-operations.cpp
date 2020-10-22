@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

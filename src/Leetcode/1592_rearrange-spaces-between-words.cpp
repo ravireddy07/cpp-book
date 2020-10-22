@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/rearrange-spaces-between-words/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

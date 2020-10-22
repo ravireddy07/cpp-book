@@ -32,8 +32,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> row = {{3, 8}};
-    vector<int> col = {{4, 7}};
+    vector<int> row = {{3, 8}}, col = {{4, 7}};
     vector<vector<int>> output = a.restoreMatrix(row, col);
     cout << "[";
     for (int i = 0; i < output.size(); i++)
