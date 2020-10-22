@@ -1,7 +1,5 @@
 // https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/
-
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class UnionFind

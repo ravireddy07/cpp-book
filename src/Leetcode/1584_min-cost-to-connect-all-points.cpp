@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/min-cost-to-connect-all-points/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

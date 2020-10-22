@@ -1,11 +1,12 @@
 // https://leetcode.com/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/
+#include <bits/stdc++.h>
+using namespace std;
 
 class Solution
 {
 public:
     int numTriplets(vector<int> &nums1, vector<int> &nums2)
     {
-        //sorting
         sort(nums1.begin(), nums1.end());
         sort(nums2.begin(), nums2.end());
 
@@ -78,3 +79,11 @@ public:
         return count;
     }
 };
+
+int main()
+{
+    Solution a;
+    vector<int> in1 = {7, 4}, in2 = {5, 2, 8, 9};
+    cout << a.numTriplets(in1, in2) << endl;
+    return 0;
+}

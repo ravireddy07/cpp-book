@@ -1,7 +1,5 @@
 // https://leetcode.com/problems/special-positions-in-a-binary-matrix/
-
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

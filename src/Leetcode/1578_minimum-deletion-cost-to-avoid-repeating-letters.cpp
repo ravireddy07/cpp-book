@@ -1,7 +1,5 @@
 // https://leetcode.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
-
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -33,6 +31,6 @@ int main()
 {
     Solution a;
     vector<int> input = {1, 2, 3, 4, 5};
-    cout << a.modifyString("abaac", input) << endl;
+    cout << a.minCost("abaac", input) << endl;
     return 0;
 }

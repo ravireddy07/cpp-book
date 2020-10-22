@@ -22,7 +22,7 @@ public:
             auto it = x[t[i] - '0'].lower_bound(0);
             for (k = 0; k < (t[i] - '0'); k++)
                 if ((int)(x[k].size()) != 0 && (*x[k].begin()) < (*it))
-                    return false;
+                    return false; //**************************************
             x[t[i] - '0'].erase(*it);
         }
         return true;
