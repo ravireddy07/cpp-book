@@ -33,6 +33,32 @@ public:
         return s.substr(0, s.size() - gap) + string(suff, ' ');
     }
 };
+/* 
+// need to be tested
+
+class Solution
+{
+public:
+    string reorderSpaces(string text)
+    {
+        string word = "";
+        string res = "";
+        for (int i = 0; i < text.length(); i++)
+        {
+            if (text[i] != ' ')
+                word += text[i];
+            else
+            {
+                if (word != "")
+                {
+                    res += word + " ";
+                }
+                word = "";
+            }
+        }
+        return res;
+    }
+}; */
 
 int main()
 {

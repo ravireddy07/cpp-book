@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/
-
 #include <bits/stdc++.h>
 using namespace std;
 
