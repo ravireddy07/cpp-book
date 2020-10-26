@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/string-to-integer-atoi/
-
 #include <bits/stdc++.h>
 using namespace std;
 
