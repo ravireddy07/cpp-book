@@ -15,9 +15,7 @@ int main()
         {
             scanf("%d", &a[i]);
             if (i > 0 && a[i] > a[i - 1])
-            {
                 inc.push_back(i);
-            }
         }
 
         if (k == 1)

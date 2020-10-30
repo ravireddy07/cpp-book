@@ -32,13 +32,9 @@ void test()
     }
     double dist = a[pos2] - a[pos1];
     if (t1 < t2)
-    {
         dist -= (t2 - t1) * s1;
-    }
     else
-    {
         dist -= (t1 - t2) * s2;
-    }
     double aa = max(t1, t2) + dist / (s1 + s2);
     printf("%.12lf\n", aa);
 }
@@ -48,8 +44,6 @@ int main()
     int t;
     scanf("%d", &t);
     while (t--)
-    {
         test();
-    }
     return 0;
 }
