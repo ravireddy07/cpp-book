@@ -1,8 +1,5 @@
 // https://leetcode.com/problems/pancake-sorting/
-
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
