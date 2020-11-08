@@ -1,10 +1,5 @@
 // https://leetcode.com/problems/stone-game-v/
-
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
-
 using namespace std;
 
 class Solution
@@ -27,12 +22,11 @@ public:
             else if (lv < rv)
                 res = max(res, dfs(sv, l, i) + lv);
             else
-            {
                 res = max({res, dfs(sv, i + 1, r) + rv, dfs(sv, l, i) + lv});
-            }
         }
         return dp[l][r] = res;
     }
+
     int stoneGameV(vector<int> &stoneValue)
     {
         memset(dp, -1, sizeof(dp));
@@ -46,10 +40,8 @@ public:
 
 int main()
 {
-    int result;
     Solution a;
-    vector<int> input = {[6, 2, 3, 4, 5, 5]};
-    result = a.stoneGameV(input);
-    cout << result << endl;
+    vector<int> input = {6, 2, 3, 4, 5, 5};
+    cout << a.stoneGameV(input) << endl;
     return 0;
 }

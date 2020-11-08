@@ -1,7 +1,6 @@
 // https://leetcode.com/problems/non-decreasing-array/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

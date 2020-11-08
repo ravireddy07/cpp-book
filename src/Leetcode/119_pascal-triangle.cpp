@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 /*
@@ -66,13 +65,9 @@ int main()
     for (int i = 0; i < show.size(); i++)
     {
         if (i == show.size() - 1)
-        {
             cout << show[i];
-        }
         else
-        {
             cout << show[i] << ", ";
-        }
     }
     cout << "]";
     return 0;

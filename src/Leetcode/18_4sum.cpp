@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/4sum/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -59,15 +57,11 @@ int main()
     for (int i = 0; i < show.size(); i++)
     {
         cout << "[";
-        for (int j = 0; j < 4; j++)
-            if (j == 3)
-            {
+        for (int j = 0; j < show[0].size(); j++)
+            if (j == show[0].size() - 1)
                 cout << show[i][j];
-            }
             else
-            {
                 cout << show[i][j] << ", ";
-            }
         cout << "]" << endl;
     }
     cout << "]";
