@@ -1,7 +1,4 @@
 // https://leetcode.com/problems/shortest-completing-word/
-
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 

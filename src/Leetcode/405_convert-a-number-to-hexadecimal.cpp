@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/convert-a-number-to-hexadecimal/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
