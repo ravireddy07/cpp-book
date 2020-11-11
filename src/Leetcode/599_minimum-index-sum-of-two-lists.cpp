@@ -1,9 +1,5 @@
 // https://leetcode.com/problems/minimum-index-sum-of-two-lists
-
-#include <iostream>
-#include <algorithm>
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 class Solution

@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/longest-harmonious-subsequence/
-
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
