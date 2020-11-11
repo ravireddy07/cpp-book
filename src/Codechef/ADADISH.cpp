@@ -9,7 +9,7 @@ int findMinR(vector<int> v, int i, int currSum, int res)
         return abs((res - currSum) - currSum);
     return min(findMinR(v, i - 1, currSum + v[i - 1], res), findMinR(v, i - 1, currSum, res));
 }
-
+// 2 3 4 5
 int main()
 {
     int t;

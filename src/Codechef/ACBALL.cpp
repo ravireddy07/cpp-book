@@ -10,6 +10,7 @@ int main()
         string x, y;
         cin >> x >> y;
         string z(x);
+        cout << z << endl;
         for (int p = 0; p < z.size(); p++)
         {
             if (x[p] == 'B' && y[p] == 'B')
