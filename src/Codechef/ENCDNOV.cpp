@@ -17,6 +17,7 @@ void test1()
     }
     int res = 0, temp = 0;
     sort(vv.begin(), vv.end());
+
     for (int i = 0; i < n; i++)
     {
         if (v[i] != vv[i])
@@ -33,8 +34,8 @@ void test1()
     }
     cout << res << endl;
 }
-// 1 2 3 6 3 5 1 8 9
-// 1 1 2 3 3 5 6 8 9
+// 5 6 1 2 3 6 3 5 1  8
+// 5 6 1 1 2 3 3 5 6  8
 
 int main()
 {
