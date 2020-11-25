@@ -4,7 +4,7 @@
 #define lli long long int
 using namespace std;
 
-// TLE Solution
+// TLE Solution. O(N*N)
 void test()
 {
     int n;
@@ -27,6 +27,42 @@ void test()
         }
     }
     printf("%d\n", (res == 0) ? -1 : res);
+    return;
+}
+
+// Need to be Tested. O(N)
+void test()
+{
+    int n;
+    scanf("%d", &n);
+
+    if (n == 1)
+    {
+        int temp;
+        scanf("%d", &temp);
+        printf("%d\n", temp);
+        return;
+    }
+
+    int v[n];
+    for (int i = 0; i < n; i++)
+        scanf("%d", &v[i]);
+
+    int cMin = INT_MAX;
+    sort(v, v + n);
+
+    for (int i = 1; i < n; i++)
+    {
+        if (v[i] == v[i - 1])
+            continue;
+        else if (i == 1 and v[i] != v[i - 1])
+            cMin = min(min(v[i], v[i - 1]), cMin);
+        else if (v[i] != v[i - 1] and v[i - 1] != v[i - 2])
+            cMin = min(min(v[i], v[i - 1]), cMin);
+        else
+            cMin = min(cMin, v[n - 1]);
+    }
+    printf("%d\n", (cMin != INT_MAX) ? cMin : -1);
     return;
 }
 
