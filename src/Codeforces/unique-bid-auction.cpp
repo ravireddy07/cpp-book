@@ -30,12 +30,11 @@ void test()
     return;
 }
 
-// Need to be Tested. O(N)
+// TLE. O(N)
 void test()
 {
     int n;
     scanf("%d", &n);
-
     if (n == 1)
     {
         int temp;
@@ -45,8 +44,12 @@ void test()
     }
 
     int v[n];
+    vector<int> vv;
     for (int i = 0; i < n; i++)
+    {
         scanf("%d", &v[i]);
+        vv.push_back(v[i]);
+    }
 
     int cMin = INT_MAX;
     sort(v, v + n);
@@ -54,15 +57,33 @@ void test()
     for (int i = 1; i < n; i++)
     {
         if (v[i] == v[i - 1])
+        {
+            if (v[i] == cMin)
+                cMin = INT_MAX;
             continue;
+        }
         else if (i == 1 and v[i] != v[i - 1])
             cMin = min(min(v[i], v[i - 1]), cMin);
         else if (v[i] != v[i - 1] and v[i - 1] != v[i - 2])
             cMin = min(min(v[i], v[i - 1]), cMin);
+        else if (v[i] != v[i - 1] and v[i - 1] == v[i - 2])
+            cMin = v[i];
         else
             cMin = min(cMin, v[n - 1]);
+
+        if (*min_element(vv.begin(), vv.end()) == cMin)
+            break;
     }
-    printf("%d\n", (cMin != INT_MAX) ? cMin : -1);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (vv[i] == cMin)
+        {
+            printf("%d\n", i + 1);
+            return;
+        }
+    }
+    printf("-1\n");
     return;
 }
 
