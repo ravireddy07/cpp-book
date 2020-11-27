@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/as-far-from-land-as-possible/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -61,7 +59,7 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = [ [ 1, 0, 1 ], [ 0, 0, 0 ], [ 1, 0, 1 ] ];
-    cout << a.minNumberOfSemesters(2, input, 2) << endl;
+    vector<vector<int>> input = {{1, 0, 1}, {0, 0, 0}, {1, 0, 1}};
+    cout << a.maxDistance(input) << endl;
     return 0;
 }

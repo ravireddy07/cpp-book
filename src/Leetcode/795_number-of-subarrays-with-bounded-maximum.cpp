@@ -1,8 +1,5 @@
 // https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -31,7 +28,8 @@ public:
 
 int main()
 {
+    Solution a;
     vector<int> input = {2, 1, 4, 3};
-    cout << Solution.numSubarrayBoundedMax(input, 2, 3) << endl;
+    cout << a.numSubarrayBoundedMax(input, 2, 3) << endl;
     return 0;
 }
