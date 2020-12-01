@@ -8,11 +8,7 @@ lli f(lli x)
 {
     string temp = to_string(x);
     reverse(temp.begin(), temp.end());
-    string str = "";
-    for (int i = 0; i < temp.length(); i++)
-        if (temp[i] != '0')
-            str += temp[i];
-    return stoll(str);
+    return stoll(temp);
 }
 
 void test()
@@ -30,7 +26,6 @@ void test()
     return;
 }
 
-// Accepted Solution
 void test()
 {
     string n;

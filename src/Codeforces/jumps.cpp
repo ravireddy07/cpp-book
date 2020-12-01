@@ -21,24 +21,22 @@ void test()
 
 void test()
 {
-    ll x;
-    cin >> x;
-    if (x == 1)
+    int n;
+    scanf("%d", &n);
+    int cur = 0;
+    int i = 1;
+    while (cur < n)
     {
-        cout << "1\n";
-        return;
+        cur += i;
+        //cout << i << " " << cur << endl;
+        i++;
     }
-    ll s = 0, i = 0;
-    for (i = 1; i <= x; ++i)
-    {
-        s += i;
-        if (s >= x)
-            break;
-    }
-    if ((s - x) == 1)
-        cout << i + (s - x) << '\n';
+    //cout << endl;
+
+    if (cur == n + 1)
+        printf("%d\n", i);
     else
-        cout << i << '\n';
+        printf("%d\n", i - 1);
     return;
 }
 
