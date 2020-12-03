@@ -1,10 +1,35 @@
-// https://leetcode.com/problems/find-the-duplicate-number/
+// Problem Statement:  https://leetcode.com/problems/find-the-duplicate-number/
 
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution #1
+class Solution
+{
+public:
+    int findDuplicate(vector<int> &nums)
+    {
+        int slow = nums[0];
+        int fast = nums[0];
+
+        do
+        {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+
+        fast = nums[0];
+
+        while (slow != fast)
+        {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+};
+
+// Solution #2
 class Solution
 {
 public:
@@ -13,7 +38,7 @@ public:
         int visited;
         for (int i = 0; i < nums.size(); i++)
         {
-            visited = ::abs(nums[i]);
+            visited = abs(nums[i]);
             if (nums[visited] < 0)
                 return visited;
             else
@@ -26,7 +51,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 1, 2};
-    cout << a.findDuplicate(input) << endl;
+    vector<int> in = {1, 3, 4, 2, 2};
+    cout << a.findDuplicate(in) << endl;
     return 0;
 }
