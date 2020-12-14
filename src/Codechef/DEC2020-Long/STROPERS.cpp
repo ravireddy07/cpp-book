@@ -3,10 +3,6 @@
 #include <bits/stdc++.h>
 #define ll long long int
 #define pii pair<ll, ll>
-#define oi(a) printf("%d\n", a)
-#define oll(a) printf("%lld\n", a)
-#define ii(a) scanf("%d", &a)
-#define ill(a) scanf("%lld", &a)
 using namespace std;
 
 /*
