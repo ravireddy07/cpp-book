@@ -1,13 +1,12 @@
 // https://leetcode.com/problems/longest-common-prefix/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    string longestCommonPrefix(vector<string> &strs)
+    string longestCommonPrefix(vector<string> strs)
     {
         if (strs.size() == 0)
             return "";
@@ -37,7 +36,6 @@ public:
 int main()
 {
     Solution a;
-    vector<string> input = {"flower", "flow", "flight"};
-    cout << a.longestCommonPrefix(input) << endl;
+    cout << a.longestCommonPrefix({"flower", "flow", "flight"}) << endl;
     return 0;
 }

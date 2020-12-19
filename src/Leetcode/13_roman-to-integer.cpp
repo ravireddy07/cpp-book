@@ -4,7 +4,7 @@
 
 // including commented code is standard code
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -19,8 +19,6 @@ public:
         {
             if (s[i] == 'I')
             {
-                //if (i + 1 != s.length())
-                //{
                 if (s[i + 1] == 'V')
                 {
                     sum += 4;
@@ -33,14 +31,9 @@ public:
                 }
                 else
                     sum += 1;
-                //}
-                //else
-                //sum += 1;
             }
             else if (s[i] == 'X')
             {
-                //if (i + 1 != s.length())
-                //{
                 if (s[i + 1] == 'L')
                 {
                     sum += 40;
@@ -53,14 +46,9 @@ public:
                 }
                 else
                     sum += 10;
-                //}
-                //else
-                //sum += 10;
             }
             else if (s[i] == 'C')
             {
-                //if (i + 1 != s.length())
-                //{
                 if (s[i + 1] == 'D')
                 {
                     sum += 400;
@@ -73,9 +61,6 @@ public:
                 }
                 else
                     sum += 100;
-                //}
-                //else
-                //sum += 100;
             }
             else if (s[i] == 'V')
                 sum += 5;

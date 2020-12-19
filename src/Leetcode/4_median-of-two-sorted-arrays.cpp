@@ -49,7 +49,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in1 = {1, 3}, in2 = {2, 7};
-    cout << a.findMedianSortedArrays(in1, in2) << endl;
+    cout << a.findMedianSortedArrays({1, 3}, {2, 7}) << endl;
     return 0;
 }

@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/palindrome-number/
-#include <iostream>
+
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
