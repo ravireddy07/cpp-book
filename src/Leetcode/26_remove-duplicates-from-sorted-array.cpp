@@ -1,13 +1,12 @@
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int removeDuplicates(vector<int> &nums)
+    int removeDuplicates(vector<int> nums)
     {
         if (nums.size() < 2)
             return nums.size();
@@ -29,7 +28,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 1, 2};
-    cout << a.removeDuplicates(input) << endl;
+    cout << a.removeDuplicates({1, 1, 2}) << endl;
     return 0;
 }

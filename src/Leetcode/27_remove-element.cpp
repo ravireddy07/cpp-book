@@ -1,13 +1,12 @@
 // https://leetcode.com/problems/remove-element/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int removeElement(vector<int> &nums, int val)
+    int removeElement(vector<int> nums, int val)
     {
         for (auto i = nums.begin(); i != nums.end(); ++i) // Traversing Each Element
         {
@@ -24,7 +23,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {3, 2, 2, 3};
-    cout << a.removeElement(input, 3) << endl;
+    cout << a.removeElement({3, 2, 2, 3}, 3) << endl;
     return 0;
 }
