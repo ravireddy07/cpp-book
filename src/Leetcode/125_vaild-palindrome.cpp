@@ -28,8 +28,7 @@ public:
 
 int main()
 {
-    string input = "A man, a plan, a canal: Panama";
     Solution a;
-    cout << a.isPalindrome(input);
+    cout << a.isPalindrome("A man, a plan, a canal: Panama") << endl;
     return 0;
 }
