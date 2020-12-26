@@ -51,7 +51,7 @@ public:
         for (int i = n; i >= 0; --i)
         {
             for (int j = i; j >= 1; j--)
-                cout << "*";
+                cout << " ";
             for (int k = n; k >= i; k--)
                 cout << k;
             cout << endl;
@@ -60,7 +60,7 @@ public:
         for (int i = 1; i <= n; ++i)
         {
             for (int j = i; j >= 1; j--)
-                cout << "*";
+                cout << " ";
             for (int k = n; k >= i; k--)
                 cout << k;
             cout << endl;
