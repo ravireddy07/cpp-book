@@ -20,21 +20,21 @@ class cp
 public:
     void test()
     {
-        int n;
-        ii(n);
+        ll n;
+        ill(n);
         string s;
         s = to_string(n);
-        set<int> res;
-        int temp = 0;
+        ll res = 0;
+        ll temp = 0;
         for (int i = 0; i < s.size(); i++)
         {
-            temp = (int)s[i] - 48;
+            temp = (ll)s[i] - 48;
             if (temp == 0)
-                res.insert(temp);
+                continue;
             else if (n % temp == 0)
-                res.insert(temp);
+                res++;
         }
-        cout << res.size();
+        cout << res;
         sheldon_harry;
         return;
     }
