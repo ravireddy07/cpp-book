@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codeforces.com/contest/1469/problem/B/
+// Problem Statement: https://www.codeforces.com/contest/1469/problem/C/
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -34,36 +34,32 @@ class moon_pie
 public:
     void harry()
     {
-        int n;
+        int n, k;
         ii(n);
-        int sum = 0, res = 0, temp = 0;
-
-        int r[n];
+        ii(k);
+        int h[n];
         for (int i = 0; i < n; i++)
+            ii(h[i]);
+
+        int lo[n], hi[n];
+        for (int i = 0; i < n; i++)
+            lo[i] = hi[i] = -1e9;
+        lo[0] = hi[0] = 0;
+
+        for (int i = 1; i < n; i++)
         {
-            ii(r[i]);
-            sum += r[i];
-            amax(res, sum);
+            lo[i] = max(0, h[i - 1] + lo[i - 1] - k + 1 - h[i]);
+            hi[i] = min(k - 1, h[i - 1] + hi[i - 1] + k - 1 - h[i]);
+            if (hi[i] < lo[i])
+                break;
         }
 
-        int m;
-        ii(m);
-
-        int b[m];
-        sum = 0;
-        for (int i = 0; i < m; i++)
-        {
-            ii(b[i]);
-            sum += b[i];
-            amax(temp, sum);
-        }
-
-        cout << res + temp;
+        cout << (lo[n - 1] == 0 && hi[n - 1] >= lo[n - 1] ? "YES" : "NO");
         ravireddy07;
         return;
     }
 };
-// g++ b.cpp -o b
+// g++ c.cpp -o c
 
 int main()
 {
