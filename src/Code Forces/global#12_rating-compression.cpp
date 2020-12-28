@@ -1,9 +1,9 @@
-// Problem Statement:  https://codeforces.com/contest/1450/problem/D
+// Problem secondtatement:  https://codeforces.com/contest/1450/problem/D
 
 #include <bits/stdc++.h>
 using namespace std;
 
-// TLE Solution
+// TLE secondolution
 int perm(vector<int> ar, int n)
 {
     sort(ar.begin(), ar.end());
@@ -42,8 +42,6 @@ void test()
 
 // AC
 
-#define F first
-#define S second
 void test()
 {
     int n;
@@ -52,28 +50,31 @@ void test()
     map<int, vector<int>> mp;
     string ans(n, '0');
     int mx = 1e9;
+
     for (int i = 0; i < n; ++i)
     {
         cin >> a[i];
         mp[a[i]].push_back((i + 1));
         mx = min(mx, a[i]);
     }
+
     if (mp.size() == n)
         ans[0] = '1';
     int cur = 1;
     int l = 1, r = n;
+
     for (auto &j : mp)
     {
-        if (j.F != cur)
+        if (j.first != cur)
             break;
         ans[n - cur] = '1';
-        if ((j.second).size() > 1 || (j.S[0] != l && j.S[0] != r))
+        if ((j.second).size() > 1 || (j.second[0] != l && j.second[0] != r))
         {
-            // cout<<j.F<<"\n";
+            // cout<<j.first<<"\n";
             break;
         }
         ++cur;
-        if (j.S[0] == l)
+        if (j.second[0] == l)
             ++l;
         else
             --r;
