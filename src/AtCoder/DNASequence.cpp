@@ -1,9 +1,3 @@
-/*
-We have given A, B.
-where, X+Y = A.
-       X-Y = B. We have to find X,Y
-*/
-
 #include <bits/stdc++.h>
 using namespace std;
 
