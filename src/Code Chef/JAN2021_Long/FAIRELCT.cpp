@@ -8,7 +8,7 @@
 **/
 
 #include <bits/stdc++.h>
-#define ll long int
+#define ll long long int
 #define ravireddy07 return
 #define ii(a) scanf("%d", &a)
 #define ii2(a, b) scanf("%d%d", &a, &b)
@@ -26,7 +26,7 @@
 #define no printf("NO")
 using namespace std;
 
-int n, m, temp, minn, maxx, jackSum, johnSum;
+ll n, m, temp, minn, maxx, JackSum, JohnSum;
 
 int checkSum(int john[], int jack[])
 {
@@ -42,26 +42,26 @@ void harry_TLE()
 {
     ii2(n, m);
     int john[n], jack[m];
-    johnSum = 0, jackSum = 0;
+    JohnSum = 0, JackSum = 0;
     for (int i = 0; i < n; ++i)
     {
         ii(john[i]);
-        johnSum += john[i];
+        JohnSum += john[i];
     }
 
     for (int i = 0; i < m; ++i)
     {
         ii(jack[i]);
-        jackSum += jack[i];
+        JackSum += jack[i];
     }
 
-    if (johnSum == jackSum)
+    if (JohnSum == JackSum)
         printf("-1\n");
     else
     {
         int ans = 0;
         //int i = 0, j = m - 1;
-        while (johnSum < jackSum)
+        while (JohnSum < JackSum)
         {
             minn = *min_element(john, john + n);
             maxx = *max_element(jack, jack + m);
@@ -76,9 +76,9 @@ void harry_TLE()
             */
 
             /* sorted votes
-            swap(john[i], jack[j]);
-            johnSum = johnSum - jack[j] + john[i];
-            jackSum = jackSum + jack[j] - john[i];
+            swap(John[i], Jack[j]);
+            JohnSum = JohnSum - Jack[j] + John[i];
+            JackSum = JackSum + Jack[j] - John[i];
             ++ans;
             ++i;
             --j;*/
@@ -88,33 +88,36 @@ void harry_TLE()
     ravireddy07;
 }
 
-void harry()
+void harry_exp()
 {
-    ii2(n, m);
-    pq<int, vi, greater<int>> John;
-    pqi Jack;
+    n, m;
+    ill2(n, m);
+    priority_queue<ll, std::vector<ll>, greater<int>> John;
+    priority_queue<ll> Jack;
 
-    for (int i = 0; i < n; ++i)
+    JohnSum = 0, JackSum = 0, temp = 0;
+    for (int i = 0; i < n; i++)
     {
-        ii(temp);
-        johnSum += temp;
+        ill(temp);
+        JohnSum += temp;
         John.push(temp);
     }
 
-    for (int i = 0; i < m; ++i)
+    for (int i = 0; i < m; i++)
     {
-        ii(temp);
-        jackSum += temp;
+        ill(temp);
+        JackSum += temp;
         Jack.push(temp);
     }
 
-    if (johnSum == jackSum)
-        printf("-1\n");
-    else if (johnSum > jackSum)
+    if (JohnSum > JackSum)
+    {
         printf("0\n");
+        return;
+    }
     else
     {
-        for (int i = 1; i <= n; ++i)
+        for (int i = 0; i < n; ++i)
         {
             minn = John.top();
             maxx = Jack.top();
@@ -122,16 +125,17 @@ void harry()
             Jack.pop();
             John.push(maxx);
             Jack.push(minn);
-            johnSum = johnSum - minn + maxx;
-            jackSum = jackSum - maxx + minn;
-            if (johnSum > jackSum)
+            JohnSum = JohnSum - minn + maxx;
+            JackSum = JackSum - maxx + minn;
+            if (JohnSum > JackSum)
             {
-                printf("%d\n", i);
-                break;
+                printf("%d\n", i + 1);
+                return;
             }
         }
     }
-    ravireddy07;
+    printf("-1\n");
+    return;
 }
 
 int main()
@@ -139,6 +143,6 @@ int main()
     int t;
     ii(t);
     while (t--)
-        harry();
+        harry_exp();
     return 0;
 }
