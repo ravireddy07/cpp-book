@@ -1,4 +1,4 @@
-// Problem Statement: https://codeforces.com/contest/1472/problem/D/
+// Problem Statement: https://codeforces.com/contest/1471/problem/B/
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -18,6 +18,7 @@
 #define vii vector<vector<int>>
 #define vl vector<ll>
 #define vll vector<vector<ll>>
+#define Pii pair<int, int>
 #define pb push_back
 #define sorta(a) sort(a.begin(), a.end())
 #define sortd(a) sort(a.begin(), a.end(), greater<>())
@@ -36,9 +37,9 @@ T amax(T &a, T1 b)
     return a;
 }
 
-ll n, x, in, sum, addTimes;
 void harry1()
 {
+    int n, x, in;
     ill2(n, x);
     vector<ll> v;
     for (ll i = 0; i < n; ++i)
@@ -46,7 +47,8 @@ void harry1()
         ill(in);
         v.pb(in);
     }
-
+    int addTimes;
+    ll sum = 0;
     while (1)
     {
         if (v[in] % x != 0 || in == v.size())
@@ -62,36 +64,32 @@ void harry1()
     }
     for (in; in < v.size(); ++in)
         sum += v[in];
-    printf("%d\n", sum);
+    printf("%lld\n", sum);
     ravireddy07;
 }
 
 // Accepted Solution
 void harry()
 {
-    ill2(n, x);
-    vector<ll> given;
-    for (ll i = 0; i < n; ++i)
-    {
-        ill(in);
-        given.pb(in);
-    }
+    int n, x, in;
+    ii2(n, x);
+    vector<Pii> v;
+    for (int i = 0; i < n; ++i)
+        ii(in), v.pb(Pii(in, 1));
 
-    vector<ll> neww(n, 1);
-    for (int i = 0; i < given.size(); ++i)
+    ll sum = 0;
+    for (int i = 0; i < v.size(); ++i)
     {
-        if (given[i] % x != 0)
+        int u = v[i].first, k = v[i].second;
+        if (u % x != 0)
             break;
         else
-        {
-            given.pb(given[i] / x);
-            neww.pb(x * neww[i]);
-        }
+            v.push_back(Pii(u / x, k * x)), ++n;
     }
 
-    sum = 0;
-    for (int i = 0; i < given.size(); ++i)
-        sum += (neww[i] * neww[i]);
+    for (int i = 0; i < v.size(); ++i)
+        sum += v[i].first * v[i].second;
+
     printf("%lld\n", sum);
     ravireddy07;
 }
