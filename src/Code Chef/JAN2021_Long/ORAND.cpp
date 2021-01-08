@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codechef.com/JAN21B/problems/ANTSCHEF/
+// Problem Statement: https://www.codechef.com/JAN21B/problems/ORAND/
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -18,6 +18,7 @@
 #define vii vector<vector<int>>
 #define vl vector<ll>
 #define vll vector<vector<ll>>
+#define Pii pair<int, int>
 #define pb push_back
 #define sorta(a) sort(a.begin(), a.end())
 #define sortd(a) sort(a.begin(), a.end(), greater<>())
@@ -36,37 +37,55 @@ T amax(T &a, T1 b)
     return a;
 }
 
-ll n, m, negCnt, posCnt;
-#define maxx 500020;
-ll points[500020];
-
+ll t, n, m, x;
+set<ll> V;
+stack<ll> tempStore;
+vector<ll> a, b;
 void harry()
 {
-    ill(n);
-    posCnt = 0, negCnt = 0;
-    for (int i = 0; i < n; ++i)
+    V.clear();
+    a.clear();
+    b.clear();
+    tempStore.empty();
+
+    V.insert(0);
+    tempStore.push(0);
+
+    ill2(n, m);
+    for (ll i = 0; i < n; ++i)
+        ill(x), a.pb(x);
+    for (ll i = 0; i < m; ++i)
+        ill(x), b.pb(x);
+
+    while (!tempStore.empty())
     {
-        ill(m);
-        // int points[m];
-        points[m] = {0};
-        for (int j = 0; j < m; ++j)
+        x = tempStore.top();
+        tempStore.pop();
+        for (ll i = 0; i < n; ++i)
         {
-            ill(points[j]);
-            if (points[j] > 0)
-                posCnt++;
-            else
-                negCnt++;
+            if (!V.count(x | a[i]))
+            {
+                V.insert(x | a[i]);
+                tempStore.push(x | a[i]);
+            }
+        }
+        for (ll i = 0; i < m; ++i)
+        {
+            if (!V.count(x & b[i]))
+            {
+                V.insert(x & b[i]);
+                tempStore.push(x & b[i]);
+            }
         }
     }
-    //ll res = posCnt * negCnt;
-    printf("%lld", posCnt * negCnt);
+    printf("%lu\n", V.size());
+    //cout << V.size() << "\n";
     ravireddy07;
 }
 
 int main()
 {
-    int t;
-    ii(t);
+    ill(t);
     while (t--)
         harry();
     return 0;
