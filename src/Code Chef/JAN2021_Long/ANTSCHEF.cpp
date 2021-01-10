@@ -18,10 +18,12 @@
 #define vii vector<vector<int>>
 #define vl vector<ll>
 #define vll vector<vector<ll>>
+#define unmp unordered_map
 #define pb push_back
 #define sorta(a) sort(a.begin(), a.end())
 #define sortd(a) sort(a.begin(), a.end(), greater<>())
 #define sortr(a) sort(a.rbegin(), a.rend())
+#define all(v) v.begin(), v.end()
 #define pqi priority_queue<int>
 #define pq priority_queue
 #define yes printf("YES\n")
@@ -36,30 +38,55 @@ T amax(T &a, T1 b)
     return a;
 }
 
-ll n, m, negCnt, posCnt;
-#define maxx 500020;
-ll points[500020];
+const ll N = 1e10;
+unmp<ll, ll> dirt;
+ll res, n, m, in, temp;
 
 void harry()
 {
+    dirt.clear();
     ill(n);
-    posCnt = 0, negCnt = 0;
+    vl ants[n];
     for (int i = 0; i < n; ++i)
     {
         ill(m);
-        // int points[m];
-        points[m] = {0};
         for (int j = 0; j < m; ++j)
         {
-            ill(points[j]);
-            if (points[j] > 0)
-                posCnt++;
+            ill(in);
+            dirt[abs(in)]++;
+            ants[i].pb(in);
+        }
+        sort(ants[i].begin(), ants[i].end());
+    }
+
+    res = 0; // Partial
+    for (auto x : dirt)
+        if (x.second > 1)
+            res++;
+
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < ants[i].size(); ++j)
+        {
+            temp = 0;
+            if (dirt[abs(ants[i][j])] > 1)
+            {
+                if (ants[i][j] > 0)
+                    temp = ants[i].size() - (j + 1);
+                else
+                    temp = j;
+            }
             else
-                negCnt++;
+            {
+                if (ants[i][j] > 0)
+                    temp = lower_bound(ants[i].begin(), ants[i].end(), -1 * ants[i][j]) - ants[i].begin();
+                else
+                    temp = ants[i].size() - (upper_bound(ants[i].begin(), ants[i].end(), -1 * ants[i][j]) - ants[i].begin());
+            }
+            res += temp;
         }
     }
-    //ll res = posCnt * negCnt;
-    printf("%lld", posCnt * negCnt);
+    printf("%lld\n", res);
     ravireddy07;
 }
 
