@@ -8,7 +8,7 @@ Problem Solutions from Different Platforms.
 Contest Solutions will be added after the contest.
 </br>
 
-**Codeforces:** After Hacking.</br>
+**Codeforces:** After Contest.</br>
 **Codechef:** After Contest.
 </br>
 
