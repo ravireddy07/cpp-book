@@ -90,48 +90,48 @@ void harry()
         q = mInverse(k, 2 * n);
         q = mInverse(q, mod - 2);
         if (k == 1)
-        {
             /*
             q = mInverse(k, 2 * n);
             q = mInverse(q, mod - 2);
             */
             printf("%lld\n", q);
-            ravireddy07;
-        }
-        //ll dp[n][2];
-        memset(dpm2, 0, sizeof dpm2[n][2]);
-        dpm2[0][0] = k;
-        dpm2[0][1] = (2 * k * (k - 1)) % mod;
-        for (int i = 1; i < n; ++i)
+        else
         {
-            dpm2[i][0] += ((k - 1) * (dpm2[i - 1][0] + (k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][0] %= mod;
-            dpm2[i][0] += dpm2[i - 1][0];
-            dpm2[i][0] %= mod;
-            dpm2[i][0] += (2LL * dpm2[i - 1][1]) % mod;
-            dpm2[i][0] += ((k - 2) * (dpm2[i - 1][1] + (((k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][0] %= mod;
-            dpm2[i][1] += ((k - 1) * (dpm2[i - 1][0] + (k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += ((k - 1) * (dpm2[i - 1][0] + (k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += ((((k - 2) * (k - 1)) % mod) * (dpm2[i - 1][0] + (2 * k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += dpm2[i - 1][1];
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += ((((k - 2)) % mod) * (dpm2[i - 1][1] + (((k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += ((((k - 2)) % mod) * (dpm2[i - 1][1] + (((k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += ((((k - 2)) % mod) * (dpm2[i - 1][1] + ((2 * (k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += ((((k - 1)) % mod) * (dpm2[i - 1][1] + ((2 * (k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
-            dpm2[i][1] += ((((k - 2) * (max(k - 3, 0LL))) % mod) * (dpm2[i - 1][1] + ((2 * (k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
-            dpm2[i][1] %= mod;
+            //ll dp[n][2];
+            memset(dpm2, 0, sizeof dpm2[n][2]);
+            dpm2[0][0] = k;
+            dpm2[0][1] = (2 * k * (k - 1)) % mod;
+            for (int i = 1; i < n; ++i)
+            {
+                dpm2[i][0] += ((k - 1) * (dpm2[i - 1][0] + (k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][0] %= mod;
+                dpm2[i][0] += dpm2[i - 1][0];
+                dpm2[i][0] %= mod;
+                dpm2[i][0] += (2LL * dpm2[i - 1][1]) % mod;
+                dpm2[i][0] += ((k - 2) * (dpm2[i - 1][1] + (((k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][0] %= mod;
+                dpm2[i][1] += ((k - 1) * (dpm2[i - 1][0] + (k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += ((k - 1) * (dpm2[i - 1][0] + (k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += ((((k - 2) * (k - 1)) % mod) * (dpm2[i - 1][0] + (2 * k * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += dpm2[i - 1][1];
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += ((((k - 2)) % mod) * (dpm2[i - 1][1] + (((k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += ((((k - 2)) % mod) * (dpm2[i - 1][1] + (((k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += ((((k - 2)) % mod) * (dpm2[i - 1][1] + ((2 * (k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += ((((k - 1)) % mod) * (dpm2[i - 1][1] + ((2 * (k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+                dpm2[i][1] += ((((k - 2) * (max(k - 3, 0LL))) % mod) * (dpm2[i - 1][1] + ((2 * (k * (k - 1)) % mod) * mInverse(k, 2 * (i - 1))) % mod) % mod) % mod;
+                dpm2[i][1] %= mod;
+            }
+            ll res = (dpm2[n - 1][0] + dpm2[n - 1][1]) % mod;
+            printf("%lld\n", (res * q) % mod); //p1(dp[1][1]);
         }
-        ll res = (dpm2[n - 1][0] + dpm2[n - 1][1]) % mod;
-        printf("%lld\n", (res * q) % mod); //p1(dp[1][1]);
     }
     ravireddy07;
 }
@@ -172,9 +172,8 @@ ll power(ll a, ll b, ll m)
         }
     }
     return x;
-} */
+}
 
-/*
 int help(int n, int r)
 {
     int x = factorial[n] % mod;
