@@ -33,9 +33,7 @@ int powMod(int a, int b, int m)
     while (b)
     {
         if (b & 1)
-        {
             res = (ll)res * tmp % m;
-        }
         b >>= 1;
         tmp = (ll)tmp * tmp % m;
     }
@@ -69,20 +67,14 @@ Node *build(int l, int r)
 void modify(int l, int r, int i, Node *pos, int pl, int pr)
 {
     if (l <= pl && pr <= r)
-    {
         pos->info.push_back(i);
-    }
     else
     {
         int pmid = (pl + pr) >> 1;
         if (l < pmid)
-        {
             modify(l, r, i, pos->child[0], pl, pmid);
-        }
         if (r > pmid)
-        {
             modify(l, r, i, pos->child[1], pmid, pr);
-        }
     }
 }
 

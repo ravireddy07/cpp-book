@@ -1,4 +1,5 @@
 // Problem Statement: https://www.codechef.com/JAN21B/problems/RCTEXSCC/
+// Explanation: https://youtu.be/CitIf168mYk
 
 /*
 Formula: 
@@ -19,19 +20,21 @@ Formula:
 #define ravireddy07 return
 #define ii(a) scanf("%d", &a)
 #define ii2(a, b) scanf("%d%d", &a, &b)
+#define ii3(a, b, c) scanf("%d%d%d", &a, &b, &c)
 #define ill(a) scanf("%lld", &a)
 #define ill2(a, b) scanf("%lld%lld", &a, &b)
+#define ill3(a, b, c) scanf("%lld%lld%lld", &a, &b, &c)
 #define vi vector<int>
 #define vii vector<vector<int>>
 #define vl vector<ll>
 #define vll vector<vector<ll>>
-#define Pii pair<int, int>
+#define unmp unordered_map
+#define pqi priority_queue<int>
+#define pq priority_queue
 #define pb push_back
 #define sorta(a) sort(a.begin(), a.end())
 #define sortd(a) sort(a.begin(), a.end(), greater<>())
 #define sortr(a) sort(a.rbegin(), a.rend())
-#define pqi priority_queue<int>
-#define pq priority_queue
 #define yes printf("YES\n")
 #define no printf("NO\n")
 using namespace std;
@@ -44,13 +47,14 @@ T amax(T &a, T1 b)
     return a;
 }
 
+//  Accepted Solution
 ll n, m, k, q;
 const ll maxx = 1e5 + 10;
 ll dpm1[maxx + 1];
 ll dpm2[maxx][2];
 #define mod 998244353
 
-ll mInverse(ll base, ll expo /*, ll m*/)
+ll mInverse(ll base, ll expo)
 {
     if (expo == 0)
         return 1;
@@ -71,7 +75,6 @@ void harry()
         printf("1\n");
     else if (m == 1)
     {
-        //ll dpm1[n + 1];
         memset(dpm1, 0, sizeof n + 1);
         dpm1[1] = k;
         for (ll i = 2; i < n + 1; ++i)
@@ -90,14 +93,9 @@ void harry()
         q = mInverse(k, 2 * n);
         q = mInverse(q, mod - 2);
         if (k == 1)
-            /*
-            q = mInverse(k, 2 * n);
-            q = mInverse(q, mod - 2);
-            */
             printf("%lld\n", q);
         else
         {
-            //ll dp[n][2];
             memset(dpm2, 0, sizeof dpm2[n][2]);
             dpm2[0][0] = k;
             dpm2[0][1] = (2 * k * (k - 1)) % mod;
@@ -130,113 +128,63 @@ void harry()
                 dpm2[i][1] %= mod;
             }
             ll res = (dpm2[n - 1][0] + dpm2[n - 1][1]) % mod;
-            printf("%lld\n", (res * q) % mod); //p1(dp[1][1]);
+            printf("%lld\n", (res * q) % mod);
         }
     }
     ravireddy07;
 }
 
-/********************* WA ************************/
-// const int N = 1e5;
-// int n, m, k;
-// ll x, y, p, q;
-// int factorial[N], inverse[N];
+/********************************************************/
+// Optimal Solution
+#define MOD 998244353
 
-/*
-ll power(ll a, ll b, ll m);
-ll inv(ll a, ll m);
-int help(int n, int r);
-void pre();
-
-ll inv(ll a, ll m)
+ll add(ll x, ll y)
 {
-    return power(a, m - 2, m);
+    ll res = x + y;
+    return (res >= MOD ? res - MOD : res);
 }
 
-ll power(ll a, ll b, ll m)
+ll mul(ll x, ll y)
 {
-    int x = 1, y = a;
-    while (b > 0)
+    ll res = x * y;
+    return (res >= MOD ? res % MOD : res);
+}
+
+ll sub(ll x, ll y)
+{
+    ll res = x - y;
+    return (res < 0 ? res + MOD : res);
+}
+
+ll power(ll x, ll y)
+{
+    ll res = 1;
+    x %= MOD;
+    while (y)
     {
-        if (b % 2 == 1)
-        {
-            x = (x * y);
-            if (x > m)
-                x %= m;
-        }
-        y = y * y;
-        if (y > m)
-        {
-            y %= m;
-            b /= 2;
-        }
+        if (y & 1)
+            res = mul(res, x);
+        y >>= 1;
+        x = mul(x, x);
     }
-    return x;
+    return res;
 }
 
-int help(int n, int r)
-{
-    int x = factorial[n] % mod;
-    x = (x * inverse[n - r]) % mod;
-    x = (x * inverse[r]) % mod;
-    return x % mod;
-}
-
-void pre()
-{
-    factorial[0] = inverse[0] = 1;
-    for (int i = 1; i < N; ++i)
-    {
-        factorial[i] = (factorial[i - 1] * i) % mod;
-        factorial[i] = power(factorial[i - 1], mod - 2, mod) % mod;
-    }
-}
+ll mod_inv(ll x) { return power(x, MOD - 2); }
 
 void harry()
 {
-    ill2(m, n);
-    ill(k);
-    q = 0;
-    if (k == 1 and m == 1)
-        printf("1\n");
-    else if (m == 1)
-    {
-
-        for (int i = 1; i <= n - 1; i++)
-            res += i * ((fact(n - 1) / fact(i - 1)) * (k * pow((k - 1), i - 1)));
-
-        ll dp[n + 1];
-        memset(dp, 0, sizeof dp);
-        dp[1] = k;
-        for (ll i = 2; i < n + 1; ++i)
-        {
-            dp[i] += dp[i - 1];
-            dp[i] %= mod;
-            dp[i] += ((k - 1) * (dp[i - 1] + (power(k, i - 1, i)))) & mod;
-            dp[i] %= mod;
-        }
-
-        cout << "check: before pre" << endl;
-        pre();
-        cout << "check: pre" << endl;
-        for (int i = 0; i < n; i++)
-        {
-            int x = help(n - 1, i) % mod;
-            y = ((((i + 1) * x) % mod) * k) % mod * power(k - 1, i, mod) % mod;
-            p = (p + y) % mod;
-        }
-        cout << "check: for loop" << endl;
-        q = (power(k, n, mod) % mod);
-        cout << "check: q" << endl;
-        ll ans = (p * inv(q, mod)) % mod;
-
-        //  % 998244353;
-
-        printf("%lld\n", ans);
-        // 1 8 3    665496241
-    }
+    ll m, n, k;
+    ill3(m, n, k);
+    ll E_e, E_f = 1, E_1 = 1, E_v, ans;
+    E_v = mul(n, m);
+    E_e = mul(add(mul(n, sub(m, 1)), mul(m, sub(n, 1))), mod_inv(k));
+    if (m == 2)
+        E_f = add(E_f, mul(sub(n, 1), mod_inv(power(k, 3))));
+    ans = sub(add(E_v, E_f), add(E_e, E_1));
+    printf("%lld\n", ans);
+    ravireddy07;
 }
-*/
 
 int main()
 {

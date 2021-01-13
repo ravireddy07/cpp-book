@@ -32,6 +32,9 @@
 #define mod 998244353
 #define all(v) v.begin(), v.end()
 using namespace std;
+using i64 = long long;
+using u64 = unsigned long long;
+using u32 = unsigned;
 
 template <typename T, typename T1>
 T amax(T &a, T1 b)
@@ -41,107 +44,62 @@ T amax(T &a, T1 b)
     return a;
 }
 
-int s, n, x, y, t, stat, cnt;
-vi v1, v2;
-
 void harry()
 {
-    v1.clear(), v2.clear();
+    int n, x, y;
     ii3(n, x, y);
-    int a[n];
-    s = 0, stat = 0;
+    vi a(n);
+    for (int i = 0; i < n; i++)
+        ii(a[i]);
+    int ans = n;
+    vector<vi> pre(n + 1, vi(y + 1, n)), suf(pre);
+    pre[0][0] = 0;
     for (int i = 0; i < n; i++)
     {
-        ii(a[i]);
-        if (x > a[i])
+        for (int j = 0; j <= y; j++)
         {
-            v1.pb(a[i]);
-            s += a[i];
+            pre[i + 1][j] = std::min(pre[i + 1][j], pre[i][j] + 1);
+            if (j >= a[i])
+                pre[i + 1][j] = std::min(pre[i + 1][j], pre[i][j - a[i]]);
         }
-        else if (y < a[i])
-            v2.pb(a[i]);
     }
-    if ((v1.size() + v2.size()) == n)
+    suf[n][0] = 0;
+    for (int i = n - 1; i >= 0; i--)
     {
-        if (s < x)
+        for (int j = 0; j <= y; j++)
         {
-            stat = 1;
-            printf("-1\n");
+            suf[i][j] = std::min(suf[i][j], suf[i + 1][j]);
+            if (j >= a[i])
+                suf[i][j] = std::min(suf[i][j], suf[i + 1][j - a[i]] + 1);
         }
     }
-
-    cnt = 0;
-    if (stat == 0)
+    for (int i = 0; i <= n; i++)
     {
-        for (int i = 0; i < n; i++)
+        deque<int> que;
+        for (int j = 0, k = y; j <= y; j++)
         {
-            cnt += a[i];
-            if ((cnt >= x) && (cnt <= y))
+            while (k >= 0 && j + k >= x)
             {
-                stat = 1;
-                printf("0\n");
-                break;
+                while (!que.empty() && suf[i][k] < suf[i][que.back()])
+                    que.pop_back();
+                que.push_back(k);
+                k--;
             }
+            while (!que.empty() && j + que.front() > y)
+                que.pop_front();
+            assert(!que.empty());
+            ans = std::min(ans, std::max(pre[i][j], suf[i][que.front()]));
         }
     }
-    if (stat == 0)
-    {
-        int end = 0, bit, temp;
-        for (int i = 0; i < n; i++)
-        {
-            end += a[i];
-            if (end > y)
-            {
-                bit = i;
-                break;
-            }
-        }
-        for (int i = 0; i < n; i++)
-        {
-            if ((x <= a[i]) && (a[i] <= y))
-            {
-                stat = 1;
-                printf("1\n");
-                break;
-            }
-        }
-
-        if (stat == 0)
-        {
-            for (int i = bit; i < n; i++)
-            {
-                if (a[i] <= y)
-                {
-                    for (int j = 0; j <= bit; j++)
-                    {
-                        temp = a[i];
-                        for (int k = 0; k < n; k++)
-                        {
-                            if (k != j && k != i)
-                                temp = temp + a[k];
-                            if ((x <= temp) && (temp <= y))
-                            {
-                                stat = 1;
-                                printf("1\n");
-                                break;
-                            }
-                        }
-                        if (stat == 1)
-                            break;
-                    }
-                }
-                if (stat == 1)
-                    break;
-            }
-        }
-    }
-    if (stat == 0)
-        printf("2\n");
+    if (ans >= n)
+        ans = -1;
+    printf("%d\n", ans);
     ravireddy07;
 }
 
 int main()
 {
+    int t;
     ii(t);
     while (t--)
         harry();
