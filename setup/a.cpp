@@ -7,7 +7,7 @@
  *  Github: ravireddy07
 **/
 
-#include <iostream>
+#include <bits/stdc++.h>
 #define ll long long int
 #define ravireddy07 return
 #define ii(a) scanf("%d", &a)
