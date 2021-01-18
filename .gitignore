@@ -1,2 +1,4 @@
 *.exe
 imp.md
+*/setup/*
+setup/**
