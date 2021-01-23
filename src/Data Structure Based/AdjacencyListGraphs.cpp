@@ -1,7 +1,4 @@
-#include <iostream>
-#include <list>
-#include <queue>
-#include <unordered_map>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Graph
@@ -19,10 +16,8 @@ public:
 	void addEdge(int a, int b, bool bidir = true)
 	{
 		adj[a].push_back(b);
-		if (bidir)
-		{ // If the graph is not directional
+		if (bidir) // If the graph is not directional
 			adj[b].push_back(a);
-		}
 	}
 
 	void printAdj()
