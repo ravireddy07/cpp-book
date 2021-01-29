@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codeforces.com/contest//problem/E/
+// Problem Statement: https://codeforces.com/contest/1476/problem/B/
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -49,7 +49,7 @@ T amin(T &a, T1 b)
 	return a;
 }
 
-void harry2() {
+void harry() {
 	int n, k;
 	ii2(n, k);
 	ll  ans = 0, sum = 0;

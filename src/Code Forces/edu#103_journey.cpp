@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codeforces.com/contest//problem/E/
+// Problem Statement: https://codeforces.com/contest/1476/problem/D/
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -56,24 +56,24 @@ int L1[Maxn], L2[Maxn];
 int R1[Maxn], R2[Maxn];
 
 void harry() {
-    ii(n);
-    scanf("%s", str);
-    for (int i = 0; i <= n; i++)
-    {
-        L1[i] = str[i] == 'L' ? 1 + (i > 0 ? L2[i - 1] : 0) : 0;
-        L2[i] = str[i] == 'R' ? 1 + (i > 0 ? L1[i - 1] : 0) : 0;
-		}
-		for (int i = n; i >= 0; i--) {
-			R1[i] = str[i] == 'L'? 1 + (i < n? R2[i + 1]: 0): 0;
-			R2[i] = str[i] == 'R'? 1 + (i < n? R1[i + 1]: 0): 0;
-		}
-		for (int i = 0; i <= n; i++) {
-			int ans = 1;
-			if (i > 0) ans += L1[i - 1];
-			ans += R2[i];
-			printf("%d%c", ans, i + 1 <= n? ' ': '\n'); 
-		}
-        ravireddy07;
+	ii(n);
+	scanf("%s", str);
+	for (int i = 0; i <= n; i++)
+	{
+		L1[i] = str[i] == 'L' ? 1 + (i > 0 ? L2[i - 1] : 0) : 0;
+		L2[i] = str[i] == 'R' ? 1 + (i > 0 ? L1[i - 1] : 0) : 0;
+	}
+	for (int i = n; i >= 0; i--) {
+		R1[i] = str[i] == 'L' ? 1 + (i < n ? R2[i + 1] : 0) : 0;
+		R2[i] = str[i] == 'R' ? 1 + (i < n ? R1[i + 1] : 0) : 0;
+	}
+	for (int i = 0; i <= n; i++) {
+		int ans = 1;
+		if (i > 0) ans += L1[i - 1];
+		ans += R2[i];
+		printf("%d%c", ans, i + 1 <= n ? ' ' : '\n');
+	}
+	ravireddy07;
 }
 
 int main()

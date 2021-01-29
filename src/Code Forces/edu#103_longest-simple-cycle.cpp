@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codeforces.com/contest//problem/E/
+// Problem Statement: https://codeforces.com/contest/1476/problem/C/
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -55,23 +55,23 @@ int c[MAXN], a[MAXN], b[MAXN];
 ll f[MAXN];
 
 void harry() {
-    int n;
-    ii(n);
-    for(int i=1; i<=n; ++i) ii(c[i]);
-	for(int i=1; i<=n; ++i) ii(a[i]);
-	for(int i=1; i<=n; ++i) ii(b[i]);
-	
+	int n;
+	ii(n);
+	for (int i = 1; i <= n; ++i) ii(c[i]);
+	for (int i = 1; i <= n; ++i) ii(a[i]);
+	for (int i = 1; i <= n; ++i) ii(b[i]);
+
 	ll ans = 0;
 	f[1] = -linf;
-	for(int i=2; i<=n; ++i)
+	for (int i = 2; i <= n; ++i)
 	{
-		if(a[i] < b[i]) swap(a[i], b[i]);
-		f[i] = c[i]-1 + 2 + (a[i] - b[i]);
-		if(a[i] != b[i]) f[i] = max(f[i], f[i-1] - (a[i] - b[i]) + 2 + c[i]-1);
+		if (a[i] < b[i]) swap(a[i], b[i]);
+		f[i] = c[i] - 1 + 2 + (a[i] - b[i]);
+		if (a[i] != b[i]) f[i] = max(f[i], f[i - 1] - (a[i] - b[i]) + 2 + c[i] - 1);
 		ans = max(ans, f[i]);
 	}
-	printf("%lld\n",ans);
-        ravireddy07;
+	printf("%lld\n", ans);
+	ravireddy07;
 }
 
 int main()

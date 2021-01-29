@@ -53,7 +53,7 @@ void harry() {
 	int n, k;
 	ii2(n, k);
 	long long S = (n + k - 1) / k * k;
-    cout << (S + n - 1) / n << "\n";
+	cout << (S + n - 1) / n << "\n";
 	ravireddy07;
 }
 
