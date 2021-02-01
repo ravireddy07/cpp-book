@@ -1,4 +1,3 @@
 *.exe
 imp.md
-setup/**
-.vscode/**
+setup/***
