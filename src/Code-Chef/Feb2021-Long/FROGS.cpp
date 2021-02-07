@@ -33,7 +33,40 @@
 #define no printf("NO\n")
 using namespace std;
 
+int div_ceil(int numerator, int denominator)
+{
+	std::div_t res = std::div(numerator, denominator);
+	return res.rem ? (res.quot + 1) : res.quot;
+}
+
 void harry() {
+	int n;
+	ii(n);
+	int weight[n], length[n];
+
+	for (int i = 0; i < n; ++i)
+		ii(weight[i]);
+	for (int i = 0; i < n; ++i)
+		ii(length[i]);
+
+	int match[n + 1] = {0};
+	// 3 1 2
+	// 1 2 0 (indexes)
+	for (int i = 1; i < n + 1; i++) {
+		auto it = find(weight, weight + n, i);
+		match[i] = distance(weight, it);
+	}
+
+	int res = 0;
+	int temp;
+	for (int i = 2; i < n + 1; ++i) {
+		temp = 0;
+		if (match[i] <= match[i - 1])
+			temp = div_ceil((match[i - 1] + 1 - match[i]), length[match[i]]);
+		res += temp;
+		match[i] += temp * (length[match[i]]);
+	}
+	printf("%d\n", res);
 	ravireddy07;
 }
 
