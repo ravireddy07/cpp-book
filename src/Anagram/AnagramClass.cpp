@@ -3,11 +3,9 @@
 using namespace std;
 
 bool IsAnagram(int *hash1, int *hash2) {
-  for(int i=0;i<26;i++) {
-    if(hash1[i] != hash2[i]) {
+  for(int i=0;i<26;i++)
+    if(hash1[i] != hash2[i])
       return false;
-    }
-  }
   return true;
 }
 
@@ -22,18 +20,14 @@ int main(int argc, char const *argv[]) {
     return 0;
   }
   else {
-    for(int i=0;i<s1.size();i++) {
+    for(int i=0;i<s1.size();i++)
       hash1[s1[i]-'a']++;
-    }
-    for(int i=0;i<s2.size();i++) {
+    for(int i=0;i<s2.size();i++)
       hash2[s1[i]-'a']++;
-    }
-    if(IsAnagram(hash1, hash2)) {
+    if(IsAnagram(hash1, hash2))
       cout<<"true";
-    }
-    else {
+    else
       cout<<"false";
-    }
   }
   return 0;
 }
