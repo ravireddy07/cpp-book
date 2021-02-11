@@ -25,6 +25,7 @@
 #define pii pair<int, int>
 #define unmp unordered_map
 #define pqi priority_queue<int>
+#define pq priority_queue
 #define pb push_back
 #define sorta(a) sort(a.begin(), a.end())
 #define sortd(a) sort(a.begin(), a.end(), greater<>())
@@ -102,6 +103,7 @@ void harry() {
 void harry() {
 	int A, B, n;
 	cin >> A >> B >> n;
+	int a[n], b[n];
 	for (int i = 1; i <= n; i++) scanf("%d", &a[i]);
 	for (int i = 1; i <= n; i++) scanf("%d", &b[i]);
 

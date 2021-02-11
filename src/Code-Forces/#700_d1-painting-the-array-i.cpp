@@ -1,4 +1,4 @@
-// Problem Statement: https://codeforces.com/contest/1480/problem/A/
+// Problem Statement: https://codeforces.com/contest/1480/problem/D1
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -9,33 +9,40 @@
 
 #include <bits/stdc++.h>
 #define ll long long int
-#define ravireddy07 return
-#define ii(a) scanf("%d", &a)
-#define ii2(a, b) scanf("%d%d", &a, &b)
-#define ii3(a, b, c) scanf("%d%d%d", &a, &b, &c)
-#define ill(a) scanf("%lld", &a)
-#define ill2(a, b) scanf("%lld%lld", &a, &b)
-#define ill3(a, b, c) scanf("%lld%lld%lld", &a, &b, &c)
-#define for1(i, a, b) for (int i = a; i < b; ++i)
-#define for2(i, a, b) for (int i = b; i >= a; --i)
-#define vi vector<int>
-#define vii vector<vector<int>>
-#define vl vector<ll>
-#define vll vector<vector<ll>>
-#define pii pair<int, int>
-#define unmp unordered_map
-#define pqi priority_queue<int>
-#define pb push_back
-#define sorta(a) sort(a.begin(), a.end())
-#define sortd(a) sort(a.begin(), a.end(), greater<>())
-#define sortr(a) sort(a.rbegin(), a.rend())
 #define yes printf("YES\n")
 #define no printf("NO\n")
 using namespace std;
 
 void harry() {
-
-	ravireddy07;
+	int n;
+	cin >> n;
+	int a[n];
+	for (int i = 0; i < n; ++i)
+		cin >> a[i];
+	vector<int> a0(1, -1);
+	vector<int> a1(1, -1);
+	int ans = 0;
+	for (int i = 0; i < n; ++i)
+	{
+		if (a[i] != a0[a0.size() - 1] && a[i] != a1[a1.size() - 1])
+		{
+			if (i != n && a[i + 1] == a0[a0.size() - 1])
+				a0.push_back(a[i]);
+			else
+				a1.push_back(a[i]);
+		}
+		else if (a[i] == a0[a0.size() - 1] && a[i] != a1[a1.size() - 1])
+			a1.push_back(a[i]);
+		else if (a[i] != a0[a0.size() - 1] && a[i] == a1[a1.size() - 1])
+			a0.push_back(a[i]);
+		else
+		{
+			ans--;
+			a0.push_back(a[i]);
+		}
+		ans++;
+	}
+	cout << ans << "\n";
 }
 
 int main()
@@ -44,10 +51,6 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-
-	int t;
-	ii(t);
-	while (t--)
-		harry();
+	harry();
 	return 0;
 }
