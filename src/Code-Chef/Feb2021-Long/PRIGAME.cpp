@@ -33,7 +33,49 @@
 #define no printf("NO\n")
 using namespace std;
 
+
+const int maxx = 1e6 + 5;
+int allPrimes[maxx];
+
+void setup()
+{
+	vi tempStr;
+	bool fPrimes[maxx];
+	// bool fPrimes[maxx] = {true};
+	memset(fPrimes, true, sizeof(fPrimes));
+
+	for (int i = 2; i * i < maxx; ++i)
+		if (fPrimes[i] == true)
+			for (int j = i * i; j < maxx; j += i)
+				fPrimes[j] = false;
+
+	for (int i = 2; i < maxx; ++i)
+		if (fPrimes[i])
+			tempStr.pb(i);
+
+	auto it = tempStr.begin();
+	int cnt = 0;
+	for (int i = 0; i < maxx; ++i)
+	{
+		if (*it <= i)
+		{
+			++cnt;
+			++it;
+		}
+		allPrimes[i] = cnt;
+	}
+	ravireddy07;
+}
+
+
 void harry() {
+	int x, y;
+	ii2(x, y);
+	if (allPrimes[x] <= y) {
+		printf("Chef\n");
+		ravireddy07;
+	}
+	printf("Divyam\n");
 	ravireddy07;
 }
 
@@ -43,7 +85,7 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-
+	setup();
 	int t;
 	ii(t);
 	while (t--)
