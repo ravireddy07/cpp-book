@@ -22,6 +22,8 @@
 #define vii vector<vector<int>>
 #define vl vector<ll>
 #define vll vector<vector<ll>>
+#define f first
+#define s second
 #define pii pair<int, int>
 #define unmp unordered_map
 #define pqi priority_queue<int>
@@ -33,7 +35,76 @@
 #define no printf("NO\n")
 using namespace std;
 
+template <typename T, typename T1>
+T amax(T &a, T1 b)
+{
+	if (b > a)
+		a = b;
+	return a;
+}
+
+template <typename T, typename T1>
+T amin(T &a, T1 b)
+{
+	if (a > b)
+		a = b;
+	return a;
+}
+
+const int maxx = 1000001;
+
 void harry() {
+	int n, q, m;
+	ii3(n, q, m);
+
+	int ar[n];
+	for1(i, 0, n)
+	ii(ar[i]);
+
+	int dp[maxx] = {};
+	map<pii, int>mp;
+
+	while (q--)
+	{
+		int l, r;
+		ii2(l, r);
+		--l, --r;
+
+		if (ar[l] > m)
+			continue;
+		else if (ar[l] <= m and ar[r] > m)
+			++dp[ar[l]], --dp[m + 1];
+		else if (ar[r] <= m)
+		{
+			++dp[ar[l]], --dp[m + 1];
+			++mp[ {ar[l], ar[r]}];
+		}
+	}
+
+	for (auto x : mp)
+	{
+		int k = x.f.f, p = x.f.s, l = x.s;
+		int c = p + 2 * k;
+
+		dp[p + k] -= l;
+		dp[p + 2 * k] += l;
+
+		while (c + p <= m)
+		{
+			c += p;
+			dp[c] -= l;
+			dp[c + k] += l;
+			c += k;
+		}
+	}
+
+	int ans = 0;
+	for (int i = 1; i <= m; i++)
+	{
+		dp[i] += dp[i - 1];
+		ans = amax(ans, dp[i]);
+	}
+	printf("%d\n", ans);
 	ravireddy07;
 }
 
@@ -43,7 +114,6 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-
 	int t;
 	ii(t);
 	while (t--)
