@@ -4,12 +4,8 @@ using namespace std;
 bool isAnagram(int *hash1, int *hash2)
 {
 	for (int i = 0; i < 26; i++)
-	{
 		if (hash1[i] != hash2[i])
-		{
 			return false;
-		}
-	}
 	return true;
 }
 
@@ -52,6 +48,6 @@ int main(int argc, char const *argv[])
 		else
 			cout << out[i] << ", ";
 	}
-	cout << "]" << endl;
+	cout << "]" << "\n";
 	return 0;
 }
