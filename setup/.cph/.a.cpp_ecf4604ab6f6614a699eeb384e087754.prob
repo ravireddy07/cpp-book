@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"h:\\cpp-book\\setup\\a.cpp","tests":[{"id":1612103559920,"input":"3\n2 1 0\n2 2 0\n2 2 1\n","output":"Takahashi\nAoki\nTakahashi"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp-book\\setup\\a.cpp","group":"local","local":true}
