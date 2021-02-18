@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void replacepi(string str, string osf) {
@@ -12,11 +12,11 @@ void replacepi(string str, string osf) {
 	if(str[0] != 'p') {
 		char ch = str[0];
 		replacepi(str.substr(1), osf+ch);
-	} else if(str[0] == 'p') {
-
-		if(str.size() >= 2 and str[1] == 'i') {
+	}
+	else if(str[0] == 'p') {
+		if(str.size() >= 2 and str[1] == 'i')
 			replacepi(str.substr(2), osf+"3.14");
-		} else {
+		else {
 			char ch=str[0];
 			replacepi(str.substr(1), osf+ch);
 		}
