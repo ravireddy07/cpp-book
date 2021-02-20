@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 #define ll unsigned long long int
 #define p 1000000007
 ll fac[100001];
@@ -68,6 +69,7 @@ int main()
             else if (a[i] == temp)
                 counter++;
         }
+
         if (counter % 2 == 1)
         {
             cout << total % p << endl;
