@@ -87,7 +87,7 @@ $ git checkout master
 # Reset local `master` branch to match `upstream` repository's `master` branch
 $ git reset --hard upstream/master
 
-# Push changes to your forked `Algo_Ds_Notes` repo
+# Push changes to your forked `ravireddy07` repo
 $ git push origin master
 ```
 
