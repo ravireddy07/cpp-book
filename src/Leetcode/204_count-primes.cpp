@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/count-primes/
+// Problem Statement: https://leetcode.com/problems/count-primes/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
