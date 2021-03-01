@@ -21,7 +21,7 @@ If you find or knows or experienced any challenging problem that others should g
 
 ### 1. Fork it :fork_and_knife:
 
-You can get your own fork/copy of [cpp-book](https://github.com/ravireddy07/cpp-book) by using the <a href="https://github.com/ravireddy07/cpp-book/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button or clicking [this](https://github.com/ravireddy07/cpp-book/new/master?readme=1#fork-destination-box).
+You can get your own fork/copy of [cpp-book](https://github.com/ravireddy07/cpp-book) by using the <kbd><b>Fork</b></kbd></a> button on right corner.
 
  [![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/ravireddy07/cpp-book)
 
@@ -81,14 +81,14 @@ Before making any changes and/or in an appropriate interval, run the following c
 # Fetch all remote repositories and delete any deleted remote branches
 $ git fetch --all --prune
 
-# Switch to `master` branch
-$ git checkout master
+# Switch to `main` branch
+$ git checkout main
 
-# Reset local `master` branch to match `upstream` repository's `master` branch
-$ git reset --hard upstream/master
+# Reset local `main` branch to match `upstream` repository's `main` branch
+$ git reset --hard upstream/main
 
 # Push changes to your forked `ravireddy07` repo
-$ git push origin master
+$ git push origin main
 ```
 
 ### 5. Ready Steady Go... :turtle: :rabbit2:
@@ -97,7 +97,7 @@ Once you have completed these steps, you are ready to start contributing by chec
 
 ### 6. Create a new branch :bangbang:
 
-Whenever you are going to make contribution. Please create seperate branch using command and keep your `master` branch clean (i.e. synced with remote branch).
+Whenever you are going to make contribution. Please create seperate branch using command and keep your `main` branch clean (i.e. synced with remote branch).
 
 ```sh
 # It will create a new branch with name Branch_Name and switch to branch Folder_Name
