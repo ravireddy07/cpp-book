@@ -1,8 +1,5 @@
-// https://leetcode.com/problems/partition-labels/
+// Problem Statement: https://leetcode.com/problems/partition-labels/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -22,10 +19,8 @@ public:
         vector<int> last_pos(26, -1);
 
         for (int i = n - 1; i >= 0; --i)
-        {
             if (last_pos[s[i] - 'a'] == -1)
                 last_pos[s[i] - 'a'] = i;
-        }
 
         // minp is the min pos we need to consider in a partition.
         // plen is the length of the partition.
@@ -62,13 +57,9 @@ int main()
     for (int i = 0; i < show.size(); i++)
     {
         if (i == show.size() - 1)
-        {
             cout << show[i];
-        }
         else
-        {
             cout << show[i] << ", ";
-        }
     }
     cout << "]";
     return 0;

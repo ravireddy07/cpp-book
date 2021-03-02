@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/toeplitz-matrix/
+// Problem Statement: https://leetcode.com/problems/toeplitz-matrix/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -22,6 +21,7 @@ public:
                 k++;
             }
         }
+
         for (int i = 1; i < matrix.size(); i++)
         {
             int n = matrix[i][0];
@@ -31,8 +31,7 @@ public:
             {
                 if (matrix[j][k] != n)
                     return false;
-                j++;
-                k++;
+                j++, k++;
             }
         }
         return true;
