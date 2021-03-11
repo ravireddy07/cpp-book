@@ -61,7 +61,6 @@ vector<int> getPermutation(size_t n)
     do
     {
         res.pb(stoi(s));
-        //cout << s << "\n";
     } while (getPermutation(s.begin(), s.end()));
     return res;
 }
@@ -119,6 +118,16 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 void harry()
 {
+    long int n;
+    cin >> n;
+    long int a = 0, cnt = 0;
+    while (n >= a)
+    {
+        a = pow(2, cnt);
+        ++cnt;
+    }
+    long int ans = pow(2, cnt - 2) - 1;
+    cout << ans * (ans + a - n) << "\n";
     ravireddy07;
 }
 
