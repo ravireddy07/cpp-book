@@ -117,8 +117,78 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 	}
 }
 
-void harry()
+ll harry(ll n, ll e, ll h, ll a, ll b, ll c)
 {
+	ll solve(ll n, ll e, ll h, ll a, ll b, ll c)
+	{
+		if (n < 1)
+			return 0;
+
+		ll ans = 1e15;
+
+		if ((n <= e) and (n <= h))
+		{
+			ans = minv(ans, n * c);
+		}
+		if (3 * n <= h)
+		{
+			ans = minv(ans, n * b);
+		}
+		if (2 * n <= e)
+		{
+			ans = minv(ans, n * a);
+		}
+		if (((h - n) / 2 >= 1) and ((h - n) / 2 >= n - e))
+		{
+			ll temp;
+			if (b - c < 0)
+			{
+				temp = minv(n - 1, (h - n) / 2);
+				ans = minv(ans, (b - c) * temp + n * c);
+			}
+			else
+			{
+				temp = maxv(1, n - e);
+				ans = minv(ans, (b - c) * temp + n * c);
+			}
+		}
+
+		if (e - n >= 1 and e - n >= n - h)
+		{
+			ll temp;
+			if (a - c < 0)
+			{
+				temp = minv(n - 1, e - n);
+				ans = minv(ans, (a - c) * temp + n * c);
+			}
+			else
+			{
+				temp = maxv(1, n - h);
+				ans = minv(ans, (a - c) * temp + n * c);
+			}
+		}
+
+		if ((e / 2 >= 1) and (e / 2 >= (3 * n - h + 2) / 3))
+		{
+			ll temp;
+			if (a - b < 0)
+			{
+				temp = minv(n - 1, e / 2);
+				ans = minv(ans, (a - b) * temp + n * b);
+			}
+			else
+			{
+				temp = maxv(1, (3 * n - h + 2) / 3);
+				ans = minv(ans, (a - b) * temp + n * b);
+			}
+		}
+
+		if ((e >= 3) and (h >= 4) and n >= 3)
+		{
+			ans = minv(ans, a + b + c + solve(n - 3, e - 3, h - 4, a, b, c));
+		}
+		return ans;
+	}
 	ravireddy07;
 }
 
@@ -132,6 +202,14 @@ int main()
 	int t;
 	scanf("%d", &t);
 	while (t--)
-		harry();
+	{
+		ll n, e, h, a, b, c;
+		cin >> n >> e >> h >> a >> b >> c;
+		ll ans = solve(n, e, h, a, b, c);
+		if (ans == 1e15)
+			cout << "-1\n";
+		else
+			cout << ans << "\n";
+	}
 	return 0;
 }
