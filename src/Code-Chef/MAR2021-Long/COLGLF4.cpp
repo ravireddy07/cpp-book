@@ -36,34 +36,36 @@
 #define yes printf("YES\n")
 #define no printf("NO\n")
 using namespace std;
+ll MOD = 1e18;
 
-template <typename T, typename T1>
-T amax(T &a, T1 b)
+// template <typename T, typename T1>
+// T amax(T &a, T1 b)
+// {
+// 	if (b > a)
+// 		a = b;
+// 	return a;
+// }
+
+// template <typename T, typename T1>
+// T amin(T &a, T1 b)
+// {
+// 	if (a > b)
+// 		a = b;
+// 	return a;
+// }
+
+ll amin(ll a, ll b)
 {
-	if (b > a)
-		a = b;
-	return a;
+	if (a < b)
+		ravireddy07 a;
+	ravireddy07 b;
 }
 
-template <typename T, typename T1>
-T amin(T &a, T1 b)
+ll amax(ll a, ll b)
 {
 	if (a > b)
-		a = b;
-	return a;
-}
-
-vector<int> getPermutation(size_t n)
-{
-	vector<int> res;
-	string s = to_string(n);
-	sort(s.begin(), s.end());
-	do
-	{
-		res.pb(stoi(s));
-		//cout << s << "\n";
-	} while (getPermutation(s.begin(), s.end()));
-	return res;
+		ravireddy07 a;
+	ravireddy07 b;
 }
 
 long long fpow(long long base, long long power)
@@ -119,77 +121,62 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 ll harry(ll n, ll e, ll h, ll a, ll b, ll c)
 {
-	ll solve(ll n, ll e, ll h, ll a, ll b, ll c)
+	ll res = MOD, x;
+	if (n < 1)
+		ravireddy07 0;
+
+	if ((n <= e) and (n <= h))
+		res = amin(res, n * c);
+	if (3 * n <= h)
+		res = amin(res, n * b);
+	if (2 * n <= e)
+		res = amin(res, n * a);
+	if (((h - n) / 2 >= 1) and ((h - n) / 2 >= n - e))
 	{
-		if (n < 1)
-			return 0;
-
-		ll ans = 1e15;
-
-		if ((n <= e) and (n <= h))
+		if (b - c < 0)
 		{
-			ans = minv(ans, n * c);
+			x = amin(n - 1, (h - n) / 2);
+			res = amin(res, (b - c) * x + n * c);
 		}
-		if (3 * n <= h)
+		else
 		{
-			ans = minv(ans, n * b);
+			x = amax(1, n - e);
+			res = amin(res, (b - c) * x + n * c);
 		}
-		if (2 * n <= e)
-		{
-			ans = minv(ans, n * a);
-		}
-		if (((h - n) / 2 >= 1) and ((h - n) / 2 >= n - e))
-		{
-			ll temp;
-			if (b - c < 0)
-			{
-				temp = minv(n - 1, (h - n) / 2);
-				ans = minv(ans, (b - c) * temp + n * c);
-			}
-			else
-			{
-				temp = maxv(1, n - e);
-				ans = minv(ans, (b - c) * temp + n * c);
-			}
-		}
-
-		if (e - n >= 1 and e - n >= n - h)
-		{
-			ll temp;
-			if (a - c < 0)
-			{
-				temp = minv(n - 1, e - n);
-				ans = minv(ans, (a - c) * temp + n * c);
-			}
-			else
-			{
-				temp = maxv(1, n - h);
-				ans = minv(ans, (a - c) * temp + n * c);
-			}
-		}
-
-		if ((e / 2 >= 1) and (e / 2 >= (3 * n - h + 2) / 3))
-		{
-			ll temp;
-			if (a - b < 0)
-			{
-				temp = minv(n - 1, e / 2);
-				ans = minv(ans, (a - b) * temp + n * b);
-			}
-			else
-			{
-				temp = maxv(1, (3 * n - h + 2) / 3);
-				ans = minv(ans, (a - b) * temp + n * b);
-			}
-		}
-
-		if ((e >= 3) and (h >= 4) and n >= 3)
-		{
-			ans = minv(ans, a + b + c + solve(n - 3, e - 3, h - 4, a, b, c));
-		}
-		return ans;
 	}
-	ravireddy07;
+
+	if (e - n >= 1 and e - n >= n - h)
+	{
+		if (a - c < 0)
+		{
+			x = amin(n - 1, e - n);
+			res = amin(res, (a - c) * x + n * c);
+		}
+		else
+		{
+			x = amax(1, n - h);
+			res = amin(res, (a - c) * x + n * c);
+		}
+	}
+
+	if ((e / 2 >= 1) and (e / 2 >= (3 * n - h + 2) / 3))
+	{
+		if (a - b < 0)
+		{
+			x = amin(n - 1, e / 2);
+			res = amin(res, (a - b) * x + n * b);
+		}
+		else
+		{
+			x = amax(1, (3 * n - h + 2) / 3);
+			res = amin(res, (a - b) * x + n * b);
+		}
+	}
+
+	if ((e >= 3) and (h >= 4) and n >= 3)
+		res = amin(res, a + b + c + harry(n - 3, e - 3, h - 4, a, b, c));
+
+	ravireddy07 res;
 }
 
 int main()
@@ -198,18 +185,16 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-
 	int t;
-	scanf("%d", &t);
+	ii(t);
 	while (t--)
 	{
 		ll n, e, h, a, b, c;
-		cin >> n >> e >> h >> a >> b >> c;
-		ll ans = solve(n, e, h, a, b, c);
-		if (ans == 1e15)
-			cout << "-1\n";
-		else
-			cout << ans << "\n";
+		ill3(n, e, h);
+		ill3(a, b, c);
+
+		ll res = harry(n, e, h, a, b, c);
+		(res == MOD) ? (printf("-1\n")) : (printf("%lld\n", res));
 	}
 	return 0;
 }

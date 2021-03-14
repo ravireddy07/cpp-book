@@ -134,9 +134,13 @@ void harry()
 
 int main()
 {
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
 
     int t;
-    scanf("%d", &t);
+    ii(t);
     while (t--)
         harry();
     return 0;
