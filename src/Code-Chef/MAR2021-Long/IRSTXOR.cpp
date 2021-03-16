@@ -36,6 +36,7 @@
 #define yes printf("YES\n")
 #define no printf("NO\n")
 using namespace std;
+ll MOD = 998244353;
 
 template <typename T, typename T1>
 T amax(T &a, T1 b)
@@ -53,17 +54,17 @@ T amin(T &a, T1 b)
     return a;
 }
 
-vector<int> getPermutation(size_t n)
-{
-    vector<int> res;
-    string s = to_string(n);
-    sort(s.begin(), s.end());
-    do
-    {
-        res.pb(stoi(s));
-    } while (getPermutation(s.begin(), s.end()));
-    return res;
-}
+// vector<int> getPermutation(size_t n)
+// {
+//     vector<int> res;
+//     string s = to_string(n);
+//     sort(s.begin(), s.end());
+//     do
+//     {
+//         res.pb(stoi(s));
+//     } while (getPermutation(s.begin(), s.end()));
+//     return res;
+// }
 
 long long fpow(long long base, long long power)
 {

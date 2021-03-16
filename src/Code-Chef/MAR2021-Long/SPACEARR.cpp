@@ -36,6 +36,7 @@
 #define yes printf("YES\n")
 #define no printf("NO\n")
 using namespace std;
+ll MOD = 998244353;
 
 template <typename T, typename T1>
 T amax(T &a, T1 b)
