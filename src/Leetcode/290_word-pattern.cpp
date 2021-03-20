@@ -1,8 +1,5 @@
-// https://leetcode.com/problems/word-pattern/
+//Problem Statemnet: https://leetcode.com/problems/word-pattern/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -48,6 +45,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.wordPattern("abba", "dog cat cat dog") << endl;
+    cout << a.wordPattern("abba", "dog cat cat dog") << "\n";
     return 0;
 }

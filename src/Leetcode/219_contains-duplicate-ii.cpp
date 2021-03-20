@@ -2,8 +2,7 @@
 
 // https://leetcode.com/problems/contains-duplicate-ii/discuss/840076/C%2B%2B-Simple-Logic-Solution-or-Without-Extra-Space-or-Beats-Runtime%3A-99.44-Space%3A-99.92
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -25,6 +24,6 @@ int main()
 {
     Solution a;
     vector<int> input = {1, 2, 3, 1, 2, 3, 1, 2, 3};
-    cout << a.containsNearbyDuplicate(input, 2) << endl;
+    cout << a.containsNearbyDuplicate(input, 2) << "\n";
     return 0;
 }
