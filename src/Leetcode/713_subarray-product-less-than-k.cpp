@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/subarray-product-less-than-k/
 
 #include <bits/stdc++.h>
-#include <iostream>
-#include <vector>
 using namespace std;
 
 class Solution

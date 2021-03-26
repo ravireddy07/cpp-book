@@ -1,7 +1,6 @@
 // https://leetcode.com/problems/longest-continuous-increasing-subsequence/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
