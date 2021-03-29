@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/reverse-vowels-of-a-string/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -18,8 +18,7 @@ public:
                 p2--;
             if (p1 < p2)
                 swap(*p1, *p2);
-            p1++;
-            p2--;
+            p1++, p2--;
         }
         return s;
     }
@@ -28,6 +27,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.reverseVowels("hello") << endl;
+    cout << a.reverseVowels("hello") << "\n";
     return 0;
 }
