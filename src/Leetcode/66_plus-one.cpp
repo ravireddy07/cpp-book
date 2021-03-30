@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/plus-one/
+// Problem Statement: https://leetcode.com/problems/plus-one/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -21,6 +20,7 @@ public:
             else
                 digits[i] = m % 10;
         }
+
         if (i == -1 && m > 9)
             digits.insert(digits.begin(), 1);
         return digits;
@@ -31,18 +31,14 @@ int main()
 {
     Solution a;
     vector<int> input = {1, 2, 3};
-    vector<int> show = a.plusOne(input) << endl;
+    vector<int> show = a.plusOne(input) << "\n";
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
         if (i == show.size() - 1)
-        {
             cout << show[i];
-        }
         else
-        {
             cout << show[i] << ", ";
-        }
     }
     cout << "]";
     return 0;

@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/isomorphic-strings/
+// problem Statement: https://leetcode.com/problems/isomorphic-strings/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -32,6 +32,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isIsomorphic("egg", "add") << endl;
+    cout << a.isIsomorphic("egg", "add") << "\n";
     return 0;
 }
