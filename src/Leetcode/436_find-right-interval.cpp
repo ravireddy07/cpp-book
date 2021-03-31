@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/find-right-interval/
-#include <iostream>
-#include <vector>
+// Problem Statement: https://leetcode.com/problems/find-right-interval/
+
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -20,20 +20,16 @@ public:
 
 int main()
 {
-    vector<vector<int>> input = [ [ 3, 4 ], [ 2, 3 ], [ 1, 2 ] ];
-    Soultion a;
+    vector<vector<int>> input = {{3, 4}, {2, 3}, {1, 2}};
+    Solution a;
     vector<int> show = a.findRightInterval(input);
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
         if (i == show.size() - 1)
-        {
             cout << show[i];
-        }
         else
-        {
             cout << show[i] << ", ";
-        }
     }
     cout << "]";
     return 0;

@@ -1,7 +1,5 @@
-// https://leetcode.com/problems/missing-number/
+// Problem Statement: https://leetcode.com/problems/missing-number/
 
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -24,6 +22,6 @@ int main()
 {
     Solution a;
     vector<int> input = {9, 6, 4, 2, 3, 5, 7, 0, 1};
-    cout << a.missingNumber(input) << endl;
+    cout << a.missingNumber(input) << "\n";
     return 0;
 }
