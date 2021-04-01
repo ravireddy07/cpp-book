@@ -1,5 +1,11 @@
 # Competative Programming Problems
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![GitHub issues](https://img.shields.io/github/issues/ravireddy07/cpp-book.svg)](https://github.com/ravireddy07/cpp-book/issues)&nbsp;&nbsp;&nbsp;
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ravireddy07/cpp-book.svg)](https://github.com/ravireddy07/cpp-book/pulls)&nbsp;&nbsp;&nbsp;
+[![GitHub forks](https://img.shields.io/github/forks/ravireddy07/cpp-book.svg?style=social&label=Fork)](https://github.com/ravireddy07/cpp-book/network)&nbsp;&nbsp;&nbsp;
+[![GitHub stars](https://img.shields.io/github/stars/ravireddy07/cpp-book.svg?style=social&label=Stars)](https://github.com/ravireddy07/cpp-book/stargazers)&nbsp;&nbsp;&nbsp;
+[![GitHub watchers](https://img.shields.io/github/watchers/ravireddy07/cpp-book.svg?style=social&label=Watch)](https://github.com/ravireddy07/cpp-book/watchers)&nbsp;&nbsp;&nbsp;
+
 Problem Solutions from Different Platforms.
 <br/>
 
