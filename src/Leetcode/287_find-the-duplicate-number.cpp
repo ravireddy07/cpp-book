@@ -52,6 +52,6 @@ int main()
 {
     Solution a;
     vector<int> in = {1, 3, 4, 2, 2};
-    cout << a.findDuplicate(in) << endl;
+    cout << a.findDuplicate(in) << "\n";
     return 0;
 }

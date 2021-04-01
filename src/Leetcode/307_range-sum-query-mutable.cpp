@@ -1,9 +1,7 @@
-// https://leetcode.com/problems/range-sum-query-mutable/
+// Problem statement: https://leetcode.com/problems/range-sum-query-mutable/
+// Problem Discussion: https://leetcode.com/problems/range-sum-query-mutable/discuss/843838/C%2B%2B-Simple-Brute-Force-Solution-or-93-Less-Space-or-Self-Explanatory
 
-// https://leetcode.com/problems/range-sum-query-mutable/discuss/843838/C%2B%2B-Simple-Brute-Force-Solution-or-93-Less-Space-or-Self-Explanatory
-
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Runtime: 19% Space: 93%
