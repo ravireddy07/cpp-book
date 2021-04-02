@@ -18,5 +18,5 @@ int main()
 {
   long long int a, b, c;
   cin >> a >> b >> c;
-  cout << Modular(a, b, c) << endl;
+  cout << Modular(a, b, c) << "\n";
 }

@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define ll long long int
 
 ll PowerExp(ll a, ll b, ll c)
@@ -30,6 +29,6 @@ int main()
 {
 	ll a, b, c;
 	cin >> a >> b >> c;
-	cout << ModularExp(a, b, c);
+	cout << ModularExp(a, b, c) << "\n";
 	return 0;
 }
