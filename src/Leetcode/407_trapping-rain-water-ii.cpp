@@ -1,10 +1,6 @@
-// https://leetcode.com/problems/trapping-rain-water-ii/
+// Problem Statement:  https://leetcode.com/problems/trapping-rain-water-ii/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <stdlib.h>
-#include <cstring>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -63,6 +59,6 @@ int main()
         {1, 4, 3, 1, 3, 2},
         {3, 2, 1, 3, 2, 4},
         {2, 3, 3, 2, 3, 1}};
-    cout << a.trapRainWater(input) << endl;
+    cout << a.trapRainWater(input) << "\n";
     return 0;
 }

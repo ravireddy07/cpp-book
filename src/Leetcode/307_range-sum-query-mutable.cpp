@@ -34,8 +34,8 @@ int main()
 {
     vector<int> input = {3, 0, 1, 4, 2};
     NumArray *obj = new NumArray(input);
-    cout << obj->sumRange(2, 5) << endl;
+    cout << obj->sumRange(2, 5) << "\n";
     obj->update(1, 2);
-    cout << obj->sumRange(2, 5) << endl;
+    cout << obj->sumRange(2, 5) << "\n";
     return 0;
 }

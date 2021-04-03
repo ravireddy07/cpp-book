@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/range-sum-query-2d-immutable/
+// Problem Statement: https://leetcode.com/problems/range-sum-query-2d-immutable/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class NumMatrix
@@ -65,6 +64,6 @@ int main()
         {4, 1, 0, 1, 7},
         {1, 0, 3, 0, 5}};
     NumMatrix *obj = new NumMatrix(input);
-    cout << obj->sumRegion(2, 1, 4, 3) << endl;
+    cout << obj->sumRegion(2, 1, 4, 3) << "\n";
     return 0;
 }

@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/range-sum-query-immutable/
+// Problem Statement: https://leetcode.com/problems/range-sum-query-immutable/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 /*
@@ -54,6 +53,6 @@ int main()
 {
     vector<int> input = {3, 0, 1, 4, 2};
     NumArray *obj = new NumArray(input);
-    cout << obj->sumRange(2, 5) << endl;
+    cout << obj->sumRange(2, 5) << "\n";
     return 0;
 }
