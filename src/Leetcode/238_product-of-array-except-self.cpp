@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/product-of-array-except-self/
+// Problem Statement: https://leetcode.com/problems/product-of-array-except-self/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

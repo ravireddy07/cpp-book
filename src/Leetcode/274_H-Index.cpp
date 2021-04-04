@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/h-index/
+// Problem Statement: https://leetcode.com/problems/h-index/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -26,6 +24,6 @@ int main()
 {
     Solution a;
     vector<int> input = {3, 0, 6, 1, 5};
-    cout << a.hIndex(input) << endl;
+    cout << a.hIndex(input) << "\n";
     return 0;
 }
