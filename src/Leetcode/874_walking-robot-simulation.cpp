@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/walking-robot-simulation/
+// Problem statement:  https://leetcode.com/problems/walking-robot-simulation/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -39,6 +38,6 @@ int main()
     Solution a;
     vector<int> input1 = {4, -1, 4, -2, 4};
     vector<vector<int>> input2 = {{2, 4}};
-    cout << a.robotSim(input1, input2) << endl;
+    cout << a.robotSim(input1, input2) << "\n";
     return 0;
 }

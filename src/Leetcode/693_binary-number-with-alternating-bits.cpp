@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/binary-number-with-alternating-bits/
+// Problem statement:  https://leetcode.com/problems/binary-number-with-alternating-bits/
 
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -27,6 +26,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.hasAlternatingBits(5) << endl;
+    cout << a.hasAlternatingBits(5) << "\n";
     return 0;
 }

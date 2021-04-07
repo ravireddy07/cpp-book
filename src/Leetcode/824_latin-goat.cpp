@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/goat-latin/
+// Problem statement:  https://leetcode.com/problems/goat-latin/
 
 // Leet Code Disscusion Thread: https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/551/week-3-august-15th-august-21st/3429/discuss/801081/C++-Simple-Brute-Force-Method-0ms-100-or-Simple-Understanding-or-Just-do-what-is-asked
 
@@ -13,8 +13,7 @@ Output: "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaa
 
 */
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
