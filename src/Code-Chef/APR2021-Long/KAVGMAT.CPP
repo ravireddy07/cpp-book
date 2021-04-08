@@ -35,6 +35,7 @@
 #define sortr(a) sort(a.rbegin(), a.rend())
 #define yes printf("YES\n")
 #define no printf("NO\n")
+#define setValue(a, value) memset(a, value, sizeof(a))
 using namespace std;
 ll MOD = 998244353;
 
@@ -120,6 +121,51 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 void harry()
 {
+    ll n, m, k;
+    ill3(n, m, k);
+
+    ll res = 0, valid, ans;
+    ll mat[n + 5][m + 5];
+    setValue(mat, 0);
+
+    for (int i = 1; i <= n; ++i)
+    {
+        for (int j = 1; j <= m; ++j)
+        {
+            ill(mat[i][j]);
+            if (mat[i][j] >= k)
+                ++res;
+        }
+    }
+
+    ll kWorth[n + 5][m + 5];
+    setValue(kWorth, 0);
+
+    kWorth[1][1] = mat[1][1];
+
+    for (int i = 2; i <= n; ++i)
+        kWorth[i][1] = kWorth[i - 1][1] + mat[i][1];
+    for (int j = 2; j <= m; ++j)
+        kWorth[1][j] = kWorth[1][j - 1] + mat[1][j];
+
+    for (int i = 2; i <= n; ++i)
+        for (int j = 2; j <= m; ++j)
+            kWorth[i][j] = kWorth[i - 1][j] + kWorth[i][j - 1] - kWorth[i - 1][j - 1] + mat[i][j];
+
+    for (int i = 2; i <= amin(n, m); ++i)
+    {
+        for (int a = n; (a - i) >= 0; --a)
+        {
+            for (int b = m; (b - i) >= 0; --b)
+            {
+                valid = kWorth[a][b] - kWorth[a - i][b] - kWorth[a][b - i] + kWorth[a - i][b - i];
+                if (((double)valid / (double)(i * i)) >= k)
+                    ++res;
+            }
+        }
+    }
+
+    printf("%lld\n", res);
     ravireddy07;
 }
 

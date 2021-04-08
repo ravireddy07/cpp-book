@@ -122,7 +122,6 @@ void harry()
 {
     ll n;
     ill(n);
-    ll sol = n % 4;
 
     vl ar;
     ar.pb(20);
@@ -137,12 +136,12 @@ void harry()
     else
     {
         res = 44 * (n / 4);
-        if (sol == 0)
+        if (n % 4 == 0)
             res += 16;
         else
         {
-            res += 4 * (4 - sol);
-            res += ar[sol - 1];
+            res += 4 * (4 - n % 4);
+            res += ar[n % 4 - 1];
         }
     }
 
