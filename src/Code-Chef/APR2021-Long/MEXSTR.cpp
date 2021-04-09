@@ -120,6 +120,10 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 void harry()
 {
+    string s;
+    cin >> s;
+    string res = "";
+    cout << res << "\n";
     ravireddy07;
 }
 
