@@ -1,4 +1,4 @@
-// https://www.codechef.com/OCT20B/problems/CHEFEZQ
+// Problem Statement: https://www.codechef.com/OCT20B/problems/CHEFEZQ
 
 #include <bits/stdc++.h>
 using namespace std;

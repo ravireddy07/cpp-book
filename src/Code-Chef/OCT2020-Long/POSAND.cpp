@@ -1,4 +1,4 @@
-// https://www.codechef.com/OCT20B/problems/POSAND
+// Problem Statement: https://www.codechef.com/OCT20B/problems/POSAND
 
 #include <bits/stdc++.h>
 using namespace std;
