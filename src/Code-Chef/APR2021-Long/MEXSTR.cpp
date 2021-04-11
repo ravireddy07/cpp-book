@@ -37,6 +37,9 @@
 #define no printf("NO\n")
 using namespace std;
 ll MOD = 998244353;
+#define MEX (int)1e6
+int dp1[MEX + 2], dp2[MEX + 2];
+int ar1[MEX], ar2[MEX];
 
 template <typename T, typename T1>
 T amax(T &a, T1 b)
@@ -122,7 +125,85 @@ void harry()
 {
     string s;
     cin >> s;
-    string res = "";
+    int n = s.size();
+    string res = "1";
+
+    int cnt = -1;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == '0')
+        {
+            for (int j = cnt + 1; j <= i; j++)
+            {
+                ar1[j] = i;
+            }
+            cnt = i;
+        }
+    }
+
+    for (int i = cnt + 1; i < s.size(); i++)
+        ar1[i] = n;
+
+    cnt = -1;
+
+    if (ar1[0] == n)
+    {
+        printf("0\n");
+        ravireddy07;
+    }
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == '1')
+        {
+            for (int j = cnt + 1; j <= i; j++)
+            {
+                ar2[j] = i;
+            }
+            cnt = i;
+        }
+    }
+
+    dp1[n] = dp1[n + 1] = 0;
+    dp2[n] = dp2[n + 1] = 0;
+
+    for (int i = cnt + 1; i < s.size(); i++)
+        ar2[i] = n;
+
+    for (int i = n - 1; i >= 0; i--)
+    {
+        dp1[i] = dp1[i + 1];
+        if (s[i] == '1' and ar1[i] < n)
+            dp1[i] = amax(dp1[i], dp1[ar1[i] + 1] + 1);
+        if (s[i] == '0' and ar2[i] < n)
+            dp1[i] = amax(dp1[i], dp1[ar2[i] + 1] + 1);
+        dp2[i] = dp2[i + 1];
+        if (ar2[i] < n)
+            dp2[i] = amax(dp2[i], dp1[ar2[i] + 1] + 1);
+    }
+
+    int nn = dp2[0] + 1, temp = ar2[0] + 1;
+    for (int i = 1; i < nn; i++)
+    {
+        if (temp >= n)
+            res += '0';
+        else if (ar1[temp] >= n)
+        {
+            res += '0';
+            temp = ar1[temp] + 1;
+        }
+        else if (dp1[ar1[temp] + 1] < nn - i - 1)
+        {
+            res += '0';
+            temp = ar1[temp] + 1;
+        }
+        else
+        {
+            res += '1';
+            temp = ar2[temp] + 1;
+        }
+    }
+
     cout << res << "\n";
     ravireddy07;
 }
