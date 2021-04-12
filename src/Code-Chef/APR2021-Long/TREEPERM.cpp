@@ -36,7 +36,7 @@
 #define yes printf("YES\n")
 #define no printf("NO\n")
 using namespace std;
-ll MOD = 998244353;
+const int MOD = (int)1e9 + 7;
 
 template <typename T, typename T1>
 T amax(T &a, T1 b)
@@ -118,8 +118,43 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
     ravireddy07;
 }
 
-void harry()
+const int M = 1000003;
+
+long long ans;
+int A[100005], B[100005];
+long long P[1000006];
+
+vector<int> X[100005];
+pair<long long, long long> Z[100005];
+
+void harry(int x, int par)
 {
+    int flag = 0;
+    Z[x] = {P[A[x]], P[B[x]]};
+
+    for (auto y : X[x])
+        if (y != par)
+        {
+            harry(y, x);
+
+            if (Z[y].first == Z[y].second)
+                continue;
+
+            if (flag == 1)
+                ans = 0;
+
+            flag = 1;
+            Z[x].first += Z[y].first;
+            Z[x].second += Z[y].second;
+        }
+
+    int children = X[x].size() - (par != 0);
+
+    if (flag == 0)
+        ans = ans * (children + 1) % MOD;
+
+    if (par == 0 && Z[x].first != Z[x].second)
+        ans = 0;
     ravireddy07;
 }
 
@@ -132,7 +167,41 @@ int main()
 
     int t;
     ii(t);
+    P[0] = 1;
+
+    for (int i = 1; i <= 1000000; i++)
+        P[i] = P[i - 1] * M % MOD;
+
     while (t--)
-        harry();
+    {
+        int n, s;
+        cin >> n >> s;
+
+        for (int i = 1; i <= n; i++)
+            X[i].clear();
+
+        for (int i = 1; i <= n - 1; i++)
+        {
+            int u, v;
+            cin >> u >> v;
+
+            X[u].push_back(v);
+            X[v].push_back(u);
+        }
+
+        for (int i = 1; i <= n; i++)
+            cin >> A[i];
+
+        for (int i = 1; i <= n; i++)
+            cin >> B[i];
+
+        ans = 1;
+        harry(1, 0);
+
+        if (s == 1)
+            ans = min(ans, 1LL);
+
+        cout << ans << "\n";
+    }
     return 0;
 }

@@ -118,9 +118,96 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
     ravireddy07;
 }
 
+ll getOverlappingRanges(int i, int j, vector<vector<pair<int, ll>>> &D)
+{
+    ll sum = 0;
+    for (auto elem : D[i])
+        sum += elem.first <= j ? elem.second : 0;
+    return sum;
+}
+
 void harry()
 {
-    ravireddy07;
+    int N, M, K;
+    cin >> N >> M >> K;
+
+    vector<ll> G(N);
+    for (int i = 0; i < N; i++)
+        cin >> G[i];
+
+    vector<vector<ll>> prefSum(N, vector<ll>(N, 0));
+    for (int i = 0; i < N; i++)
+    {
+        ll curSum = 0;
+        for (int j = i; j < N; j++)
+        {
+            curSum += G[j];
+            prefSum[i][j] = curSum;
+        }
+    }
+
+    vector<vector<pair<int, ll>>> D(N);
+    for (int i = 0; i < M; i++)
+    {
+        int u, v;
+        ii2(u, v);
+        u--;
+        v--;
+        ll d;
+        ill(d);
+        D[u].push_back({v, d});
+    }
+
+    multiset<ll> topK[N][2];
+    topK[0][0].insert(0);
+    topK[0][1].insert(G[0]);
+    for (int i = 1; i < N; i++)
+    {
+        // Not taking ith value
+        for (auto elem : topK[i - 1][0])
+            topK[i][0].insert(elem);
+
+        for (auto elem : topK[i - 1][1])
+        {
+            topK[i][0].insert(elem);
+            if (topK[i][0].size() > K)
+                topK[i][0].erase(topK[i][0].begin());
+        }
+
+        // Taking ith value
+        ll prevSum = 0;
+        for (int prev = i - 1; prev >= 0; prev--)
+        {
+            prevSum += getOverlappingRanges(prev + 1, i, D);
+            for (auto elem : topK[prev][0])
+            {
+                topK[i][1].insert(elem + prefSum[prev + 1][i] + prevSum);
+                if (topK[i][1].size() > K)
+                    topK[i][1].erase(topK[i][1].begin());
+            }
+        }
+
+        prevSum += getOverlappingRanges(0, i, D);
+        topK[i][1].insert(prefSum[0][i] + prevSum);
+        if (topK[i][1].size() > K)
+            topK[i][1].erase(topK[i][1].begin());
+    }
+
+    multiset<ll> answer;
+    for (auto elem : topK[N - 1][0])
+        answer.insert(elem);
+    for (auto elem : topK[N - 1][1])
+        answer.insert(elem);
+
+    int counter = 0;
+    for (auto it = answer.rbegin(); it != answer.rend(); it++)
+    {
+        cout << *it << " ";
+        counter++;
+        if (counter == K)
+            break;
+    }
+    cout << "\n";
 }
 
 int main()
