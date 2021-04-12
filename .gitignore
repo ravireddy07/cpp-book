@@ -1,3 +1,5 @@
 setup/***
 *.exe
 imp.md
+*.javac
+*.class
