@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
+// Problem Statement: https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Trie
@@ -88,6 +87,6 @@ int main()
 {
     Solution a;
     vector<int> input = {3, 10, 5, 25, 2, 8};
-    cout << a.findMaximumXOR(input) << endl;
+    cout << a.findMaximumXOR(input) << "\n";
     return 0;
 }

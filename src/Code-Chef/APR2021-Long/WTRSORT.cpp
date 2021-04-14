@@ -11,6 +11,7 @@
 #define LLm LONG_LONG_MIN
 #define MOD 1000000007
 using namespace std;
+
 bool comp(ll a, ll b)
 {
     if (a > b)
@@ -18,6 +19,7 @@ bool comp(ll a, ll b)
     else
         return false;
 }
+
 int isP(ll n)
 {
     if (n == 1)
@@ -31,6 +33,7 @@ int isP(ll n)
     }
     return 1;
 }
+
 ll power(ll a, ll b)
 {
     if (b == 0)
@@ -43,6 +46,7 @@ ll power(ll a, ll b)
     else
         return t * t;
 }
+
 ll powMOD(ll x, ll y)
 {
     if (y == 0)
@@ -58,7 +62,6 @@ ll powMOD(ll x, ll y)
 
 int main()
 {
-
     ll t;
     t = 1;
     while (t--)
@@ -113,6 +116,7 @@ int main()
                 }
             }
         }
+
         ll mx = 0, idxx = 0;
         for (ll i = 1; i <= n; i++)
         {
@@ -126,6 +130,7 @@ int main()
                 }
             }
         }
+
         ans1.clear();
         for (ll i = 1; i <= n; i++)
         {
@@ -171,6 +176,7 @@ int main()
                 }
             }
         }
+
         for (ll i = 1; i <= n; i++)
         {
             if (!bp[i].empty())
@@ -221,6 +227,7 @@ int main()
                 }
             }
         }
+
         if (!bp[n + 2].empty())
         {
             if (bp[n + 2].size() != m)
@@ -233,6 +240,7 @@ int main()
                 }
             }
         }
+
         cout << "0 " << ans1.size() << "\n";
         for (ll i = 0; i < ans1.size(); i++)
         {
