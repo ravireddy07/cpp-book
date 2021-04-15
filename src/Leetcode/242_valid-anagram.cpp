@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/valid-anagram/
+// Problem Statement: https://leetcode.com/problems/valid-anagram/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -18,10 +18,9 @@ public:
             --count[t[i] - 'a'];
         }
         for (int i = 0; i < 26; ++i)
-        {
             if (count[i])
                 return false;
-        }
+
         return true;
     }
 };
@@ -29,6 +28,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isAnagram("anagram", "nagaram") << endl;
+    cout << a.isAnagram("anagram", "nagaram") << "\n";
     return 0;
 }

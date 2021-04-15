@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/decompress-run-length-encoded-list/
+// Problem Statement: https://leetcode.com/problems/decompress-run-length-encoded-list/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

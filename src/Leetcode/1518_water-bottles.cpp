@@ -1,6 +1,5 @@
-// https://leetcode.com/problems/water-bottles/
+// Problem Statement: https://leetcode.com/problems/water-bottles/
 
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,9 +13,8 @@ public:
         {
             sum += numBottles / numExchange;
             numBottles = numBottles % numExchange + numBottles / numExchange;
-            cout << numBottles % numExchange << endl;
+            cout << numBottles % numExchange << "\n";
         }
-        cout << endl;
         return sum;
     }
 };
@@ -24,6 +22,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.numWaterBottles(15, 4) << endl;
+    cout << a.numWaterBottles(15, 4) << "\n";
     return 0;
 }
