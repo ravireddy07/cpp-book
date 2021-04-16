@@ -1,8 +1,5 @@
-//Problem Link:  https://leetcode.com/problems/single-number/
+// Problem Statement: https://leetcode.com/problems/single-number/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -28,6 +25,6 @@ int main()
 {
     Solution a;
     vector<int> input = {4, 1, 2, 1, 2};
-    cout << a.singleNumber(input) << endl;
+    cout << a.singleNumber(input) << "\n";
     return 0;
 }
