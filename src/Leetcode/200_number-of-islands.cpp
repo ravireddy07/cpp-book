@@ -1,8 +1,5 @@
-// https://leetcode.com/problems/number-of-islands/
+// Problem Statement:  https://leetcode.com/problems/number-of-islands/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -41,10 +38,10 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = [ [ "1", "1", "1", "1", "0" ],
-                                  [ "1", "1", "0", "1", "0" ],
-                                  [ "1", "1", "0", "0", "0" ],
-                                  [ "0", "0", "0", "0", "0" ] ];
-    cout << a.numIslands(input) << endl;
+    vector<vector<int>> input = {{"1", "1", "1", "1", "0"},
+                                 {"1", "1", "0", "1", "0"},
+                                 {"1", "1", "0", "0", "0"},
+                                 {"0", "0", "0", "0", "0"}};
+    cout << a.numIslands(input) << "\n";
     return 0;
 }

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/factorial-trailing-zeroes/
+// Problem Statement: https://leetcode.com/problems/factorial-trailing-zeroes/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -42,6 +42,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.trailingZeroes(5) << endl;
+    cout << a.trailingZeroes(5) << "\n";
     return 0;
 }

@@ -1,8 +1,5 @@
-//Problem Link:  https://leetcode.com/problems/happy-number/
+// Problem Statement: Problem Link:  https://leetcode.com/problems/happy-number/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,6 +30,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isHappy(2) << endl;
+    cout << a.isHappy(2) << "\n";
     return 0;
 }
