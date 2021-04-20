@@ -3,3 +3,4 @@ setup/***
 imp.md
 *.javac
 *.class
+.project
