@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/contains-duplicate/
+// Problem Statement: https://leetcode.com/problems/contains-duplicate/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -20,6 +20,6 @@ int main()
 {
     Solution a;
     vector<int> input = {1, 2, 3, 1};
-    cout << a.containsDuplicate(input) << endl;
+    cout << a.containsDuplicate(input) << "\n";
     return 0;
 }

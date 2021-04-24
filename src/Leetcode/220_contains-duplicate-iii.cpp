@@ -1,8 +1,5 @@
-// https://leetcode.com/problems/contains-duplicate-iii/
+// Problem Statement: https://leetcode.com/problems/contains-duplicate-iii/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -42,6 +39,6 @@ int main()
 {
     Solution a;
     vector<int> input = {-1,2147483647};
-    cout << a.containsNearbyAlmostDuplicate(input,2, 4) << endl;
+    cout << a.containsNearbyAlmostDuplicate(input,2, 4) << "\n";
     return 0;
 }
