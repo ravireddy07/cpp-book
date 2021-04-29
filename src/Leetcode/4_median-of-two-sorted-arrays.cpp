@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/median-of-two-sorted-arrays/
+// Problem Statement: https://leetcode.com/problems/median-of-two-sorted-arrays/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -49,6 +49,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.findMedianSortedArrays({1, 3}, {2, 7}) << endl;
+    cout << a.findMedianSortedArrays({1, 3}, {2, 7}) << "\n";
     return 0;
 }

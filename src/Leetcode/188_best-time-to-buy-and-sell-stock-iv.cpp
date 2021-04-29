@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+// Problem Statement: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -45,7 +44,7 @@ public:
 int main()
 {
     Solution a;
-    vcetor<int> input = {2, 4, 1};
+    vector<int> input = {2, 4, 1};
     cout << a.maxProfit(2, input);
     return 0;
 }
