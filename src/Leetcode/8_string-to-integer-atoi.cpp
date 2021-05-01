@@ -1,4 +1,5 @@
-// https://leetcode.com/problems/string-to-integer-atoi/
+// Problem Statement: https://leetcode.com/problems/string-to-integer-atoi/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -47,6 +48,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.myAtoi("42") << endl;
+    cout << a.myAtoi("42") << "\n";
     return 0;
 }

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindrome-number/
+// Problem Statement: https://leetcode.com/problems/palindrome-number/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -26,6 +26,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isPalindrome(121) << endl;
+    cout << a.isPalindrome(121) << "\n";
     return 0;
 }
