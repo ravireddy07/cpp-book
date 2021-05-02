@@ -1,8 +1,5 @@
-// https://leetcode.com/problems/course-schedule/
+// Problem Statement: https://leetcode.com/problems/course-schedule/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -60,7 +57,7 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = [ [ 1, 0 ], [ 0, 1 ] ];
-    cout << a.canFinish(2, input) << endl;
+    vector<vector<int>> input = {{1, 0}, {0, 1}};
+    cout << a.canFinish(2, input) << "\n";
     return 0;
 }
