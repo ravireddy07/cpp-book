@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
+// Problem Statement: https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -29,6 +27,6 @@ int main()
 {
     Solution a;
     vector<int> input = {1, 5, 4, 5};
-    cout << a.maxProduct(input) << endl;
+    cout << a.maxProduct(input) << "\n";
     return 0;
 }

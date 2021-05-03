@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/running-sum-of-1d-array/
+// Problem Statement: https://leetcode.com/problems/running-sum-of-1d-array/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -9,14 +8,9 @@ class Solution
 public:
     vector<int> runningSum(vector<int> &nums)
     {
-        vector<int> res;
-        int sum = 0;
-        for (int i = 0; i < nums.size(); i++)
-        {
-            sum += nums[i];
-            res.push_back(sum);
-        }
-        return res;
+        for (int i = 1; i < nums.size(); ++i)
+            nums[i] += nums[i - 1];
+        return nums;
     }
 };
 
@@ -33,6 +27,7 @@ int main()
         else
             cout << show[i] << ", ";
     }
-    cout << "]" << endl;
+    cout << "]"
+         << "\n";
     return 0;
 }

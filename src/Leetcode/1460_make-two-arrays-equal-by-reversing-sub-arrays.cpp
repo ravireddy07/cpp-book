@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/
+// Problem Statement: https://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Solution 1
@@ -45,6 +43,6 @@ int main()
 {
     Solution a;
     vector<int> target = {1, 2, 3, 4}, arr = {2, 4, 1, 3};
-    cout << a.canBeEqual(target, arr) << endl;
+    cout << a.canBeEqual(target, arr) << "\n";
     return 0;
 }
