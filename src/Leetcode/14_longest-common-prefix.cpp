@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-common-prefix/
+// Problem Statement: https://leetcode.com/problems/longest-common-prefix/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -36,6 +36,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.longestCommonPrefix({"flower", "flow", "flight"}) << endl;
+    cout << a.longestCommonPrefix({"flower", "flow", "flight"}) << "\n";
     return 0;
 }

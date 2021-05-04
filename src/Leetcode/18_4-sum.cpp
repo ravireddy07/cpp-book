@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/4sum/
+// Problem statement: https://leetcode.com/problems/4sum/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -53,7 +53,8 @@ int main()
     Solution a;
     vector<int> input = {1, 0, -1, 0, -2, 2};
     vector<vector<int>> show = a.fourSum(input, 0);
-    cout << "[" << endl;
+    cout << "["
+         << "\n";
     for (int i = 0; i < show.size(); i++)
     {
         cout << "[";
@@ -62,7 +63,8 @@ int main()
                 cout << show[i][j];
             else
                 cout << show[i][j] << ", ";
-        cout << "]" << endl;
+        cout << "]"
+             << "\n";
     }
     cout << "]";
     return 0;

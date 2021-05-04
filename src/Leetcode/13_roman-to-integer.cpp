@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/roman-to-integer/
+// Problem Statement: https://leetcode.com/problems/roman-to-integer/
 
-// https://leetcode.com/problems/roman-to-integer/discuss/829390/C%2B%2B-Simple-4ms-Solution-or-Beats-99-Faster-Solution-or-O(n)-Complexity
-
-// including commented code is standard code
+// problem discussion: https://leetcode.com/problems/roman-to-integer/discuss/829390/C%2B%2B-Simple-4ms-Solution-or-Beats-99-Faster-Solution-or-O(n)-Complexity
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -78,6 +76,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.romanToInt("IV") << endl;
+    cout << a.romanToInt("IV") << "\n";
     return 0;
 }

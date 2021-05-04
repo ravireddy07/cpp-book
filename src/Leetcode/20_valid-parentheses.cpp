@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/valid-parentheses/
+// Problem Statement: https://leetcode.com/problems/valid-parentheses/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -57,6 +56,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isValid("([)]") << endl;
+    cout << a.isValid("([)]") << "\n";
     return 0;
 }
