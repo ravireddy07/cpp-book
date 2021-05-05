@@ -1,12 +1,12 @@
-// https://leetcode.com/problems/search-insert-position/
+// Problem Statement: https://leetcode.com/problems/search-insert-position/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int searchInsert(vector<int> &nums, int target)
+    int searchInsert(vector<int> nums, int target)
     {
         for (int i = nums.size() - 1; i >= 0; i--)
         {
@@ -22,7 +22,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 3, 5, 6};
-    cout << a.searchInsert(input, 7) << endl;
+    cout << a.searchInsert({1, 3, 5, 6}, 7) << "\n";
     return 0;
 }

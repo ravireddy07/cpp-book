@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-strstr/
+// Problem Statement: https://leetcode.com/problems/implement-strstr/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -17,6 +17,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.strStr("hello", "ll") << endl;
+    cout << a.strStr("hello", "ll") << "\n";
     return 0;
 }

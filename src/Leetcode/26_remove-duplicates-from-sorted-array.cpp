@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+// Problem Statement: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -28,6 +28,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.removeDuplicates({1, 1, 2}) << endl;
+    cout << a.removeDuplicates({1, 1, 2}) << "\n";
     return 0;
 }

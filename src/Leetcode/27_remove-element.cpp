@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-element/
+// Problem Statement: https://leetcode.com/problems/remove-element/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -23,6 +23,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.removeElement({3, 2, 2, 3}, 3) << endl;
+    cout << a.removeElement({3, 2, 2, 3}, 3) << "\n";
     return 0;
 }
