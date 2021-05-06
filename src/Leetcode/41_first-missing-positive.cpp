@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/first-missing-positive/
+// Problem Statement: https://leetcode.com/problems/first-missing-positive/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,6 +30,6 @@ int main()
 {
     Solution a;
     vector<int> in = {3, 4, -1, 1};
-    cout << a.firstMissingPositive(in) << endl;
+    cout << a.firstMissingPositive(in) << "\n";
     return 0;
 }

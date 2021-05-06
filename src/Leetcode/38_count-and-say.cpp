@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/count-and-say/
+// Problem Statement: https://leetcode.com/problems/count-and-say/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -34,6 +33,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.countAndSay(4) << endl;
+    cout << a.countAndSay(4) << "\n";
     return 0;
 }
