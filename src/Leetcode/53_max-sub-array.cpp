@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-subarray/
+// Problem Statement: https://leetcode.com/problems/maximum-subarray/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,10 +6,9 @@ using namespace std;
 class Solution
 {
 public:
-    int maxSubArray(vector<int> &nums)
+    int maxSubArray(vector<int> nums)
     {
         int maxSub = nums[0], curSum = 0;
-
         for (int n : nums)
         {
             if (curSum < 0)
@@ -24,7 +23,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = [ -2, 1, -3, 4, -1, 2, 1, -5, 4 ];
-    cout << a.maxSubArray(input) << endl;
+    cout << a.maxSubArray({-2, 1, -3, 4, -1, 2, 1, -5, 4}) << "\n";
     return 0;
 }

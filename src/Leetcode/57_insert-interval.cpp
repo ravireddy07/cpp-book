@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/insert-interval/
+// Problem Statement: https://leetcode.com/problems/insert-interval/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<vector<int>> insert(vector<vector<int>> &intervals, vector<int> &newinterval)
+    vector<vector<int>> insert(vector<vector<int>> intervals, vector<int> newinterval)
     {
         int flag = 1;
         for (int i = 0; i < intervals.size(); i++)
@@ -46,8 +45,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input1 = {{1, 3}, {6, 9}};
-    vector<vector<int>> input2 = {2, 5};
-    cout << a.insert(input1, input2) << endl;
+    vector<vector<int>> result = a.insert({{1, 3}, {6, 9}}, {2, 5});
     return 0;
 }

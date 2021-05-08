@@ -1,5 +1,5 @@
-#include <iostream>
-#include <algorithm>
+// Problem Statement: https://leetcode.com/problems/wildcard-matching/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,6 +40,6 @@ public:
 int main()
 {
     Solution a;
-    bool result = a.isMatch("aa", "a");
-    cout << result << endl;
+    cout << a.isMatch("aa", "a") << "\n";
+    return 0;
 }
