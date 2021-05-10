@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/search-a-2d-matrix/
+// Problem Statement: https://leetcode.com/problems/search-a-2d-matrix/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    bool searchMatrix(vector<vector<int>> &matrix, int target)
+    bool searchMatrix(vector<vector<int>> matrix, int target)
     {
         if (matrix.size() == 0)
             return 0;
@@ -27,7 +27,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> in = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}};
-    cout << a.searchMatrix(in, 13) << endl;
+    cout << a.searchMatrix({{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}}, 13) << "\n";
     return 0;
 }

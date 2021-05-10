@@ -157,38 +157,24 @@ void harry()
 
     // 3
     if (ar[2][2] == ar[2][1] and ar[2][1] == ar[2][0])
-    {
         xo++;
-    }
     if (ar[0][2] == ar[1][2] and ar[1][2] == ar[2][2])
-    {
         xo++;
-    }
 
     // diagonal
     if (ar[0][0] == ar[1][1] and ar[1][1] == ar[2][2])
-    {
         xo++;
-    }
     if (ar[0][2] == ar[1][1] and ar[1][1] == ar[2][0])
-    {
         xo++;
-    }
 
     if (xo == 0 and underScore == 0)
         cout << 1 << "\n";
     else if (xo > 1)
-    {
         cout << 3 << "\n";
-    }
     else if (xo == 1)
-    {
         cout << 1 << "\n";
-    }
     else
-    {
         cout << 2 << "\n";
-    }
 }
 /*
 XOX

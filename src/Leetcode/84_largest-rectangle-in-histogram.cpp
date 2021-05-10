@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/largest-rectangle-in-histogram/
+// Problem Statement:  https://leetcode.com/problems/largest-rectangle-in-histogram/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int largestRectangleArea(vector<int> &heights)
+    int largestRectangleArea(vector<int> heights)
     {
         int n = heights.size();
         vector<int> rightSmallest(n, n), leftSmallest(n, -1), stk;
@@ -39,7 +38,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {2, 1, 5, 6, 2, 3};
-    cout << a.largestRectangleArea(input) << endl;
+    cout << a.largestRectangleArea({2, 1, 5, 6, 2, 3}) << "\n";
     return 0;
 }
