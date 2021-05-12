@@ -1,5 +1,6 @@
-#include <iostream>
-#include <vector>
+// Problem Statement: https://leetcode.com/problems/valid-palindrome/
+
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -8,7 +9,6 @@ public:
     bool isPalindrome(string s)
     {
         int i = 0, j = s.size();
-
         while (i < j)
         {
             // skip the non-alpha numeric chars
@@ -29,6 +29,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isPalindrome("A man, a plan, a canal: Panama") << endl;
+    cout << a.isPalindrome("A man, a plan, a canal: Panama") << "\n";
     return 0;
 }

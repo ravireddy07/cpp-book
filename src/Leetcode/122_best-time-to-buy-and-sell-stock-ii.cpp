@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+// Problem Statement: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -21,6 +21,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.maxProfit({7, 1, 5, 3, 6, 4}) << endl;
+    cout << a.maxProfit({7, 1, 5, 3, 6, 4}) << "\n";
     return 0;
 }
