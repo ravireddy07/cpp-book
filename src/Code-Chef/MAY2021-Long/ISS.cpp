@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codechef.com/MAY21C/problems/TCTCTOE
+// Problem Statement: https://www.codechef.com/MAY21C/problems/ISS
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -118,69 +118,32 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
     ravireddy07;
 }
 
+long int gcd(long int a, long int b)
+{
+    if (a == 0)
+        return b;
+    if (b == 0 or a == b)
+        return a;
+    if (a > b)
+        return gcd(a - b, b);
+    return gcd(a, b - a);
+}
+
 void harry()
 {
-    char ar[3][3];
-    int underScore = 0;
-    for (int i = 0; i < 3; i++)
+    ll k;
+    ill(k);
+    ll arr[2 * k + 1];
+    for (int i = 1; i <= 2 * k + 1; ++i)
     {
-        for (int j = 0; j < 3; j++)
-        {
-            cin >> ar[i][j];
-            if (ar[i][j] == '_')
-                underScore++;
-        }
+        ll temp = k + (i * i);
+        arr[i] = temp;
     }
-
-    int xo = 0;
-    // checking X-O
-    // 1
-    //cout<< ar[0][0] <<" "<< ar[0][1] << " "<< ar[0][2] <<"\n";
-    if (ar[0][0] == ar[0][1] and ar[0][1] == ar[0][2])
-    {
-        xo++;
-    }
-    if (ar[0][0] == ar[1][0] and ar[1][0] == ar[2][0])
-    {
-        xo++;
-    }
-
-    // 2
-    if (ar[0][1] == ar[1][1] and ar[1][1] == ar[2][1])
-    {
-        xo++;
-    }
-    if (ar[1][0] == ar[1][1] and ar[1][1] == ar[1][2])
-    {
-        xo++;
-    }
-
-    // 3
-    if (ar[2][2] == ar[2][1] and ar[2][1] == ar[2][0])
-        xo++;
-    if (ar[0][2] == ar[1][2] and ar[1][2] == ar[2][2])
-        xo++;
-
-    // diagonal
-    if (ar[0][0] == ar[1][1] and ar[1][1] == ar[2][2])
-        xo++;
-    if (ar[0][2] == ar[1][1] and ar[1][1] == ar[2][0])
-        xo++;
-
-    if (xo == 0 and underScore == 0)
-        cout << 1 << "\n";
-    else if (xo > 1)
-        cout << 3 << "\n";
-    else if (xo == 1)
-        cout << 1 << "\n";
-    else
-        cout << 2 << "\n";
+    ll res = 0;
+    for (int i = 1; i < 2 * k + 1; ++i)
+        res = (res + (gcd(arr[i], arr[i + 1]))) % MOD;
+    cout << res % MOD << "\n";
 }
-/*
-XOX
-O_O
-XOX
-*/
 
 int main()
 {
