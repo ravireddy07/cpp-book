@@ -133,16 +133,11 @@ void harry()
 {
     ll k;
     ill(k);
-    ll arr[2 * k + 1];
-    for (int i = 1; i <= 2 * k + 1; ++i)
-    {
-        ll temp = k + (i * i);
-        arr[i] = temp;
-    }
     ll res = 0;
     for (int i = 1; i < 2 * k + 1; ++i)
-        res = (res + (gcd(arr[i], arr[i + 1]))) % MOD;
-    cout << res % MOD << "\n";
+        res += __gcd(k + i * i, k + (i + 1) * (i + 1)) % MOD;
+    printf("%lld\n", res % MOD);
+    ravireddy07;
 }
 
 int main()

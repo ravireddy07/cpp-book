@@ -1,4 +1,4 @@
-// Problem Statement: https://www.odechef.om/MAY21C/problems/TCTCTOE
+// Problem Statement: https://www.odechef.om/MAY21C/problems/MODEQ
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -120,66 +120,19 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 void harry()
 {
-    char ar[3][3];
-    int x = 0, o = 0, s = 0;
-    for (int i = 0; i < 3; i++)
+    ll n, m;
+    ill2(n, m);
+    vl v(n + 1, 1);
+    ll res = 0;
+    for (ll i = 2; i <= n; ++i)
     {
-        for (int j = 0; j < 3; ++j)
-        {
-            cin >> ar[i][j];
-            if (ar[i][j] == 'X')
-                x++;
-            else if (ar[i][j] == 'O')
-                o++;
-            else
-                s++;
-        }
+        ll temp = m % i;
+        res += v[temp];
+        for (ll j = temp; j <= n; j+=i)
+            v[j]++;
     }
-    int cntX = 0, cntO = 0;
-
-    if (ar[0][0] == 'X' and ar[0][1] == 'X' and ar[0][2] == 'X')
-        cntX = 1;
-    if (ar[0][0] == 'O' and ar[0][1] == 'O' and ar[0][2] == 'O')
-        cntO = 1;
-    if (ar[0][0] == 'X' and ar[1][0] == 'X' and ar[2][0] == 'X')
-        cntX = 1;
-    if (ar[0][0] == 'O' and ar[1][0] == 'O' and ar[2][0] == 'O')
-        cntO = 1;
-    if (ar[0][0] == 'X' and ar[1][1] == 'X' and ar[2][2] == 'X')
-        cntX = 1;
-    if (ar[0][0] == 'O' and ar[1][1] == 'O' and ar[2][2] == 'O')
-        cntO = 1;
-    if (ar[0][1] == 'X' and ar[1][1] == 'X' and ar[2][1] == 'X')
-        cntX = 1;
-    if (ar[0][1] == 'O' and ar[1][1] == 'O' and ar[2][1] == 'O')
-        cntO = 1;
-    if (ar[0][2] == 'X' and ar[1][2] == 'X' and ar[2][2] == 'X')
-        cntX = 1;
-    if (ar[0][2] == 'O' and ar[1][2] == 'O' and ar[2][2] == 'O')
-        cntO = 1;
-    if (ar[0][2] == 'X' and ar[1][1] == 'X' and ar[2][0] == 'X')
-        cntX = 1;
-    if (ar[0][2] == 'O' and ar[1][1] == 'O' and ar[2][0] == 'O')
-        cntO = 1;
-    if (ar[1][0] == 'X' and ar[1][1] == 'X' and ar[1][2] == 'X')
-        cntX = 1;
-    if (ar[1][0] == 'O' and ar[1][1] == 'O' and ar[1][2] == 'O')
-        cntO = 1;
-    if (ar[2][0] == 'X' and ar[2][1] == 'X' and ar[2][2] == 'X')
-        cntX = 1;
-    if (ar[2][0] == 'O' and ar[2][1] == 'O' and ar[2][2] == 'O')
-        cntO = 1;
-
-    if ((cntX == 1 and cntO == 1) or (x - o < 0) or (x - o > 1))
-        printf("3\n");
-    else if ((x == 0 and o == 0 and s == 9) or (cntX == 0 and cntO == 0 and s > 0))
-        printf("2\n");
-    else if ((cntX == 1 and cntO == 0 and x > o) or (cntX == 0 and cntO == 1 and x == o))
-        printf("1\n");
-    else if (cntX == 0 and cntO == 0 and s == 0)
-        printf("1\n");
-    else
-        printf("3\n");
+    printf("%lld\n", res);
+    ravireddy07;
 }
 
 int main()
