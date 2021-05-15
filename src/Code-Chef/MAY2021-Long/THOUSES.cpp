@@ -8,7 +8,7 @@
 **/
 
 #include <bits/stdc++.h>
-#define ll long long int
+#define ll long long
 #define ravireddy07 return
 #define ii(a) scanf("%d", &a)
 #define ii2(a, b) scanf("%d%d", &a, &b)
@@ -118,65 +118,67 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
     ravireddy07;
 }
 
-vii tree;
-vi subval, val;
-vector<pii> ch;
+vll tree;
+vl nodes, value;
+vector<pll> childPair;
 
-void dfs(ll now, ll last)
+void app(ll cur, ll prev)
 {
-    for (auto x : tree[now])
+    for (auto i : tree[cur])
     {
-        if (x == last)
+        if (i == prev)
             continue;
-        dfs(x, now);
+        app(i, cur);
     }
-    ch.clear();
-    for (auto x : tree[now])
+
+    childPair.clear();
+    for (auto i : tree[cur])
     {
-        if (x != last)
-            ch.pb({subval[x], x});
+        if (i != prev)
+            childPair.pb({nodes[i], i});
     }
-    sort(ch.rbegin(), ch.rend());
-    ll tol = 1;
-    for (auto [temp, id] : ch)
-        val[id] += tol++;
-    for (auto x : tree[now])
-    {
-        if (x != last)
-        {
-            subval[now] += val[x] * subval[x];
-        }
-    }
+
+    sortr(childPair);
+    ll cnt = 1;
+
+    for (auto [a, b] : childPair)
+        value[b] += cnt++;
+
+    for (auto i : tree[cur])
+        if (i != prev)
+            nodes[cur] += value[i] * nodes[i];
+    ravireddy07;
+}
+
+void setup(ll n)
+{
+    nodes.assign(n, 1);
+    value.assign(n, 0);
+    tree.clear();
+    tree.resize(n);
+    ravireddy07;
 }
 
 void harry()
 {
     ll n, x;
-    ill2(n, x);
-    subval.assign(n, 1);
-    val.assign(n, 0);
-    tree.clear();
-    tree.resize(n);
+    cin >> n >> x;
+    setup(n);
     while (n-- > 1)
     {
         ll u, v;
-        ill2(u, v);
+        cin >> u >> v;
         u--, v--;
         tree[u].pb(v);
         tree[v].pb(u);
     }
-    dfs(0, -1);
-    cout << subval[0] % MOD * x % MOD << "\n";
+    app(0, -1);
+    cout << nodes[0] % MOD * x % MOD << "\n";
     ravireddy07;
 }
 
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-
     int t;
     ii(t);
     while (t--)
