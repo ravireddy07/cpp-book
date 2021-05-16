@@ -1,4 +1,4 @@
-// Problem Statement: https://www.odechef.om/MAY21C/problems/MODEQ
+// Problem Statement: https://www.odechef.om/MAY21B/problems/MODEQ
 
 /**
  *  Author: Ravi Kanth Gojur

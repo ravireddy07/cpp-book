@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codechef.com/MAY21B/problems/ISS
+// Problem Statement: https://www.codechef.com/MAY21B/problems/KKLING
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -118,41 +118,9 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
     ravireddy07;
 }
 
-const int N = 4e6 + 7;
-int seq[N];
-int sum[N];
-
-void run()
-{
-    setValue(sum, 0);
-    for1(i, 0, N)
-        seq[i] = i;
-
-    for1(i, 2, N)
-    {
-        if (seq[i] == i)
-        {
-            seq[i] = i - 1;
-            for (ll j = 2 * i; j < N; j += i)
-                seq[j] = (seq[j] / i) * (i - 1);
-        }
-    }
-
-    for1(i, 1, N)
-    {
-        sum[i] = sum[i] + i - 1;
-        for (ll j = 2 * i; j < N; j += i)
-            sum[j] = sum[j] + i * ((1 + seq[j / i]) / 2);
-    }
-    ravireddy07;
-}
-
 void harry()
 {
-    ll k;
-    ill(k);
-    printf("%lld\n", sum[4 * k + 1]);
-    ravireddy07;
+    
 }
 
 int main()
@@ -161,7 +129,7 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    run();
+
     int t;
     ii(t);
     while (t--)

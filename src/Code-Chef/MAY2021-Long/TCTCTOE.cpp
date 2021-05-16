@@ -1,4 +1,4 @@
-// Problem Statement: https://www.odechef.om/MAY21C/problems/TCTCTOE
+// Problem Statement: https://www.odechef.om/MAY21B/problems/TCTCTOE
 
 /**
  *  Author: Ravi Kanth Gojur
