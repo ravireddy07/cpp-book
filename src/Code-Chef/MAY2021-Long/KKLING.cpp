@@ -120,7 +120,112 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 void harry()
 {
-    
+    int N;
+    cin >> N;
+    vector<vi> G(N + 1);
+    vi p(N + 1), ls, C(N + 1, -1), r(N + 1), s(N + 1, 1);
+    vector<bool> seen(N + 1, false);
+    for (int i = 1; i < N; ++i)
+    {
+        int u, v;
+        cin >> u >> v;
+        G[u].push_back(v);
+        G[v].push_back(u);
+    }
+    function<int(int)> find;
+    function<void(int, int)> init, merge;
+    function<bool(int, int)> magic;
+    find = [&](int i)
+    {
+        if (r[i] == i)
+            return i;
+        return r[i] = find(r[i]);
+    };
+    merge = [&](int i, int j)
+    {
+        i = find(i);
+        j = find(j);
+        if (i == j)
+            return;
+        if (s[i] < s[j])
+            swap(i, j);
+        r[j] = i;
+        s[i] += s[j];
+    };
+    init = [&](int i, int i0)
+    {
+        p[i] = i0;
+        r[i] = i;
+        if (i != 1 && G[i].size() == 1u)
+        {
+            ls.push_back(i);
+            C[i] = i;
+        }
+        for (int j : G[i])
+            if (j != i0)
+                init(j, i);
+    };
+    magic = [&](int i, int j)
+    {
+        int c = C[j];
+        C[j] = -1;
+        bool leaf = true;
+        for (int k : G[j])
+            if (k != p[j] && !seen[k])
+            {
+                leaf = false;
+                seen[k] = true;
+                magic(i, k);
+            }
+        if (!leaf)
+            return false;
+        if (C[i] == -1)
+            C[i] = c;
+        else
+            merge(C[i], c);
+        return true;
+    };
+    init(1, 0);
+    int t = 0;
+    bool king = true;
+    while (king)
+    {
+        ++t;
+        vi ls2, leaves;
+        for (int i : ls)
+            if (!seen[i])
+            {
+                if (magic(i, i))
+                    leaves.push_back(i);
+                else
+                    ls2.push_back(i);
+            }
+        for (int i : leaves)
+            if (!seen[i])
+            {
+                seen[i] = true;
+                int j = p[i];
+                if (C[j] == -1)
+                {
+                    ls2.push_back(j);
+                    C[j] = C[i];
+                    if (j == 1)
+                        king = false;
+                }
+                else
+                    merge(C[j], C[i]);
+            }
+        ls = move(ls2);
+    }
+    int c = find(C[1]);
+    vi a;
+    for (int i = 1; i <= N; ++i)
+        if (find(i) == c)
+            a.push_back(i);
+    cout << a.size() << ' ' << t << '\n';
+    for (int i : a)
+        cout << i << ' ';
+    cout << '\n';
 }
 
 int main()

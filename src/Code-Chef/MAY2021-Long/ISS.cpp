@@ -1,170 +1,73 @@
 // Problem Statement: https://www.codechef.com/MAY21B/problems/ISS
 
-/**
- *  Author: Ravi Kanth Gojur
- *  Code Forces: ravireddy07
- *  Code Chef: ravireddy115
- *  Github: ravireddy07
-**/
-
 #include <bits/stdc++.h>
-#define ll long long int
-#define ravireddy07 return
-#define ii(a) scanf("%d", &a)
-#define ii2(a, b) scanf("%d%d", &a, &b)
-#define ii3(a, b, c) scanf("%d%d%d", &a, &b, &c)
-#define ill(a) scanf("%lld", &a)
-#define ill2(a, b) scanf("%lld%lld", &a, &b)
-#define ill3(a, b, c) scanf("%lld%lld%lld", &a, &b, &c)
-#define for1(i, a, b) for (int i = a; i < b; ++i)
-#define for2(i, a, b) for (int i = b; i >= a; --i)
-#define vi vector<int>
-#define vii vector<vector<int>>
-#define vl vector<ll>
-#define vll vector<vector<ll>>
-#define pii pair<int, int>
-#define pll pair<ll, ll>
-#define fi first
-#define se second
-#define mp make_pair
-#define unmp unordered_map
-#define pq priority_queue
-#define pb push_back
-#define sorta(a) sort(a.begin(), a.end())
-#define sortd(a) sort(a.begin(), a.end(), greater<>())
-#define sortr(a) sort(a.rbegin(), a.rend())
-#define yes printf("YES\n")
-#define no printf("NO\n")
-#define setValue(a, value) memset(a, value, sizeof(a))
 using namespace std;
-ll MOD = 1e9 + 7;
+#define _USE_MATH_DEFINES
 
-template <typename T, typename T1>
-T amax(T &a, T1 b)
-{
-    if (b > a)
-        a = b;
-    return a;
+//#define FILENAME sadcactus
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+template <typename T>
+using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+typedef long long ll;
+typedef long double ld;
+typedef complex<ld> pt;
+
+constexpr char nl = '\n';
+constexpr ll INF = 0x3f3f3f3f;
+constexpr ll INFLL = 0x3f3f3f3f3f3f3f3f;
+constexpr ll MOD = 998244353;
+constexpr ld EPS = 1e-9L;
+random_device _rd; mt19937 rng(_rd());
+
+const int N = 4e6 + 2;
+namespace sieve {
+  vector<int> ps; bool isc[N]; ll phi[N], f[N], e[N];
+  void sieve() { phi[1] = f[1] = 1;
+    for (int i = 2; i < N; i++) { if (!isc[i]) {
+        ps.push_back(i);
+        phi[i] = i-1;
+        f[i] = 2*i-1;
+        e[i] = 1; }
+      for (int ip, j = 0; j < ps.size() && (ip=i*ps[j]) < N; j++) {
+        isc[ip] = 1;
+        if (i % ps[j] == 0) {
+          phi[ip] = phi[i] * ps[j];
+          int pf = round(powl(ps[j], e[i]));
+          f[ip] = (i == pf ? f[i] * ps[j] + phi[ip] : f[i/pf] * f[pf * ps[j]]);
+          e[ip] = e[i] + 1; break;
+        } else {
+          phi[ip] = phi[i] * phi[ps[j]];
+          f[ip] = f[i] * f[ps[j]];
+          e[ip] = 1; }
+      } } }
 }
 
-template <typename T, typename T1>
-T amin(T &a, T1 b)
-{
-    if (a > b)
-        a = b;
-    return a;
-}
-
-/*
-vector<int> getPermutation(size_t n)
-{
-	vector<int> res;
-	string s = to_string(n);
-	sort(s.begin(), s.end());
-	do
-	{
-		res.pb(stoi(s));
-		//cout << s << "\n";
-	} while (getPermutation(s.begin(), s.end()));
-	return res;
-}*/
-
-ll fpow(ll base, ll power)
-{
-    ll result = 1;
-    while (power > 0)
-    {
-        if (power & 1)
-            result = (result * base) % MOD;
-        base = (base * base) % MOD;
-        //power >> = 1;
-        power = power / 2;
-    }
-    ravireddy07 result;
-}
-
-void dfs(ll s, vector<vector<ll>> &adj, vector<bool> &vis, vector<ll> &arr)
-{
-    if (vis[s])
-        return;
-    vis[s] = true;
-    arr.pb(s);
-    for (auto x : adj[s])
-        if (vis[x] == false)
-            dfs(x, adj, vis, arr);
-    ravireddy07;
-}
-
-void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level, vector<ll> &parent)
-{
-    queue<ll> q;
-    vis[x] = true;
-    q.push(x);
-    while (!q.empty())
-    {
-        ll s = q.front();
-        q.pop();
-        // process node s
-        for (auto u : adlist[s])
-        {
-            if (vis[u])
-                continue;
-            vis[u] = true;
-            parent[u] = s;
-            level[u] = level[s] + 1;
-            q.push(u);
-        }
-    }
-    ravireddy07;
-}
-
-const int N = 4e6 + 7;
-int seq[N];
-int sum[N];
-
-void run()
-{
-    setValue(sum, 0);
-    for1(i, 0, N)
-        seq[i] = i;
-
-    for1(i, 2, N)
-    {
-        if (seq[i] == i)
-        {
-            seq[i] = i - 1;
-            for (ll j = 2 * i; j < N; j += i)
-                seq[j] = (seq[j] / i) * (i - 1);
-        }
-    }
-
-    for1(i, 1, N)
-    {
-        sum[i] = sum[i] + i - 1;
-        for (ll j = 2 * i; j < N; j += i)
-            sum[j] = sum[j] + i * ((1 + seq[j / i]) / 2);
-    }
-    ravireddy07;
-}
-
-void harry()
-{
-    ll k;
-    ill(k);
-    printf("%lld\n", sum[4 * k + 1]);
-    ravireddy07;
-}
-
-int main()
-{
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+// double-check correctness
+// read limits carefully
+// characterize valid solutions
+int main() {
+  cin.tie(0)->sync_with_stdio(0);
+  cout << fixed << setprecision(10);
+#if defined(ONLINE_JUDGE) && defined(FILENAME)
+  freopen(FILENAME ".in", "r", stdin);
+  freopen(FILENAME ".out", "w", stdout);
 #endif
-    run();
-    int t;
-    ii(t);
-    while (t--)
-        harry();
-    return 0;
+
+  sieve::sieve();
+
+  int T;
+  cin >> T;
+  while(T--) {
+    int k;
+    cin >> k;
+    int n = 4*k + 1;
+    ll f = sieve::f[n];
+    cout << n + (f - n) / 2 - 1 << nl;
+  }
+
+  return 0;
 }
