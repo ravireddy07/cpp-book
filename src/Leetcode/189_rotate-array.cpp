@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/rotate-array/
+// Problem Statement: https://leetcode.com/problems/rotate-array/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution

@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/house-robber/
+// Problem Statement: https://leetcode.com/problems/house-robber/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int rob(vector<int> &nums)
+    int rob(vector<int> nums)
     {
         if (nums.size() == 0)
             return 0;
@@ -25,7 +24,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {2, 1, 1, 2};
-    cout << a.rob(input) << endl;
+    cout << a.rob({2, 1, 1, 2}) << "\n";
     return 0;
 }
