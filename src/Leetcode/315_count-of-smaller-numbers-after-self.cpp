@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+// Problem Statement: https://leetcode.com/problems/count-of-smaller-numbers-after-self/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,7 +7,7 @@ class Solution
 {
 public:
     // TLE
-    vector<int> countSmaller(vector<int> &nums)
+    vector<int> countSmaller(vector<int> nums)
     {
         vector<int> res;
         for (int i = 0; i < nums.size(); i++)
@@ -20,7 +20,8 @@ public:
         }
         return res;
     }
-    vector<int> countSmaller(vector<int> &nums)
+
+    vector<int> countSmaller(vector<int> nums)
     {
         if (nums.empty())
             return {};
@@ -39,8 +40,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {5, 2, 6, 1};
-    vector<int> show = a.countSmaller(in);
+    vector<int> show = a.countSmaller({5, 2, 6, 1});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
