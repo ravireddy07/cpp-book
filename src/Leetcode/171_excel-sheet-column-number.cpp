@@ -18,6 +18,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.titleToNumber("AX") << endl;
+    cout << a.titleToNumber("AX") << "\n";
     return 0;
 }

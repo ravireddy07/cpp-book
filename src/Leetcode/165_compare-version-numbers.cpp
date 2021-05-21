@@ -1,8 +1,5 @@
-// https://leetcode.com/problems/compare-version-numbers/
+// Problem Statement: https://leetcode.com/problems/compare-version-numbers/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -54,6 +51,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.compareVersion("0.1", "1.1") << endl;
+    cout << a.compareVersion("0.1", "1.1") << "\n";
     return 0;
 }

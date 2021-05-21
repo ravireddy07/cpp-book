@@ -1,21 +1,19 @@
-// https://leetcode.com/problems/largest-number/
+// Problem Statement: https://leetcode.com/problems/largest-number/
 
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
-#include <algorithm>
 using namespace std;
 
 class Solution
 {
 public:
-    string largestNumber(vector<int> &nums)
+    string largestNumber(vector<int> nums)
     {
         vector<string> container;
         for (int i : nums)
             container.push_back(to_string(i));
 
-        auto comp = [](string a, string b) {
+        auto comp = [](string a, string b)
+        {
             string f = a + b;
             string s = b + a;
             return f > s;
@@ -23,7 +21,7 @@ public:
 
         sort(begin(container), end(container), comp);
         string res = "";
-        
+
         if (container.front() == "0")
             return "0";
         for (auto i : container)
@@ -35,7 +33,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {3, 30, 34, 5, 9};
-    cout << a.largestNumber(input) << endl;
+    cout << a.largestNumber({3, 30, 34, 5, 9}) << "\n";
     return 0;
 }

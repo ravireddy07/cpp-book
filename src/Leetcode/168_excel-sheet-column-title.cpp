@@ -1,3 +1,5 @@
+// Problem Statement: https://leetcode.com/problems/excel-sheet-column-number/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -12,17 +14,16 @@ public:
         reverse(result.begin(), result.end());
         return result;
     }
-    /*
+
     string convertToTitle(int n)
     {
         return (n == 0) ? "" : convertToTitle((n - 1) / 26) + char(--n % 26 + 65);
     }
-    */
 };
 
 int main()
 {
     Solution a;
-    cout << a.convertToTitle(800) << endl;
+    cout << a.convertToTitle(800) << "\n";
     return 0;
 }

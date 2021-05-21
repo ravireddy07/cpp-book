@@ -1,14 +1,12 @@
-// https://leetcode.com/problems/majority-element/
+// Problem Statement: https://leetcode.com/problems/majority-element/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int majorityElement(vector<int> &nums)
+    int majorityElement(vector<int> nums)
     {
         if (nums.size() == 0)
             return -1;
@@ -68,7 +66,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {2, 2, 1, 1, 2, 2};
-    cout << a.majorityElement(input) << endl;
+    cout << a.majorityElement({2, 2, 1, 1, 2, 2}) << "\n";
     return 0;
 }
