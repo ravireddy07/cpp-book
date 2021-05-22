@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/word-break/
+// Problem Statement: https://leetcode.com/problems/word-break/
 
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    bool wordBreak(string s, vector<string> &wordDict)
+    bool wordBreak(string s, vector<string> wordDict)
     {
         if (wordDict.size() == 0)
             return false;
@@ -45,7 +44,6 @@ public:
 int main()
 {
     Solution a;
-    vector<string> in = {"apple", "lepp"};
-    cout << a.wordBreak("applepenapple", in) << endl;
+    cout << a.wordBreak("applepenapple", {"apple", "lepp"}) <<"\n";
     return 0;
 }

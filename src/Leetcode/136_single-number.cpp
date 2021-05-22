@@ -6,12 +6,11 @@ using namespace std;
 class Solution
 {
 public:
-    /*
-    int singleNumber(vector<int> &nums)
+    int singleNumber(vector<int> nums)
     {
         return std::accumulate(nums.begin(), nums.end(), 0, [](const int &a, const int &b) { return a ^ b; });
     }
-    */
+    
     int singleNumber(vector<int> &nums)
     {
         int result = nums[0];
@@ -24,7 +23,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {4, 1, 2, 1, 2};
-    cout << a.singleNumber(input) << "\n";
+    cout << a.singleNumber({4, 1, 2, 1, 2}) << "\n";
     return 0;
 }
