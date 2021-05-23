@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/gas-station/
+// Problem Statement: https://leetcode.com/problems/gas-station/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int canCompleteCircuit(vector<int> &gas, vector<int> &cost)
+    int canCompleteCircuit(vector<int> gas, vector<int> cost)
     {
         int n = gas.size();
         int prevSum = 0;
@@ -32,7 +31,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input1 = {1, 2, 3, 4, 5}, input2 = {3, 4, 5, 1, 2};
-    cout << a.canCompleteCircuit(input1, input2);
+    cout << a.canCompleteCircuit({1, 2, 3, 4, 5}, {3, 4, 5, 1, 2}) << "\n";
     return 0;
 }

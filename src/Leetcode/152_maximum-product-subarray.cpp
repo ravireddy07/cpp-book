@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/maximum-product-subarray/
+// Problem Statement: https://leetcode.com/problems/maximum-product-subarray/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int maxProduct(vector<int> &nums)
+    int maxProduct(vector<int> nums)
     {
         int maxNum = nums[0], minNum = nums[0], res = nums[0];
         for (int i = 1; i < nums.size(); i++)
@@ -24,7 +23,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {-3, -1, -1};
-    cout << a.maxProduct(input) << endl;
+    cout << a.maxProduct({-3, -1, -1}) << "\n";
     return 0;
 }
