@@ -1,4 +1,4 @@
-// Problem Statement: Problem Link:  https://leetcode.com/problems/happy-number/
+// Problem Statement: https://leetcode.com/problems/happy-number/
 
 #include <bits/stdc++.h>
 using namespace std;

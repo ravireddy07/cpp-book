@@ -6,16 +6,15 @@ using namespace std;
 class Solution
 {
 public:
-    /*void rotate(vector<int> &nums, int k)
+    void rotate(vector<int> nums, int k)
     {
         k %= nums.size();
         reverse(nums.begin(), nums.end() - k);
-        reverse(nums.begin() + l - k, nums.end());
+        reverse(nums.begin() + 1 - k, nums.end());
         reverse(nums.begin(), nums.end());
-    }*/
+    }
 
-    /*
-    void rotate(vector<int> &nums, int k)
+    void rotate(vector<int> nums, int k)
     {
         while (k--)
         {
@@ -23,9 +22,8 @@ public:
             nums.pop_back();
         }
     }
-    */
 
-    void rotate(vector<int> &nums, int k)
+    void rotate(vector<int> nums, int k)
     {
         int sz, n;
         sz = n = nums.size();
