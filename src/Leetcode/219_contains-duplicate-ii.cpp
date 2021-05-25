@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/contains-duplicate-ii/
+// Problem Statement: https://leetcode.com/problems/contains-duplicate-ii/
 
-// https://leetcode.com/problems/contains-duplicate-ii/discuss/840076/C%2B%2B-Simple-Logic-Solution-or-Without-Extra-Space-or-Beats-Runtime%3A-99.44-Space%3A-99.92
+// Problem Discussion: https://leetcode.com/problems/contains-duplicate-ii/discuss/840076/C%2B%2B-Simple-Logic-Solution-or-Without-Extra-Space-or-Beats-Runtime%3A-99.44-Space%3A-99.92
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -8,7 +8,7 @@ using namespace std;
 class Solution
 {
 public:
-    bool containsNearbyDuplicate(vector<int> &nums, int k)
+    bool containsNearbyDuplicate(vector<int> nums, int k)
     {
         if (nums.size() == 0 || nums.size() == 1 || k == 35000)
             return false;
@@ -23,7 +23,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 3, 1, 2, 3, 1, 2, 3};
-    cout << a.containsNearbyDuplicate(input, 2) << "\n";
+    cout << a.containsNearbyDuplicate({1, 2, 3, 1, 2, 3, 1, 2, 3}, 2) << "\n";
     return 0;
 }

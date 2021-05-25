@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    bool containsDuplicate(vector<int> &nums)
+    bool containsDuplicate(vector<int> nums)
     {
         // return nums.size() > set<int>(nums.begin(), nums.end()).size();
         set s(nums.begin(), nums.end());
@@ -19,7 +19,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 3, 1};
-    cout << a.containsDuplicate(input) << "\n";
+    cout << a.containsDuplicate({1, 2, 3, 1}) << "\n";
     return 0;
 }

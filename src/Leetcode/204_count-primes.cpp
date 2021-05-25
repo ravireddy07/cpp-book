@@ -26,6 +26,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.countPrimes(10) << endl;
+    cout << a.countPrimes(10) << "\n";
     return 0;
 }

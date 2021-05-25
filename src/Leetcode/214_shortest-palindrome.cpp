@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shortest-palindrome/
+// Problem Statement: https://leetcode.com/problems/shortest-palindrome/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -47,6 +47,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.shortestPalindrome("aacecaaa") << endl;
+    cout << a.shortestPalindrome("aacecaaa") << "\n";
     return 0;
 }

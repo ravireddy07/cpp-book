@@ -1,15 +1,12 @@
-// https://leetcode.com/problems/minimum-size-subarray-sum/
+// Problem Statement: https://leetcode.com/problems/minimum-size-subarray-sum/
 
-#include <iostream>
 #include <bits/stdc++.h>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
 class Solution
 {
 public:
-    int minSubArrayLen(int s, vector<int> &nums)
+    int minSubArrayLen(int s, vector<int> nums)
     {
         if (nums.size() == 0)
             return 0;
@@ -45,7 +42,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 3, 4, 5};
-    cout << a.minSubArrayLen(11, input) << endl;
+    cout << a.minSubArrayLen(11, {1, 2, 3, 4, 5}) << "\n";
     return 0;
 }
