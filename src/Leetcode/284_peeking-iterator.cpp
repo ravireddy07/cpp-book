@@ -16,13 +16,14 @@
  *  };
  */
 
-class PeekingIterator : public Iterator {
+class PeekingIterator : public Iterator
+{
 public:
-    PeekingIterator(const vector<int>& nums) : Iterator(nums) {
+    PeekingIterator(const vector<int> &nums) : Iterator(nums)
+    {
         // Initialize any member here.
         // **DO NOT** save a copy of nums and manipulate it directly.
         // You should only use the Iterator interface methods.
-
     }
 
     // Returns the next element in the iteration without advancing the iterator.

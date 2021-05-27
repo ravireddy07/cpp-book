@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/bulls-and-cows/
+// Problem Statement: https://leetcode.com/problems/bulls-and-cows/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -39,6 +38,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.getHint("1807", "7810") << endl;
+    cout << a.getHint("1807", "7810") << "\n";
     return 0;
 }

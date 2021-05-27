@@ -7,11 +7,10 @@ using namespace std;
 class Solution
 {
 public:
-    int findDuplicate(vector<int> &nums)
+    int findDuplicate(vector<int> nums)
     {
         int slow = nums[0];
         int fast = nums[0];
-
         do
         {
             slow = nums[slow];
@@ -27,13 +26,8 @@ public:
         }
         return slow;
     }
-};
 
-// Solution #2
-class Solution
-{
-public:
-    int findDuplicate(vector<int> &nums)
+    int findDuplicate(vector<int> nums)
     {
         int visited;
         for (int i = 0; i < nums.size(); i++)
@@ -51,7 +45,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {1, 3, 4, 2, 2};
-    cout << a.findDuplicate(in) << "\n";
+    cout << a.findDuplicate({1, 3, 4, 2, 2}) << "\n";
     return 0;
 }

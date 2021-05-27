@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    int hIndex(vector<int> &citations)
+    int hIndex(vector<int> citations)
     {
         //sort the array and scan the array
         int size = citations.size();
@@ -23,7 +23,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {3, 0, 6, 1, 5};
-    cout << a.hIndex(input) << "\n";
+    cout << a.hIndex({3, 0, 6, 1, 5}) << "\n";
     return 0;
 }

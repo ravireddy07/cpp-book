@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/first-bad-version/
+// Problem Statement: https://leetcode.com/problems/first-bad-version/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -31,6 +31,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.firstBadVersion(3) << endl;
+    cout << a.firstBadVersion(3) << "\n";
     return 0;
 }

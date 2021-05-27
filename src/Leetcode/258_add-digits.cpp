@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/add-digits/
+// Problem Statement: https://leetcode.com/problems/add-digits/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -32,6 +32,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.addDigits(18) << endl;
+    cout << a.addDigits(18) << "\n";
     return 0;
 }

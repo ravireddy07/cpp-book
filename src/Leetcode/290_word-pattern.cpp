@@ -1,4 +1,4 @@
-//Problem Statemnet: https://leetcode.com/problems/word-pattern/
+// Problem Statemnet: https://leetcode.com/problems/word-pattern/
 
 #include <bits/stdc++.h>
 using namespace std;

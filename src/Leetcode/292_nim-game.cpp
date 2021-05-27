@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/nim-game/
+// Problem Statement: https://leetcode.com/problems/nim-game/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -15,6 +15,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.canWinNim(4) << endl;
+    cout << a.canWinNim(4) << "\n";
     return 0;
 }
