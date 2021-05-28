@@ -3,13 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-// Runtime: 33% Space: 35%
 vector<int> sumIndices(100000);
 class NumArray
 {
 public:
-    NumArray(vector<int> &nums)
+    NumArray(vector<int> nums)
     {
         if (nums.size() == 0)
             return;
@@ -25,15 +23,9 @@ public:
         else
             return sumIndices[j] - sumIndices[i - 1];
     }
-};
-*/
-
-// Runtime: 11% Space: 83%
-class NumArray
-{
-public:
+    /***** Below another solution *****/
     vector<int> ar;
-    NumArray(vector<int> &nums)
+    NumArray(vector<int> nums)
     {
         if (nums.size() == 0)
             return;
@@ -51,8 +43,7 @@ public:
 
 int main()
 {
-    vector<int> input = {3, 0, 1, 4, 2};
-    NumArray *obj = new NumArray(input);
+    NumArray *obj = new NumArray({3, 0, 1, 4, 2});
     cout << obj->sumRange(2, 5) << "\n";
     return 0;
 }

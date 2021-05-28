@@ -7,7 +7,7 @@ class NumMatrix
 {
 public:
     vector<vector<int>> sums;
-    NumMatrix(vector<vector<int>> &matrix)
+    NumMatrix(vector<vector<int>> matrix)
     {
         sums = matrix;
         if (matrix.size() == 0)
@@ -32,14 +32,10 @@ public:
             ans += sums[row1 - 1][col1 - 1];
         return ans;
     }
-};
 
-/*
-class NumMatrix
-{
-public:
+    /***** Another Solution *****/
     vector<vector<int>> temp;
-    NumMatrix(vector<vector<int>> &matrix)
+    NumMatrix(vector<vector<int>> matrix)
     {
         temp = matrix;
     }
@@ -53,17 +49,14 @@ public:
         return sum;
     }
 };
-*/
 
 int main()
 {
-    vector<vector<int>> input = {
-        {3, 0, 1, 4, 2},
-        {5, 6, 3, 2, 1},
-        {1, 2, 0, 1, 5},
-        {4, 1, 0, 1, 7},
-        {1, 0, 3, 0, 5}};
-    NumMatrix *obj = new NumMatrix(input);
+    NumMatrix *obj = new NumMatrix({{3, 0, 1, 4, 2},
+                                    {5, 6, 3, 2, 1},
+                                    {1, 2, 0, 1, 5},
+                                    {4, 1, 0, 1, 7},
+                                    {1, 0, 3, 0, 5}});
     cout << obj->sumRegion(2, 1, 4, 3) << "\n";
     return 0;
 }
