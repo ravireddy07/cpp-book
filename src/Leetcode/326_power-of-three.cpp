@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/power-of-three/
+// Problem Statement: https://leetcode.com/problems/power-of-three/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -24,6 +24,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isPowerOfThree(27) << endl;
+    cout << a.isPowerOfThree(27) << "\n";
     return 0;
 }

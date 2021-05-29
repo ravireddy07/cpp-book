@@ -9,7 +9,7 @@ class NumArray
 {
 public:
     vector<int> ar;
-    NumArray(vector<int> &nums)
+    NumArray(vector<int> nums)
     {
         if (nums.size() == 0)
             return;
@@ -32,8 +32,7 @@ public:
 
 int main()
 {
-    vector<int> input = {3, 0, 1, 4, 2};
-    NumArray *obj = new NumArray(input);
+    NumArray *obj = new NumArray({3, 0, 1, 4, 2});
     cout << obj->sumRange(2, 5) << "\n";
     obj->update(1, 2);
     cout << obj->sumRange(2, 5) << "\n";

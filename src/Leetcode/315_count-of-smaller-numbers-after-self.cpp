@@ -6,21 +6,6 @@ using namespace std;
 class Solution
 {
 public:
-    // TLE
-    vector<int> countSmaller(vector<int> nums)
-    {
-        vector<int> res;
-        for (int i = 0; i < nums.size(); i++)
-        {
-            int count = 0;
-            for (int j = i + 1; j < nums.size(); j++)
-                if (nums[i] > nums[j])
-                    count++;
-            res.push_back(count);
-        }
-        return res;
-    }
-
     vector<int> countSmaller(vector<int> nums)
     {
         if (nums.empty())

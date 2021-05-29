@@ -50,7 +50,8 @@ T amin(T &a, T1 b)
 }
 
 // Brute force
-void harry() {
+void harry()
+{
 	int px, py;
 	ii2(px, py);
 	string s;
@@ -61,38 +62,42 @@ void harry() {
 	// LDLDLDDDR
 	if (px == 0)
 		ans = 1;
-	else if (px < 0) {
-		for (int i = 0; i < s.size(); i++) {
-			if (x == px) {
+	else if (px < 0)
+	{
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (x == px)
+			{
 				ans = 1;
 				break;
 			}
-			else if (s[i] == 'L') {
+			else if (s[i] == 'L')
 				x -= 1;
-			}
 		}
-		if (x == px) {
+		if (x == px)
 			ans = 1;
-		}
+
 		else
 		{
 			no;
 			ravireddy07;
 		}
 	}
-	else if (px > 0) {
-		for (int i = 0; i < s.size(); i++) {
-			if (x == px) {
+	else if (px > 0)
+	{
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (x == px)
+			{
 				ans = 1;
 				break;
 			}
-			else if (s[i] == 'R') {
+			else if (s[i] == 'R')
 				x += 1;
-			}
 		}
-		if (x == px) {
+		if (x == px)
 			ans = 1;
-		}
+
 		else
 		{
 			no;
@@ -105,16 +110,20 @@ void harry() {
 		yes;
 		ravireddy07;
 	}
-	else if (py < 0) {
-		for (int i = 0; i < s.size(); i++) {
-			if (y == py) {
+	else if (py < 0)
+	{
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (y == py)
+			{
 				yes;
 				ravireddy07;
 			}
 			else if (s[i] == 'D')
 				y -= 1;
 		}
-		if (y == py) {
+		if (y == py)
+		{
 			yes;
 			ravireddy07;
 		}
@@ -124,16 +133,20 @@ void harry() {
 			ravireddy07;
 		}
 	}
-	else if (py > 0) {
-		for (int i = 0; i < s.size(); i++) {
-			if (y == py) {
+	else if (py > 0)
+	{
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (y == py)
+			{
 				yes;
 				ravireddy07;
 			}
 			else if (s[i] == 'U')
 				y += 1;
 		}
-		if (y == py) {
+		if (y == py)
+		{
 			yes;
 			ravireddy07;
 		}
@@ -146,16 +159,23 @@ void harry() {
 	ravireddy07;
 }
 
-void harry() {
+void harry()
+{
 	int l = r = u = d = 0;
 	int px, py;
-	cin >> px >> py;
-	string s; cin >> s;
-	for (auto c : s) {
-		if (c == 'L') l++;
-		if (c == 'R') r++;
-		if (c == 'U') u++;
-		if (c == 'D') d++;
+	ii2(px, py);
+	string s;
+	cin >> s;
+	for (auto c : s)
+	{
+		if (c == 'L')
+			l++;
+		if (c == 'R')
+			r++;
+		if (c == 'U')
+			u++;
+		if (c == 'D')
+			d++;
 	}
 
 	if ((px > 0) && (px > r))

@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/remove-duplicate-letters/
-
+// Problem Statement: https://leetcode.com/problems/remove-duplicate-letters/
 // Not solved
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -78,6 +78,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.removeDuplicateLetters("cbacdcbc") << endl;
+    cout << a.removeDuplicateLetters("cbacdcbc") << "\n";
     return 0;
 }
