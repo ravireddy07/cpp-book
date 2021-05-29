@@ -1,14 +1,12 @@
-// https://leetcode.com/problems/evaluate-division/
+// Problem Statement: https://leetcode.com/problems/evaluate-division/
 
-#include <iostream>
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<double> calcEquation(vector<vector<string>> &equations, vector<double> &values, vector<vector<string>> &queries)
+    vector<double> calcEquation(vector<vector<string>> equations, vector<double> values, vector<vector<string>> queries)
     {
         unordered_map<string, vector<pair<string, double>>> g;
         for (int i = 0; i < equations.size(); ++i)
@@ -53,9 +51,8 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<string>> equations = {{"a", "b"}, {"b", "c"}}, queries = {{"a", "c"}, {"b", "a"}, {"a", "e"}, {"a", "a"}, {"x", "x"}};
     vector<double> values = {{2.0}, {3.0}};
-    vector<double> show = a.calcEquation(equations, values, queries);
+    vector<double> show = a.calcEquation({{"a", "b"}, {"b", "c"}}, values, {{"a", "c"}, {"b", "a"}, {"a", "e"}, {"a", "a"}, {"x", "x"}});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {

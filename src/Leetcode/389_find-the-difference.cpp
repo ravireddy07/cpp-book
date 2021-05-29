@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/find-the-difference/
+// Problem Statement: https://leetcode.com/problems/find-the-difference/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -18,6 +18,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.findTheDifference("abcd", "abcde") << endl;
+    cout << a.findTheDifference("abcd", "abcde") << "\n";
     return 0;
 }

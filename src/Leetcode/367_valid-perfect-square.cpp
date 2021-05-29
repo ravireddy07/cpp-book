@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/valid-perfect-square/
+// Problem Statement: https://leetcode.com/problems/valid-perfect-square/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -28,6 +28,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isPerfectSquare(16) << endl;
+    cout << a.isPerfectSquare(16) << "\n";
     return 0;
 }
