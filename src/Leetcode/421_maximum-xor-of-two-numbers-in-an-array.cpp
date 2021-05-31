@@ -70,7 +70,7 @@ private:
 class Solution
 {
 public:
-    int findMaximumXOR(vector<int> &nums)
+    int findMaximumXOR(vector<int> nums)
     {
         int ans = 0;
         Trie root;
@@ -86,7 +86,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {3, 10, 5, 25, 2, 8};
-    cout << a.findMaximumXOR(input) << "\n";
+    cout << a.findMaximumXOR({3, 10, 5, 25, 2, 8}) << "\n";
     return 0;
 }

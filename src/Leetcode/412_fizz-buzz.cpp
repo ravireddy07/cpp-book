@@ -1,6 +1,6 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
+// Problem Statement: https://leetcode.com/problems/fizz-buzz/
+
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -27,19 +27,17 @@ public:
 int main()
 {
     Solution a;
-    vector<string> show;
-    show = a.fizzBuzz(15);
+    vector<string> show = a.fizzBuzz(15);
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
         if (i == show.size() - 1)
-        {
+
             cout << show[i];
-        }
+
         else
-        {
+
             cout << show[i] << ", ";
-        }
     }
     cout << "]";
     return 0;

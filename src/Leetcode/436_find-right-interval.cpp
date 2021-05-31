@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<int> findRightInterval(vector<vector<int>> &intervals)
+    vector<int> findRightInterval(vector<vector<int>> intervals)
     {
         vector<int> ans(intervals.size());
         map<int, int> m;
@@ -20,9 +20,8 @@ public:
 
 int main()
 {
-    vector<vector<int>> input = {{3, 4}, {2, 3}, {1, 2}};
     Solution a;
-    vector<int> show = a.findRightInterval(input);
+    vector<int> show = a.findRightInterval({{3, 4}, {2, 3}, {1, 2}});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {

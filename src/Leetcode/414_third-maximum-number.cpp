@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    int thirdMax(vector<int> &nums)
+    int thirdMax(vector<int> nums)
     {
         sort(nums.begin(), nums.end());
         for (int i = 1; i < nums.size(); i++)
@@ -26,7 +26,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {3, 4, 2, 2, 2, 2, 3, 1};
-    cout << a.thirdMax(input) << "\n";
+    cout << a.thirdMax({3, 4, 2, 2, 2, 2, 3, 1}) << "\n";
     return 0;
 }

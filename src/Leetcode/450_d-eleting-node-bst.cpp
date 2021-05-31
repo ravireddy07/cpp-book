@@ -1,18 +1,7 @@
-// https://leetcode.com/problems/delete-node-in-a-bst/
+// Problem Statement: https://leetcode.com/problems/delete-node-in-a-bst/
 
-/*
-
-Sample Input:
-
-root = [5,3,6,2,4,null,7]
-key = 3
-
-Sample Output: 
-
-[5,4,6,2,null,null,7]
-or
-[5,2,6,null,4,null,7]
-*/
+#include <bits/stdc++.h>
+using namespace std;
 
 class Solution
 {
