@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/longest-palindrome/
+// Problem Statement: https://leetcode.com/problems/longest-palindrome/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 int longestPalindrome(string s)
@@ -19,6 +18,6 @@ int longestPalindrome(string s)
 
 int main()
 {
-    cout << longestPalindrome("abccccdd") << endl; //Result: 7 (dccaccd)
+    cout << longestPalindrome("abccccdd") << "\n"; // Result: 7 (dccaccd)
     return 0;
 }

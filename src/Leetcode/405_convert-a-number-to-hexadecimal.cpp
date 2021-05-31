@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+// Problem Statement: https://leetcode.com/problems/convert-a-number-to-hexadecimal/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -34,6 +34,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.toHex(26) << endl;
+    cout << a.toHex(26) << "\n";
     return 0;
 }

@@ -6,11 +6,12 @@ using namespace std;
 class Solution
 {
 public:
-    int trapRainWater(vector<vector<int>> &matrix)
+    int trapRainWater(vector<vector<int>> matrix)
     {
         int dir[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         int m = matrix.size(), n = matrix[0].size();
-        auto cmp = [&](const vector<int> &l, const vector<int> &r) {
+        auto cmp = [&](const vector<int> &l, const vector<int> &r)
+        {
             return matrix[l[0]][l[1]] > matrix[r[0]][r[1]];
         };
         priority_queue<vector<int>, vector<vector<int>>, decltype(cmp)> q(cmp);
@@ -55,10 +56,9 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {
-        {1, 4, 3, 1, 3, 2},
-        {3, 2, 1, 3, 2, 4},
-        {2, 3, 3, 2, 3, 1}};
-    cout << a.trapRainWater(input) << "\n";
+    cout << a.trapRainWater({{1, 4, 3, 1, 3, 2},
+                             {3, 2, 1, 3, 2, 4},
+                             {2, 3, 3, 2, 3, 1}})
+         << "\n";
     return 0;
 }
