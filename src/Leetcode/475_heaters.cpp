@@ -1,14 +1,12 @@
-// https://leetcode.com/problems/heaters/
+// Problem Statement: https://leetcode.com/problems/heaters/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int findRadius(vector<int> &houses, vector<int> &heaters)
+    int findRadius(vector<int> houses, vector<int> heaters)
     {
         sort(houses.begin(), houses.end());
         sort(heaters.begin(), heaters.end());
@@ -33,8 +31,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input1 = {1, 2, 3, 4};
-    vector<int> input2 = {1, 4};
-    cout << a.findRadius(input1, input2) << endl;
+    cout << a.findRadius({1, 2, 3, 4}, {1, 4}) << "\n";
     return 0;
 }
