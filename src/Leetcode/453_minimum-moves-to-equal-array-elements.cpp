@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/minimum-moves-to-equal-array-elements/
+// Problem Statement: https://leetcode.com/problems/minimum-moves-to-equal-array-elements/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int minMoves(vector<int> &nums)
+    int minMoves(vector<int> nums)
     {
         if (nums.size() == 1)
             return 0;
@@ -22,7 +21,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 3};
-    cout << a.minMoves(input) << endl;
+    cout << a.minMoves({1, 2, 3}) << "\n";
     return 0;
 }
