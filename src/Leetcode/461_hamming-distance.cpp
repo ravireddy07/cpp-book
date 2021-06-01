@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/hamming-distance/
+// Problem Statement: https://leetcode.com/problems/hamming-distance/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -24,6 +24,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.hammingDistance(1, 4) << endl;
+    cout << a.hammingDistance(1, 4) << "\n";
     return 0;
 }

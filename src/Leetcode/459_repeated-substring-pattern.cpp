@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/repeated-substring-pattern/
+// Problem Statement: https://leetcode.com/problems/repeated-substring-pattern/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 /*
@@ -50,5 +50,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.repeatedSubstringPattern("abcabcabcabc") << endl;
+    cout << a.repeatedSubstringPattern("abcabcabcabc") << "\n";
+    return 0;
 }

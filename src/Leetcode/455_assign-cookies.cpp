@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/assign-cookies/
+// Problem Statement: https://leetcode.com/problems/assign-cookies/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int findContentChildren(vector<int> &g, vector<int> &s)
+    int findContentChildren(vector<int> g, vector<int> s)
     {
         int result = 0;
         sort(g.begin(), g.end());
@@ -25,12 +24,9 @@ public:
     }
 };
 
-
 int main()
 {
     Solution a;
-    vector<int> input1 = {1, 2, 3};
-    vector<int> input2 = {1, 1};
-    cout << a.findContentChildren(input1, input2) << endl;
+    cout << a.findContentChildren({1, 2, 3}, {1, 1}) << "\n";
     return 0;
 }

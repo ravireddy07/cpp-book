@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/island-perimeter/
+// Problem Statement: https://leetcode.com/problems/island-perimeter/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -20,7 +19,7 @@ class Solution
     int perim;
 
 public:
-    int islandPerimeter(vector<vector<int>> &grid)
+    int islandPerimeter(vector<vector<int>> grid)
     {
         perim = 0;
         for (int i = 0; i < grid.size(); i++)
@@ -57,7 +56,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}};
-    cout << a.islandPerimeter(input) << endl;
+    cout << a.islandPerimeter({{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}}) << "\n";
     return 0;
 }
