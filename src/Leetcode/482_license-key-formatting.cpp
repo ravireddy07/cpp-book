@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/license-key-formatting/
+// Problem Statement: https://leetcode.com/problems/license-key-formatting/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -62,6 +61,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.licenseKeyFormatting("5F3Z-2e-9-w", 4) << endl;
+    cout << a.licenseKeyFormatting("5F3Z-2e-9-w", 4) << "\n";
     return 0;
 }
