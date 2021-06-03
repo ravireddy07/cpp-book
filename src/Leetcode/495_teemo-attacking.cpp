@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/teemo-attacking/
+// Problem Statement: https://leetcode.com/problems/teemo-attacking/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int findPoisonedDuration(vector<int> &timeSeries, int duration)
+    int findPoisonedDuration(vector<int> timeSeries, int duration)
     {
         if (timeSeries.size() == 0)
             return 0;
@@ -26,7 +25,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 4};
-    cout << a.findPoisonedDuration(input, 2) << endl;
+    cout << a.findPoisonedDuration({1, 4}, 2) << "\n";
     return 0;
 }

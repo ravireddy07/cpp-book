@@ -1,12 +1,12 @@
-// https://leetcode.com/problems/keyboard-row/
+// Problem Statement: https://leetcode.com/problems/keyboard-row/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<string> findWords(vector<string> &words)
+    vector<string> findWords(vector<string> words)
     {
         string row1 = "qwertyuiop";
         string row2 = "asdfghjkl";
@@ -36,11 +36,10 @@ public:
 int main()
 {
     Solution a;
-    vector<string> input = {"Hello",
-                            "Alaska",
-                            "Dad",
-                            "Peace"};
-    vector<string> show = a.findWords(input);
+    vector<string> show = a.findWords({"Hello",
+                                       "Alaska",
+                                       "Dad",
+                                       "Peace"});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {

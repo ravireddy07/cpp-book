@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/next-greater-element-i/
+// Problem Statement: https://leetcode.com/problems/next-greater-element-i/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<int> nextGreaterElement(vector<int> &nums1, vector<int> &nums2)
+    vector<int> nextGreaterElement(vector<int> nums1, vector<int> nums2)
     {
         unordered_map<int, int> mp;
         stack<int> s;
@@ -43,8 +42,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input1 = {4, 1, 2}, input2 = {1, 3, 4, 2};
-    vector<int> shoow = a.findLHS(input1, input2);
+    vector<int> shoow = a.findLHS({4, 1, 2}, {1, 3, 4, 2});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
