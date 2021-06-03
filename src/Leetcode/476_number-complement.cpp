@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/number-complement/
+// Problem Statement: https://leetcode.com/problems/number-complement/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -26,6 +24,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.findComplement(5) << endl;
+    cout << a.findComplement(5) << "\n";
     return 0;
 }

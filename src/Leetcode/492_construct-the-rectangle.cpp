@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/construct-the-rectangle/
+// Problem Statement: https://leetcode.com/problems/construct-the-rectangle/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -27,7 +27,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> show = a.constructRectangle(4) << endl;
+    vector<int> show = a.constructRectangle(4);
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
