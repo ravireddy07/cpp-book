@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/relative-ranks/
+// Problem Statement: https://leetcode.com/problems/relative-ranks/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<string> findRelativeRanks(vector<int> &nums)
+    vector<string> findRelativeRanks(vector<int> nums)
     {
         vector<string> ans;
         map<string, int> mp;
@@ -38,8 +37,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {5, 4, 3, 2, 1};
-    vector<string> show = a.findRelativeRanks(input);
+    vector<string> show = a.findRelativeRanks({5, 4, 3, 2, 1});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {

@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/base-7/
+// Problem Statement: https://leetcode.com/problems/base-7/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -26,6 +26,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.convertToBase7(100) << endl;
+    cout << a.convertToBase7(100) << "\n";
     return 0;
 }
