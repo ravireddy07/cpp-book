@@ -1,4 +1,4 @@
-// Problem Statement: https://www.codechef.com/MAY21B/problems/MODEQ/
+// Problem Statement: https://www.codechef.com/JUNE21B/problems/COCONUT/
 
 /**
  *  Author: Ravi Kanth Gojur
@@ -120,19 +120,6 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 void harry()
 {
-    ll n, m;
-    ill2(n, m);
-    vl v(n + 1, 1);
-    ll res = 0;
-    for (ll i = 2; i <= n; ++i)
-    {
-        ll temp = m % i;
-        res += v[temp];
-        for (ll j = temp; j <= n; j += i)
-            v[j]++;
-    }
-    printf("%lld\n", res);
-    ravireddy07;
 }
 
 int main()

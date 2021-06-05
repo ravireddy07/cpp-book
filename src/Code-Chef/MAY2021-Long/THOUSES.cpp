@@ -1,4 +1,4 @@
-// Problem Statement: https://www.odechef.om/MAY21B/problems/THOUSES
+// Problem Statement: https://www.codechef.com/MAY21B/problems/THOUSES/
 
 /**
  *  Author: Ravi Kanth Gojur
