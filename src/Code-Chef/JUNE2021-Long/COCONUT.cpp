@@ -120,6 +120,11 @@ void bfs(ll x, vector<bool> &vis, vector<vector<ll>> &adlist, vector<ll> &level,
 
 void harry()
 {
+    int Ca, Cb, Xa,Xb;
+    ii2(Ca,Cb);
+    ii2(Xa,Xb);
+    printf("%d\n", (Xa/Ca)+(Xb/Cb));
+    ravireddy07;
 }
 
 int main()
