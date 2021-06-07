@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/longest-uncommon-subsequence-i/
+// problem Statement: https://leetcode.com/problems/longest-uncommon-subsequence-i/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -21,6 +21,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.findLUSlength("aba", "cdc") << endl;
+    cout << a.findLUSlength("aba", "cdc") << "\n";
     return 0;
 }

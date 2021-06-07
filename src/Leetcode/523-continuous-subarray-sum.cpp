@@ -1,21 +1,12 @@
-// https://leetcode.com/problems/continuous-subarray-sum/
+//  Problem Statement: https://leetcode.com/problems/continuous-subarray-sum/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    Solution()
-    {
-        ios::sync_with_stdio(false);
-        cin.tie(NULL);
-        cout.tie(NULL);
-    }
-    bool checkSubarraySum(vector<int> &nums, int k)
+    bool checkSubarraySum(vector<int> nums, int k)
     {
         k = abs(k);
         int n = nums.size();
@@ -48,8 +39,7 @@ public:
 
 int main()
 {
-    vector<int> input = {23, 2, 4, 6, 7};
     Solution a;
-    cout << a.checkSubarraySum(input, 6) << endl;
+    cout << a.checkSubarraySum({23, 2, 4, 6, 7}, 6) << "\n";
     return 0;
 }
