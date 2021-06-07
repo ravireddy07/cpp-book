@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/perfect-number/
+// Problem Statement: https://leetcode.com/problems/perfect-number/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++h>
 using namespace std;
 
 class Solution
@@ -36,6 +35,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.checkPerfectNumber(28) << endl;
+    cout << a.checkPerfectNumber(28) << "\n";
     return 0;
 }

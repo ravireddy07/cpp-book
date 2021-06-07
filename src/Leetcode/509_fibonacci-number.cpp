@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/fibonacci-number/
+// Problem Statement: https://leetcode.com/problems/fibonacci-number/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -22,6 +22,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.fib(2) << endl;
+    cout << a.fib(2) << "\n";
     return 0;
 }
