@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/largest-component-size-by-common-factor/
+// Problem Statement: https://leetcode.com/problems/largest-component-size-by-common-factor/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -26,7 +24,7 @@ public:
             return false;
         return true;
     }
-    int largestComponentSize(vector<int> &arr)
+    int largestComponentSize(vector<int> arr)
     {
         unordered_map<int, int> memo;
         memset(parent, -1, sizeof(parent));
@@ -51,7 +49,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = [ 2, 3, 6, 7, 4, 12, 21, 39 ];
-    cout << a.largestComponentSize(input) << endl;
+    cout << a.largestComponentSize({2, 3, 6, 7, 4, 12, 21, 39}) << "\n";
     return 0;
 }

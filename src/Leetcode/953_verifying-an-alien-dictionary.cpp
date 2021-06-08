@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/verifying-an-alien-dictionary/
+// Problem Statement: https://leetcode.com/problems/verifying-an-alien-dictionary/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    bool isAlienSorted(vector<string> &words, string order)
+    bool isAlienSorted(vector<string> words, string order)
     {
         for (int i = 0; i < words.size() - 1; i++)
         {
@@ -30,7 +29,6 @@ public:
 int main()
 {
     Solution a;
-    vector<string> input = {"hello", "leetcode"};
-    cout << a.isAlienSorted(input, "hlabcdefgijkmnopqrstuvwxyz") << endl;
+    cout << a.isAlienSorted({"hello", "leetcode"}, "hlabcdefgijkmnopqrstuvwxyz") << "\n";
     return 0;
 }
