@@ -1,29 +1,26 @@
-// https://leetcode.com/problems/minesweeper/
+// problem Statement: https://leetcode.com/problems/minesweeper/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    bool isBomb(vector<vector<char>> &board, int i, int j)
+    bool isBomb(vector<vector<char>> board, int i, int j)
     {
         if (i >= 0 && j >= 0 && i < board.size() && j < board[0].size() && board[i][j] == 'M')
             return true;
         else
             return false;
     }
-    bool isSafe(vector<vector<char>> &board, int i, int j)
+    bool isSafe(vector<vector<char>> board, int i, int j)
     {
         if (i >= 0 && j >= 0 && i < board.size() && j < board[0].size() && board[i][j] == 'E')
             return true;
         else
             return false;
     }
-    void reveal(vector<vector<char>> &board, int i, int j)
+    void reveal(vector<vector<char>> board, int i, int j)
     {
         board[i][j] = 'B';
         int cnt = 0;
@@ -67,7 +64,7 @@ public:
             reveal(board, i - 1, j - 1);
     }
 
-    vector<vector<char>> updateBoard(vector<vector<char>> &board, vector<int> &click)
+    vector<vector<char>> updateBoard(vector<vector<char>> board, vector<int> click)
     {
         if (board[click[0]][click[1]] == 'M')
         {
@@ -81,13 +78,12 @@ public:
 
 int main()
 {
-    vector<vector<char>> input = {{'E', 'E', 'E', 'E', 'E'},
-                                  {'E', 'E', 'M', 'E', 'E'},
-                                  {'E', 'E', 'E', 'E', 'E'},
-                                  {'E', 'E', 'E', 'E', 'E'}};
-    vector<int> click = {3, 0};
     Solution a;
-    vector<vector<char>> show = a.updateBoard(input, click);
+    vector<vector<char>> show = a.updateBoard({{'E', 'E', 'E', 'E', 'E'},
+                                               {'E', 'E', 'M', 'E', 'E'},
+                                               {'E', 'E', 'E', 'E', 'E'},
+                                               {'E', 'E', 'E', 'E', 'E'}},
+                                              {3, 0});
     cout << "[";
     for (int i = 0; i < show[i].size(); i++)
     {
@@ -95,13 +91,9 @@ int main()
         for (int j = 0; j < show[j].size(); j++)
         {
             if (j == show[j].size() - 1)
-            {
                 cout << show[i][j];
-            }
             else
-            {
                 cout << show[i][j] << ", ";
-            }
         }
         cout << "]," << endl;
     }
