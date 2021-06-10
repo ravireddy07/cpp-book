@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/reverse-string-ii/
+// Problem Statement: https://leetcode.com/problems/reverse-string-ii/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -30,6 +30,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.reverseStr("abcdefg", 2) << endl;
+    cout << a.reverseStr("abcdefg", 2) << "\n";
     return 0;
 }

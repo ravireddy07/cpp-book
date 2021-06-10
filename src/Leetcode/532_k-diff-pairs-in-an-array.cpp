@@ -1,12 +1,12 @@
-// https://leetcode.com/problems/k-diff-pairs-in-an-array/
+// Problem Statement: https://leetcode.com/problems/k-diff-pairs-in-an-array/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int findPairs(vector<int> &nums, int k)
+    int findPairs(vector<int> nums, int k)
     {
         if (k < 0)
             return 0;
@@ -33,7 +33,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {3, 1, 4, 1, 5};
-    cout << a.findPairs(input, 2) << endl;
+    cout << a.findPairs({3, 1, 4, 1, 5}, 2) << "\n";
     return 0;
 }
