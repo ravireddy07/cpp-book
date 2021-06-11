@@ -1,8 +1,5 @@
 // https://leetcode.com/problems/minimum-operations-to-make-array-equal/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 
 using namespace std;
