@@ -1,7 +1,7 @@
-// https://leetcode.com/problems/student-attendance-record-i/
+// Problem Statement: https://leetcode.com/problems/student-attendance-record-i/
 
-#include <iostream>
-using namepsace std;
+#include <bits/stdc++.h>
+using namespace std;
 
 class Solution
 {
@@ -36,6 +36,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.checkRecord("PPALLP") << endl;
+    cout << a.checkRecord("PPALLP") << "\n";
     return 0;
 }

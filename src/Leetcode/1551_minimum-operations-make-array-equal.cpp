@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/minimum-operations-to-make-array-equal/
+// Problem Statement: https://leetcode.com/problems/minimum-operations-to-make-array-equal/
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
 class Solution
@@ -11,9 +10,9 @@ public:
     {
         int ans = 0;
         for (int i = 1; i <= n; i = i + 2)
-        {
+
             ans = ans + (n - i);
-        }
+
         return ans;
     }
 };
@@ -21,6 +20,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.minOperations(3) << endl;
+    cout << a.minOperations(3) << "\n";
     return 0;
 }

@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/reshape-the-matrix/
+// Problem Statement: https://leetcode.com/problems/reshape-the-matrix/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<vector<int>> matrixReshape(vector<vector<int>> &nums, int r, int c)
+    vector<vector<int>> matrixReshape(vector<vector<int>> nums, int r, int c)
     {
         vector<vector<int>> v(r, vector<int>(c, 0));
         if (nums.size() == 0 || r * c != nums.size() * nums[0].size())
@@ -32,7 +31,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{1, 2}, {3, 4}};
-    vector<vector<int>> show = a.distributeCandies(input, 1, 4);
+    vector<vector<int>> show = a.distributeCandies({{1, 2}, {3, 4}}, 1, 4);
     return 0;
 }

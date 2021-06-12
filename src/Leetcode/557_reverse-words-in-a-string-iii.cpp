@@ -1,8 +1,7 @@
-// https://leetcode.com/problems/reverse-words-in-a-string-iii/
+// {roblem Statement: }https://leetcode.com/problems/reverse-words-in-a-string-iii/
 
-#include <iostream>
-#include <vector>
-using namepsace std;
+#include <bits/stdc++.h>
+using namespace std;
 
 class Solution
 {
@@ -27,6 +26,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.reverseWords("s'teL ekat edoCteeL tsetnoc") << endl;
+    cout << a.reverseWords("s'teL ekat edoCteeL tsetnoc") << "\n";
     return 0;
 }

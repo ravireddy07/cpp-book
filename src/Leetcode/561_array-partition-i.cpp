@@ -1,15 +1,14 @@
-// https://leetcode.com/problems/array-partition-i/
+// Problem Statemnet: https://leetcode.com/problems/array-partition-i/
 
-// https://leetcode.com/problems/array-partition-i/discuss/850851/C%2B%2B-Best-Solution-or-Explanation-with-another-Example
+// Problem Discussion: https://leetcode.com/problems/array-partition-i/discuss/850851/C%2B%2B-Best-Solution-or-Explanation-with-another-Example
 
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
 class Solution
 {
 public:
-    int arrayPairSum(vector<int> &nums)
+    int arrayPairSum(vector<int> nums)
     {
         sort(nums.begin(), nums.end());
         int sum = 0, count = 0;
@@ -21,13 +20,13 @@ public:
             }
         return sum;
     }
-};*/
+};
 
 // Optimized Solution
 class Solution
 {
 public:
-    int arrayPairSum(vector<int> &nums)
+    int arrayPairSum(vector<int> nums)
     {
         sort(nums.begin(), nums.end());
         int sum = 0;
@@ -40,7 +39,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 4, 3, 2};
-    cout << a.arrayPairSum(input) << endl;
+    cout << a.arrayPairSum({1, 4, 3, 2}) << "\n";
     return 0;
 }

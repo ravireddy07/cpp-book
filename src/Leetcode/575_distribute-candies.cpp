@@ -1,13 +1,12 @@
-//  https://leetcode.com/problems/distribute-candies/
+// Problem Statement: https://leetcode.com/problems/distribute-candies/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int distributeCandies(vector<int> &candies)
+    int distributeCandies(vector<int> candies)
     {
         int n = candies.size();
         set<int> s;
@@ -15,9 +14,7 @@ public:
         {
             s.insert(candies[i]);
             if (s.size() == (n / 2))
-            {
                 return (n / 2);
-            }
         }
         return s.size();
     }
@@ -25,8 +22,7 @@ public:
 
 int main()
 {
-    vector<int> input = {1, 1, 2, 2, 3, 3};
     Solution a;
-    cout << a.distributeCandies(input) << endl;
+    cout << a.distributeCandies({1, 1, 2, 2, 3, 3}) << "\n";
     return 0;
 }
