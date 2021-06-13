@@ -1,4 +1,5 @@
-// https://leetcode.com/problems/minimum-index-sum-of-two-lists
+// Problem Statement: https://leetcode.com/problems/minimum-index-sum-of-two-lists
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -27,9 +28,7 @@ public:
 int main()
 {
     Solution a;
-    vector<string> input1 = {"Shogun", "Tapioca Express", "Burger King", "KFC"},
-                   input2 = {"KFC", "Shogun", "Burger King"};
-    vector<string> show = a.findRestaurant(input1, input2);
+    vector<string> show = a.findRestaurant({"Shogun", "Tapioca Express", "Burger King", "KFC"}, {"KFC", "Shogun", "Burger King"});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
@@ -38,6 +37,7 @@ int main()
         else
             cout << show[i] << ", ";
     }
-    cout << "]" << endl;
+    cout << "]"
+         << "\n";
     return 0;
 }

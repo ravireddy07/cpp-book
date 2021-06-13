@@ -1,15 +1,12 @@
-// https://leetcode.com/problems/range-addition-ii/
+// Problem Statement:  https://leetcode.com/problems/range-addition-ii/
 
-#include <iostream>
-#include <algorithm>
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 class Solution
 {
 public:
-    int maxCount(int m, int n, vector<vector<int>> &ops)
+    int maxCount(int m, int n, vector<vector<int>> ops)
     {
         int r = INT_MAX, c = INT_MAX;
         int len = ops.size();
@@ -27,7 +24,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{2, 2}, {2, 2}};
-    cout << a.maxCount(3, 3, input);
+    cout << a.maxCount(3, 3, {{2, 2}, {2, 2}}) << "\n";
     return 0;
 }

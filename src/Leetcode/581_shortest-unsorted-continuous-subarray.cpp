@@ -1,15 +1,12 @@
-// https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+// Problem Statement: https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
 
-#include <iostream>
-#include <algorithm>
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 class Solution
 {
 public:
-    int findUnsortedSubarray(vector<int> &nums)
+    int findUnsortedSubarray(vector<int> nums)
     {
         int len = nums.size();
         int minNum = INT_MAX;
@@ -53,7 +50,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {2, 6, 4, 8, 10, 9, 15};
-    cout << a.findUnsortedSubarray(input);
+    cout << a.findUnsortedSubarray({2, 6, 4, 8, 10, 9, 15}) << "\n";
     return 0;
 }

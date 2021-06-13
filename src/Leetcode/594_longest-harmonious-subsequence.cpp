@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-harmonious-subsequence/
+// Problem Statement: https://leetcode.com/problems/longest-harmonious-subsequence/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,8 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    // easy
-    int findLHS(vector<int> &nums)
+    int findLHS(vector<int> nums)
     {
         unordered_map<int, int> um;
         for (int &x : nums)
@@ -26,25 +25,31 @@ public:
     }
 
     // Brute Force
-    int findLHS(vector<int>& nums) {
+    int findLHS(vector<int> nums)
+    {
         sort(nums.begin(), nums.end());
 
         vector<int> cnt;
         int res = 0, cntr = 1;
 
-        for (int i = 1; i < nums.size(); ++i) {
-            if (nums[i] == nums[i - 1]) {
+        for (int i = 1; i < nums.size(); ++i)
+        {
+            if (nums[i] == nums[i - 1])
+            {
                 cntr++;
             }
-            else {
+            else
+            {
                 cnt.push_back(cntr);
                 cntr = 1;
             }
         }
         cnt.push_back(cntr);
 
-        for (int i = 1; i < nums.size(); ++i) {
-            if (nums[i] == nums[i - 1]) {
+        for (int i = 1; i < nums.size(); ++i)
+        {
+            if (nums[i] == nums[i - 1])
+            {
                 nums.erase(nums.begin() + i);
                 i--;
             }
@@ -61,7 +66,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 3, 2, 2, 5, 2, 3, 7};
-    cout << a.findLHS(input) << endl;
+    cout << a.findLHS({1, 3, 2, 2, 5, 2, 3, 7}) << "\n";
     return 0;
 }

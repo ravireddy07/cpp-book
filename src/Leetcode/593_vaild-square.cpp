@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-square/
+// Problem Statement: https://leetcode.com/problems/valid-square/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,12 +7,12 @@ class Solution
 {
 public:
     // helper function to calculate distance between two points
-    double dist(vector<int> &p1, vector<int> &p2)
+    double dist(vector<int> p1, vector<int> p2)
     {
         return sqrt((p2[0] - p1[0]) * (p2[0] - p1[0]) + (p2[1] - p1[1]) * (p2[1] - p1[1]));
     }
 
-    bool validSquare(vector<int> &p1, vector<int> &p2, vector<int> &p3, vector<int> &p4)
+    bool validSquare(vector<int> p1, vector<int> p2, vector<int> p3, vector<int> p4)
     {
         // keep points in an array to be able to get them by index
         vector<vector<int>> points = {p1, p2, p3, p4};
@@ -39,7 +39,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> p1 = {0, 0}, p2 = {1, 1}, p3 = {0, 1}, p4 = {1, 0};
-    cout << a.validSquare(p1, p2, p3, p4) << endl;
+    cout << a.validSquare({0, 0}, {1, 1}, {0, 1}, {1, 0}) << "\n";
     return 0;
 }
