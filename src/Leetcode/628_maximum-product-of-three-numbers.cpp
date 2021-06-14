@@ -1,14 +1,12 @@
-// https://leetcode.com/problems/maximum-product-of-three-numbers/
+// Problem Statement: https://leetcode.com/problems/maximum-product-of-three-numbers/
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int maximumProduct(vector<int> &nums)
+    int maximumProduct(vector<int> nums)
     {
         sort(nums.begin(), nums.end());
         return (max(nums[0] * nums[1] * nums[nums.size() - 1], nums[nums.size() - 1] * nums[nums.size() - 2] * nums[nums.size() - 3]));
@@ -18,7 +16,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, -4, -3, -1, -2, 60};
-    cout << a.maximumProduct(input) << endl;
+    cout << a.maximumProduct({1, -4, -3, -1, -2, 60}) << "\n";
     return 0;
 }

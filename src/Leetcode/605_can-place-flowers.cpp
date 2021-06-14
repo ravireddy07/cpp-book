@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/can-place-flowers/
+// Problem Statement: https://leetcode.com/problems/can-place-flowers/
 
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    bool canPlaceFlowers(vector<int> &flowerbed, int n)
+    bool canPlaceFlowers(vector<int> flowerbed, int n)
     {
         flowerbed.insert(flowerbed.begin(), 0);
         flowerbed.push_back(0);
@@ -26,7 +25,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 0, 0, 0, 1};
-    cout << a.canPlaceFlowers(input, 2) << endl;
+    cout << a.canPlaceFlowers({1, 0, 0, 0, 1}, 2) << "\n";
     return 0;
 }

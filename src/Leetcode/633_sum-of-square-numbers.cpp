@@ -1,6 +1,5 @@
-// https://leetcode.com/problems/sum-of-square-numbers/
+// Problem Statement: https://leetcode.com/problems/sum-of-square-numbers/
 
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,6 +24,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.judgeSquareSum(5) << endl;
+    cout << a.judgeSquareSum(5) << "\n";
     return 0;
 }

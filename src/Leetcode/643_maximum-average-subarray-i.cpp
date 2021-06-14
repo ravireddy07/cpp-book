@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/maximum-average-subarray-i/
+// Problem Statemnet: https://leetcode.com/problems/maximum-average-subarray-i/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    double findMaxAverage(vector<int> &nums, int k)
+    double findMaxAverage(vector<int> nums, int k)
     {
         double sum = 0.0, j = 0, max_average = INT_MIN;
         for (int i = 0; i < nums.size(); i++)
@@ -28,7 +27,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 12, -5, -6, 50, 3};
-    cout << a.findMaxAverage(input, 4) << endl;
+    cout << a.findMaxAverage({1, 12, -5, -6, 50, 3}, 4) << "\n";
     return 0;
 }

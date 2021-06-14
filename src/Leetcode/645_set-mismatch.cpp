@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/set-mismatch/
+// Problem Statement: https://leetcode.com/problems/set-mismatch/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<int> findErrorNums(vector<int> &nums)
+    vector<int> findErrorNums(vector<int> nums)
     {
         for (int i = 0; i < nums.size(); i++)
             while (nums[i] != nums[nums[i] - 1])
@@ -23,8 +22,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 2, 4};
-    vector<int> show = a.findErrorNums(input);
+    vector<int> show = a.findErrorNums({1, 2, 2, 4});
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
