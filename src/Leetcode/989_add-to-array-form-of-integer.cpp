@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/plus-one/
+// Problem Statement: https://leetcode.com/problems/plus-one/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<int> addToArrayForm(vector<int> &A, int k)
+    vector<int> addToArrayForm(vector<int> A, int k)
     {
         vector<int> ans;
         int n = A.size(), i = n - 1, j = k, carry = 0;
@@ -30,19 +29,14 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 0, 0};
-    vector<int> show = a.addToArrayForm(input, 34) << endl;
+    vector<int> show = a.addToArrayForm({1, 2, 0, 0}, 34);
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
         if (i == show.size() - 1)
-        {
             cout << show[i];
-        }
         else
-        {
             cout << show[i] << ", ";
-        }
     }
     cout << "]";
     return 0;
