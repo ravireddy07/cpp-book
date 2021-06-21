@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/employee-importance/
+// Problem Statement: https://leetcode.com/problems/employee-importance/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Employee
@@ -40,7 +39,6 @@ public:
 int main()
 {
     Solution a;
-    vector<Employee *> input = {{1, 5, {2, 3}}, {2, 3, {}}, {3, 3, {}}};
-    cout << a.getImportance(input, 1) << endl;
+    cout << a.getImportance({{1, 5, {2, 3}}, {2, 3, {}}, {3, 3, {}}}, 1) << "\n";
     return 0;
 }

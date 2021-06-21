@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+// Problem Statement: https://leetcode.com/problems/longest-continuous-increasing-subsequence/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    int findLengthOfLCIS(vector<int> &nums)
+    int findLengthOfLCIS(vector<int> nums)
     {
         if (nums.size() == 0)
             return 0;
@@ -31,7 +31,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 3, 5, 4, 7};
-    cout << a.findLengthOfLCIS(input) << endl;
+    cout << a.findLengthOfLCIS({1, 3, 5, 4, 7}) << "\n";
     return 0;
 }

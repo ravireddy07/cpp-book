@@ -1,9 +1,10 @@
-// https://leetcode.com/problems/trim-a-binary-search-tree/
+// Problem Statement: https://leetcode.com/problems/trim-a-binary-search-tree/
 
 #include <bits/stdc++.h>
 using namespace std;
 
-struct TreeNode {
+struct TreeNode
+{
 	int val;
 	TreeNode *left;
 	TreeNode *right;
@@ -12,9 +13,11 @@ struct TreeNode {
 	TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-class Solution {
+class Solution
+{
 public:
-	TreeNode* trimBST(TreeNode* root, int low, int high) {
+	TreeNode *trimBST(TreeNode *root, int low, int high)
+	{
 		if (!root)
 			return root;
 		if (root->val < low)
