@@ -1,7 +1,5 @@
-// https://leetcode.com/problems/count-largest-group/
+// Problem Statement: https://leetcode.com/problems/count-largest-group/
 
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -35,6 +33,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.countLargestGroup(15) << endl;
+    cout << a.countLargestGroup(15) << "\n";
     return 0;
 }
