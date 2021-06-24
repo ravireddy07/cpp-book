@@ -1,15 +1,12 @@
-// https://leetcode.com/problems/lucky-numbers-in-a-matrix/
+// Problem Statement: https://leetcode.com/problems/lucky-numbers-in-a-matrix/
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    vector<int> luckyNumbers(vector<vector<int>> &matrix)
+    vector<int> luckyNumbers(vector<vector<int>> matrix)
     {
         vector<int> vRet;
         int j;
@@ -31,7 +28,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{3, 7, 8}, {9, 11, 13}, {15, 16, 17}};
-    cout << a.luckyNumbers(input) << endl;
+    cout << a.luckyNumbers({{3, 7, 8}, {9, 11, 13}, {15, 16, 17}}) << "\n";
     return 0;
 }

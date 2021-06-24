@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-lucky-integer-in-an-array/
+// Problem Statement: https://leetcode.com/problems/find-lucky-integer-in-an-array/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    int findLucky(vector<int> &arr)
+    int findLucky(vector<int> arr)
     {
         int freq;
         int res = -1;
@@ -26,7 +26,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {2, 2, 2, 3, 3};
-    cout << a.findLucky(in) << endl;
+    cout << a.findLucky({2, 2, 2, 3, 3}) << "\n";
     return 0;
 }
