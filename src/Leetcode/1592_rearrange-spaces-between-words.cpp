@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rearrange-spaces-between-words/
+// Problem Statement: https://leetcode.com/problems/rearrange-spaces-between-words/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -33,16 +33,14 @@ public:
         return s.substr(0, s.size() - gap) + string(suff, ' ');
     }
 };
-/* 
-// need to be tested
 
+// need to be tested
 class Solution
 {
 public:
     string reorderSpaces(string text)
     {
-        string word = "";
-        string res = "";
+        string word = "", res = "";
         for (int i = 0; i < text.length(); i++)
         {
             if (text[i] != ' ')
@@ -50,19 +48,18 @@ public:
             else
             {
                 if (word != "")
-                {
                     res += word + " ";
-                }
+
                 word = "";
             }
         }
         return res;
     }
-}; */
+};
 
 int main()
 {
     Solution a;
-    cout << a.reorderSpaces("  this   is  a sentence ") << endl;
+    cout << a.reorderSpaces("  this   is  a sentence ") << "\n";
     return 0;
 }

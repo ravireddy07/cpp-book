@@ -1,50 +1,12 @@
-// https://leetcode.com/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period
+// Problem Statement: https://leetcode.com/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period
+
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-// Brute Force (35/77)
 class Solution
 {
 public:
-    vector<string> alertNames(vector<string> &keyName, vector<string> &keyTime)
-    {
-        vector<string> res;
-        vector<int> time(keyTime.size());
-        int count, s, e;
-        for (int i = 0; i < keyName.size(); i++)
-            time[i] = stoi(keyTime[i].substr(0, 2) + keyTime[i].substr(3, 2));
-
-        for (int i = 0; i < keyName.size() - 1; i++)
-        {
-            if (i && count >= 3 && keyName[i] == keyName[i - 1])
-                continue;
-            count = 1;
-            s = time[i];
-            for (int j = i + 1; j < keyName.size(); j++)
-            {
-                if (keyName[i] == keyName[j])
-                {
-                    if (abs(time[j] - s) <= 100)
-                    {
-                        count++;
-                        e = time[j];
-                        if (count >= 3)
-                            res.push_back(keyName[i]);
-                    }
-                }
-            }
-        }
-        sort(res.begin(), res.end());
-        return res;
-    }
-};
-*/
-
-class Solution
-{
-public:
-    vector<string> alertNames(vector<string> &name, vector<string> &time)
+    vector<string> alertNames(vector<string> name, vector<string> time)
     {
         if (name.size() < 3)
             return {};
@@ -88,10 +50,7 @@ public:
 int main()
 {
     Solution a;
-    vector<string> in1 = {"daniel", "daniel", "daniel", "luis", "luis", "luis", "luis"},
-                   in2 = {"10:00", "10:40", "11:00", "09:00", "11:00", "13:00", "15:00"};
-
-    vector<string> show = a.alertNames(in1, in2);
+    vector<string> show = a.alertNames({"daniel", "daniel", "daniel", "luis", "luis", "luis", "luis"}, {"10:00", "10:40", "11:00", "09:00", "11:00", "13:00", "15:00"});
 
     cout << "[";
     for (int i = 0; i < show.size(); i++)

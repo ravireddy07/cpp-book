@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-parking-system
+// Problem Statement: https://leetcode.com/problems/design-parking-system
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -39,6 +39,6 @@ public:
 int main()
 {
     ParkingSystem *obj = new ParkingSystem(1, 1, 0);
-    cout << obj->addCar(2) << endl;
+    cout << obj->addCar(2) << "\n";
     return 0;
 }
