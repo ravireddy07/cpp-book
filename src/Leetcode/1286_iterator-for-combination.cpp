@@ -1,9 +1,6 @@
-// https://leetcode.com/problems/iterator-for-combination/
+// Problem Statement: https://leetcode.com/problems/iterator-for-combination/
 
-#include <iostream>
-#include <vector>
-#include <set>
-#include <iterator>
+#include <bits/stdc++.h>
 using namespace std;
 
 set<string> GenaretallComb(string s, int len)
