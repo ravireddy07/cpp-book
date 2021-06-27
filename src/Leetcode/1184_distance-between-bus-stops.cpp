@@ -1,12 +1,12 @@
-// https://leetcode.com/problems/distance-between-bus-stops/
+// Problem Statement: https://leetcode.com/problems/distance-between-bus-stops/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int distanceBetweenBusStops(vector<int> &distance, int start, int destination)
+    int distanceBetweenBusStops(vector<int> distance, int start, int destination)
     {
         int sum1 = 0, sum2 = 0;
         int i = start;
@@ -38,7 +38,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 3, 4};
-    cout << a.distanceBetweenBusStops(input, 0, 3) << endl;
+    cout << a.distanceBetweenBusStops({1, 2, 3, 4}, 0, 3) << "\n";
     return 0;
 }

@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/design-skiplist/
+// Problem Statement: https://leetcode.com/problems/design-skiplist/
 
-#include <iostream>
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 class Skiplist
@@ -20,7 +18,6 @@ private:
 
 public:
     Skiplist() : head(&dummy) {}
-
     // Find node traversal from top to bottom layer
     bool search(int target)
     {
@@ -28,7 +25,6 @@ public:
         { // for-each layer
             for (; node->next && target > node->next->val; node = node->next)
                 ; // find the pre-node for the current num
-
             if (node->next && node->next->val == target)
                 return true;
         }
@@ -44,12 +40,10 @@ public:
     {
         // 1. traversal from top to bottom and save all the preNodes
         vector<ListNode *> preNodes;
-
         for (auto *node = head; node; node = node->down)
         { // for-each layer
             for (; node->next && num > node->next->val; node = node->next)
                 ; // find the pre-node for the current num
-
             preNodes.push_back(node);
         }
 
@@ -67,9 +61,7 @@ public:
 
         // 3. lastly, if rnd == 1, create a new layer on top of current layers
         if (rnd)
-        {
             head = new ListNode(0, new ListNode(num, NULL, down), head);
-        }
     }
 
     // 1. Find the node from top layer to bottom
@@ -77,7 +69,6 @@ public:
     bool erase(int num)
     {
         bool found = false;
-
         for (auto *node = head; node; node = node->down)
         { // for each layer
             for (; node->next && num > node->next->val; node = node->next)
@@ -89,7 +80,6 @@ public:
                 node->next = node->next->next;
             }
         }
-
         return found;
     }
 };
@@ -104,6 +94,6 @@ int main()
     obj->add(0);
     obj->add(4);
     bool param_3 = obj->erase(0);
-    cout << param_1 << " " << param_3 << endl;
+    cout << param_1 << " " << param_3 << "\n";
     return 0;
 }

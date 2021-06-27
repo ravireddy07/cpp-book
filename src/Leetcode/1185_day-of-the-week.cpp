@@ -1,8 +1,6 @@
-// https://leetcode.com/problems/day-of-the-week/
+// Problem Statement: https://leetcode.com/problems/day-of-the-week/
 
-#include <iostream>
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 class Solution
@@ -35,6 +33,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.dayOfTheWeek(29, 2, 2016) << endl;
+    cout << a.dayOfTheWeek(29, 2, 2016) << "\n";
     return 0;
 }
