@@ -1,6 +1,6 @@
-// https://leetcode.com/problems/count-binary-substrings/
+// Problem Statement: https://leetcode.com/problems/count-binary-substrings/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -49,6 +49,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.countBinarySubstrings("10101") << endl;
+    cout << a.countBinarySubstrings("10101") << "\n";
     return 0;
 }

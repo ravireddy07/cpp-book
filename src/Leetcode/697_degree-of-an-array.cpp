@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/degree-of-an-array/
+// Problem Statement: https://leetcode.com/problems/degree-of-an-array/
 
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int findShortestSubArray(vector<int> &nums)
+    int findShortestSubArray(vector<int> nums)
     {
         unordered_map<int, int> count, first;
         int res = 0, degree = 0;
@@ -30,7 +29,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {1};
-    cout << a.findShortestSubArray(in) << endl;
+    cout << a.findShortestSubArray({1}) << "\n";
     return 0;
 }
