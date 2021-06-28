@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/open-the-lock/
+// Problem Statement: https://leetcode.com/problems/open-the-lock/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -54,6 +54,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.openLock({"0201", "0101", "0102", "1212", "2002"}, "0202") << endl;
+    cout << a.openLock({"0201", "0101", "0102", "1212", "2002"}, "0202") << "\n";
     return 0;
 }
