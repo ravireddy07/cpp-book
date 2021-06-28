@@ -1,3 +1,5 @@
+// Problem Statement: https://leetcode.com/problems/design-hashset/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -83,10 +85,10 @@ public:
     }
 };
 
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * MyHashSet* obj = new MyHashSet();
- * obj->add(key);
- * obj->remove(key);
- * bool param_3 = obj->contains(key);
- */
+int main()
+{
+    MyHashSet *obj = new MyHashSet();
+    obj->add(key);
+    obj->remove(key);
+    bool param_3 = obj->contains(key);
+}

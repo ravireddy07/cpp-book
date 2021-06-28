@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subarray-product-less-than-k/
+// Problem Statement: https://leetcode.com/problems/subarray-product-less-than-k/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    int numSubarrayProductLessThanK(vector<int> &nums, int k)
+    int numSubarrayProductLessThanK(vector<int> nums, int k)
     {
         if (k == 0)
             return 0;
@@ -34,7 +34,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {10, 5, 2, 6};
-    cout << a.numSubarrayProductLessThanK(in, 100) << endl;
+    cout << a.numSubarrayProductLessThanK({10, 5, 2, 6}, 100) << "\n";
     return 0;
 }
