@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/self-dividing-numbers/
+// Problem Statement: https://leetcode.com/problems/self-dividing-numbers/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -10,7 +9,7 @@ public:
     vector<int> selfDividingNumbers(int left, int right)
     {
         vector<int> candidate;
-        for (int n = left; n <= right; n++)
+        for (int n = left; n <= right; ++n)
         {
             int temp = n;
             while (temp > 0)

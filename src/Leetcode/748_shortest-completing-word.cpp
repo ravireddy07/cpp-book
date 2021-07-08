@@ -1,11 +1,12 @@
-// https://leetcode.com/problems/shortest-completing-word/
+// Problem Statement: https://leetcode.com/problems/shortest-completing-word/
+
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    string shortestCompletingWord(string licensePlate, vector<string> &words)
+    string shortestCompletingWord(string licensePlate, vector<string> words)
     {
         int mp[26] = {0};
         int index = -1;
@@ -19,13 +20,11 @@ public:
             int tmap[26] = {0};
             for (auto c : words[item])
                 ++tmap[c - 'a'];
-
             int i;
             for (i = 0; i < 26; ++i)
             {
                 if (!mp[i])
                     continue;
-
                 if (mp[i] > tmap[i])
                     break;
             }
@@ -40,7 +39,6 @@ public:
 int main()
 {
     Solution a;
-    vector<string> input = {"step", "steps", "stripe", "stepple"};
-    cout << a.shortestCompletingWord("1s3 PSt", input) << endl;
+    cout << a.shortestCompletingWord("1s3 PSt", {"step", "steps", "stripe", "stepple"}) << "\n";
     return 0;
 }
