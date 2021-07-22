@@ -6,18 +6,18 @@ using namespace std;
 class Solution
 {
 public:
-    int waysToMakeFair(vector<int> &nums)
+    int waysToMakeFair(vector<int> nums)
     {
         int odd_sum, even_sum, skip;
         bool shift = 1; // when any index is removed/skiped, value's indexes will also change,
                         // that's why we use a shift to switch to odd-even an even-odd
         int res = 0;
-        for (int i = 0; i < nums.size(); i++)
+        for (int i = 0; i < nums.size(); ++i)
         {
             skip = i;
             odd_sum = 0;
             even_sum = 0;
-            for (int j = 0; j < nums.size(); j++)
+            for (int j = 0; j < nums.size(); ++j)
             {
                 if (shift && skip != j)
                 {
@@ -40,7 +40,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {1, 1, 1};
-    cout << a.waysToMakeFair(in) << endl;
+    cout << a.waysToMakeFair({1, 1, 1}) << "\n";
     return 0;
 }

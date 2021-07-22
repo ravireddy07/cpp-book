@@ -35,11 +35,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.countStudents({1, 1, 1, 0, 0, 1}, {1, 0, 0, 0, 1, 1}) << endl;
+    cout << a.countStudents({1, 1, 1, 0, 0, 1}, {1, 0, 0, 0, 1, 1}) << "\n";
     return 0;
 }
-
-/*
-Author: Ravi Kanth Gojur
-Github: ravireddy07
-*/

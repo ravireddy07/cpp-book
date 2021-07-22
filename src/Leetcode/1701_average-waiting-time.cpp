@@ -53,8 +53,8 @@ public:
 int main()
 {
     Solution a;
-    cout << a.averageWaitingTime({{2, 3}, {6, 3}, {7, 5}, {11, 3}, {15, 2}, {18, 1}}) << endl;
-    cout << a.averageWaitingTime({{1, 2}, {2, 5}, {4, 3}}) << endl;
+    cout << a.averageWaitingTime({{2, 3}, {6, 3}, {7, 5}, {11, 3}, {15, 2}, {18, 1}}) << "\n";
+    cout << a.averageWaitingTime({{1, 2}, {2, 5}, {4, 3}}) << '|n';
     return 0;
 }
 
