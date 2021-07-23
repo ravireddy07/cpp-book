@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    bool arrayStringsAreEqual(vector<string> &word1, vector<string> &word2)
+    bool arrayStringsAreEqual(vector<string> word1, vector<string> word2)
     {
         string a = "", b = "";
         for (auto i : word1)
@@ -20,10 +20,6 @@ public:
 int main()
 {
     Solution a;
-    vector<string> in1 = {"ab",
-                          "c"},
-                   in2 = {"a",
-                          "bc"};
-    cout << a.arrayStringsAreEqual(in1, in2) << endl;
+    cout << a.arrayStringsAreEqual({"ab", "c"}, {"a", "bc"}) << "\n";
     return 0;
 }
