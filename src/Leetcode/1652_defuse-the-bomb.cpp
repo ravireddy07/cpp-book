@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/defuse-the-bomb
+// Problem Statement: https://leetcode.com/problems/defuse-the-bomb
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<int> decrypt(vector<int> &code, int k)
+    vector<int> decrypt(vector<int> code, int k)
     {
         vector<int> res(code.size(), 0);
         int it; // count of k values while doing sum
@@ -46,8 +46,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {5, 7, 1, 4};
-    vector<int> show = a.decrypt(in, 3);
+    vector<int> show = a.decrypt({5, 7, 1, 4}, 3);
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
@@ -56,6 +55,7 @@ int main()
         else
             cout << show[i] << ", ";
     }
-    cout << "]" << endl;
+    cout << "]"
+         << "\n";
     return 0;
 }

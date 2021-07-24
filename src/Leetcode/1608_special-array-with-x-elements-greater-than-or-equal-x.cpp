@@ -1,4 +1,5 @@
-// https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/
+// Problem Statement: https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -23,7 +24,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> in = {0, 4, 3, 0, 4};
-    cout << a.specialArray(in) << endl;
+    cout << a.specialArray({0, 4, 3, 0, 4}) << "\n";
     return 0;
 }
