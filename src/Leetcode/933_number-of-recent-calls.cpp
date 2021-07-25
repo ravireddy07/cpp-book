@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-recent-calls/
+// Problem Statement: https://leetcode.com/problems/number-of-recent-calls/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -22,9 +22,9 @@ public:
 int main()
 {
     RecentCounter *obj = new RecentCounter();
-    cout << obj->ping(1) << endl;
-    cout << obj->ping(100) << endl;
-    cout << obj->ping(3001) << endl;
-    cout << obj->ping(3002) << endl;
+    cout << obj->ping(1) << "\n";
+    cout << obj->ping(100) << "\n";
+    cout << obj->ping(3001) << "\n";
+    cout << obj->ping(3002) << "\n";
     return 0;
 }

@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/create-target-array-in-the-given-order/
+// Problem Statement: https://leetcode.com/problems/create-target-array-in-the-given-order/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -41,6 +40,7 @@ int main()
         else
             cout << show[i] << ", ";
     }
-    cout << "]" << endl;
+    cout << "]"
+         << "\n";
     return 0;
 }
