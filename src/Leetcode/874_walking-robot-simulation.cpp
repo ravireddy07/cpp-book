@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    int robotSim(vector<int> &commands, vector<vector<int>> &obstacles)
+    int robotSim(vector<int> &commands, vector<vector<int>> obstacles)
     {
         unordered_set<string> obst;
         vector<vector<int>> dirs{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
@@ -36,8 +36,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input1 = {4, -1, 4, -2, 4};
-    vector<vector<int>> input2 = {{2, 4}};
-    cout << a.robotSim(input1, input2) << "\n";
+    cout << a.robotSim({4, -1, 4, -2, 4}, {{2, 4}}) << "\n";
     return 0;
 }

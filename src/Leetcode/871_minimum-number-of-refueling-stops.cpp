@@ -1,13 +1,12 @@
-// https://leetcode.com/problems/minimum-number-of-refueling-stops/
+// Problem Statement: https://leetcode.com/problems/minimum-number-of-refueling-stops/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int minRefuelStops(int target, int startFuel, vector<vector<int>> &stations)
+    int minRefuelStops(int target, int startFuel, vector<vector<int>> stations)
     {
         priority_queue<int> pq;
         pq.push({startFuel});
@@ -34,7 +33,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{10, 60}, {20, 30}, {30, 30}, {60, 40}};
-    cout << a.minRefuelStops(100, 10, input) << endl;
+    cout << a.minRefuelStops(100, 10, {{10, 60}, {20, 30}, {30, 30}, {60, 40}}) << "\n";
     return 0;
 }
