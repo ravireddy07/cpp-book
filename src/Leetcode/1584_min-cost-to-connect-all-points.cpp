@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/min-cost-to-connect-all-points/
+// Problem Statement: https://leetcode.com/problems/min-cost-to-connect-all-points/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -29,7 +29,7 @@ public:
             par[b] = a;
     }
 
-    int minCostConnectPoints(vector<vector<int>> &p)
+    int minCostConnectPoints(vector<vector<int>> p)
     {
         init();
         int n = p.size();
@@ -56,7 +56,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{0, 0}, {2, 2}, {3, 10}, {5, 2}, {7, 0}};
-    cout << a.minCostConnectPoints(input) << endl;
+    cout << a.minCostConnectPoints({{0, 0}, {2, 2}, {3, 10}, {5, 2}, {7, 0}}) << "\n";
     return 0;
 }

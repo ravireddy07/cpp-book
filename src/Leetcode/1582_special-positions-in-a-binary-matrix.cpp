@@ -1,11 +1,12 @@
-// https://leetcode.com/problems/special-positions-in-a-binary-matrix/
+// Problem Statement: https://leetcode.com/problems/special-positions-in-a-binary-matrix/
+
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int check(vector<vector<int>> &mat, int row, int col)
+    int check(vector<vector<int>> mat, int row, int col)
     {
         int res = 1;
         /* Checking Column by Traversing each Row */
@@ -26,7 +27,7 @@ public:
         return res;
     }
 
-    int numSpecial(vector<vector<int>> &mat)
+    int numSpecial(vector<vector<int>> mat)
     {
         int count = 0;
         for (int i = 0; i < mat.size(); ++i)
@@ -41,10 +42,9 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {
-        {1, 0, 0},
-        {0, 1, 0},
-        {0, 0, 1}};
-    cout << a.numSpecial(input) << endl;
+    cout << a.numSpecial({{1, 0, 0},
+                          {0, 1, 0},
+                          {0, 0, 1}})
+         << "\n";
     return 0;
 }

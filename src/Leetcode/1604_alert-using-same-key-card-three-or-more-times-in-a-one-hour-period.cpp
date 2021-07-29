@@ -51,7 +51,6 @@ int main()
 {
     Solution a;
     vector<string> show = a.alertNames({"daniel", "daniel", "daniel", "luis", "luis", "luis", "luis"}, {"10:00", "10:40", "11:00", "09:00", "11:00", "13:00", "15:00"});
-
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {

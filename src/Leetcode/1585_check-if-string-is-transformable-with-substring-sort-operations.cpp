@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
+// Problem Statement: https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -32,6 +32,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.isTransformable("84532", "34852");
+    cout << a.isTransformable("84532", "34852") << "\n";
     return 0;
 }

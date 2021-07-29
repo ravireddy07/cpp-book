@@ -1,11 +1,12 @@
-// https://leetcode.com/problems/count-unhappy-friends/
+// Problem Statement: https://leetcode.com/problems/count-unhappy-friends/
+
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int unhappyFriends(int n, vector<vector<int>> &p, vector<vector<int>> &pairs)
+    int unhappyFriends(int n, vector<vector<int>> p, vector<vector<int>> pairs)
     {
         int res = 0, d, v, count;
         vector<int> pairing(n);
@@ -36,8 +37,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input1 = {{1, 2, 3}, {3, 2, 0}, {3, 1, 0}, {1, 2, 0}};
-    vector<vector<int>> input2 = {{0, 1}, {2, 3}};
-    cout << a.unhappyFriends(4, input1, input2) << endl;
+    cout << a.unhappyFriends(4, {{1, 2, 3}, {3, 2, 0}, {3, 1, 0}, {1, 2, 0}}, {{0, 1}, {2, 3}}) << "\n";
     return 0;
 }

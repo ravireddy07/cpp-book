@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/
+// Problem Statement: https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<vector<int>> restoreMatrix(vector<int> &rowSum, vector<int> &colSum)
+    vector<vector<int>> restoreMatrix(vector<int> rowSum, vector<int> colSum)
     {
         int h = rowSum.size();
         int w = colSum.size();
@@ -32,8 +32,7 @@ public:
 int main()
 {
     Solution a;
-    vector<int> row = {{3, 8}}, col = {{4, 7}};
-    vector<vector<int>> output = a.restoreMatrix(row, col);
+    vector<vector<int>> output = a.restoreMatrix({{3, 8}}, {{4, 7}});
     cout << "[";
     for (int i = 0; i < output.size(); i++)
     {
@@ -48,7 +47,7 @@ int main()
         }
         cout << "]";
     }
-    cout << endl
+    cout << "\n"
          << "]";
     return 0;
 }
