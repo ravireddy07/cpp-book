@@ -1,4 +1,5 @@
-// https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/
+// Problem Statement: https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -35,7 +36,7 @@ public:
 class Solution
 {
 public:
-    int maxNumEdgesToRemove(int n, vector<vector<int>> &E)
+    int maxNumEdgesToRemove(int n, vector<vector<int>> E)
     {
         UnionFind a(n), b(n);
         int ans = 0;
@@ -77,7 +78,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{3, 1, 2}, {3, 2, 3}, {1, 1, 4}, {2, 1, 4}};
-    cout << a.maxNumEdgesToRemove(4, input) << endl;
+    cout << a.maxNumEdgesToRemove(4, {{3, 1, 2}, {3, 2, 3}, {1, 1, 4}, {2, 1, 4}}) << "\n";
     return 0;
 }

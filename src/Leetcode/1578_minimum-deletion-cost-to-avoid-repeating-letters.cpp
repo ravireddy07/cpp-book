@@ -1,11 +1,12 @@
-// https://leetcode.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
+// Problem Statement:  https://leetcode.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
+
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int minCost(string s, vector<int> &cost)
+    int minCost(string s, vector<int> cost)
     {
         long long int res = 0;
         for (int i = 0; i < cost.size();)
@@ -30,7 +31,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {1, 2, 3, 4, 5};
-    cout << a.minCost("abaac", input) << endl;
+    cout << a.minCost("abaac", {1, 2, 3, 4, 5}) << "\n";
     return 0;
 }
