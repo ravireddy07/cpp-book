@@ -1,6 +1,6 @@
-// https://leetcode.com/contest/weekly-contest-205/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
+// Problem Statement: https://leetcode.com/contest/weekly-contest-205/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -45,6 +45,6 @@ public:
 int main()
 {
     Solution a;
-    cout << a.modifyString("?ah") << endl;
+    cout << a.modifyString("?ah") << "\n";
     return 0;
 }
