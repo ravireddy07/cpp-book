@@ -1,4 +1,5 @@
-// https://leetcode.com/problems/pancake-sorting/
+// Problem Statement:  https://leetcode.com/problems/pancake-sorting/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -6,12 +7,12 @@ class Solution
 {
 public:
     vector<int> B;
-    bool isSorted(vector<int> &A)
+    bool isSorted(vector<int> A)
     {
         return A == B;
     }
 
-    vector<int> pancakeSort(vector<int> &A)
+    vector<int> pancakeSort(vector<int> A)
     {
         B = A;
         sort(B.begin(), B.end());
@@ -36,21 +37,17 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {3, 2, 4, 1};
-    vector<int> show = a.pancakeSort(input);
+    vector<int> show = a.pancakeSort({3, 2, 4, 1});
 
     cout << "[";
     for (int i = 0; i < show.size(); i++)
     {
         if (i == show.size() - 1)
-        {
             cout << show[i];
-        }
         else
-        {
             cout << show[i] << ", ";
-        }
     }
-    cout << "]";
+    cout << "]"
+         << "\n";
     return 0;
 }
