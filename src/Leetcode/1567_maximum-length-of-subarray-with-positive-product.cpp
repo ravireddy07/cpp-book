@@ -1,7 +1,6 @@
-// https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/
+// Problem Statement: https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -25,7 +24,7 @@ public:
             return n;
         return max(n - f - 1, s);
     }
-    int getMaxLen(vector<int> &nums)
+    int getMaxLen(vector<int> nums)
     {
         int n = nums.size();
         vector<int> v;
@@ -49,7 +48,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {-3, -1, -1};
-    cout << a.getMaxLen(input) << endl;
+    cout << a.getMaxLen({-3, -1, -1}) << "\n";
     return 0;
 }

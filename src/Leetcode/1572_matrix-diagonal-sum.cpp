@@ -1,12 +1,12 @@
-// https://leetcode.com/problems/matrix-diagonal-sum/
+// Problem Statement: https://leetcode.com/problems/matrix-diagonal-sum/
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int diagonalSum(vector<vector<int>> &mat)
+    int diagonalSum(vector<vector<int>> mat)
     {
         int sum = 0;
         for (int i = 0; i < mat.size(); i++)
@@ -24,10 +24,10 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{1, 1, 1, 1},
-                                 {1, 1, 1, 1},
-                                 {1, 1, 1, 1},
-                                 {1, 1, 1, 1}};
-    cout << a.diagonalSum(input) << endl;
+    cout << a.diagonalSum({{1, 1, 1, 1},
+                           {1, 1, 1, 1},
+                           {1, 1, 1, 1},
+                           {1, 1, 1, 1}})
+         << "\n";
     return 0;
 }
