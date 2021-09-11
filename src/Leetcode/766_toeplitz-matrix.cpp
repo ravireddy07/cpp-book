@@ -6,9 +6,9 @@ using namespace std;
 class Solution
 {
 public:
-    bool isToeplitzMatrix(vector<vector<int>> &matrix)
+    bool isToeplitzMatrix(vector<vector<int>> matrix)
     {
-        for (int i = 0; i < matrix[0].size(); i++)
+        for (int i = 0; i < matrix[0].size(); ++i)
         {
             int n = matrix[0][i];
             int j = 0;
@@ -22,7 +22,7 @@ public:
             }
         }
 
-        for (int i = 1; i < matrix.size(); i++)
+        for (int i = 1; i < matrix.size(); ++i)
         {
             int n = matrix[i][0];
             int j = i;
@@ -41,7 +41,6 @@ public:
 int main()
 {
     Solution a;
-    vector<vector<int>> input = {{1, 2}, {2, 2}};
-    cout << a.isToeplitzMatrix(input) << endl;
+    cout << a.isToeplitzMatrix({{1, 2}, {2, 2}}) << "\n";
     return 0;
 }

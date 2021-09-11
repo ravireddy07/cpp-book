@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+// Problem Statement: https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,12 +6,12 @@ using namespace std;
 class Solution
 {
 public:
-    int util(vector<int> &A, int val)
+    int util(vector<int> A, int val)
     {
         multiset<int> m;
         int start = 0;
         int res = 0;
-        for (int i = 0; i < A.size(); i++)
+        for (int i = 0; i < A.size(); ++i)
         {
             m.insert(A[i]);
             while (m.size() and (*m.rbegin() > val))
@@ -20,7 +20,7 @@ public:
         }
         return res;
     }
-    int numSubarrayBoundedMax(vector<int> &A, int L, int R)
+    int numSubarrayBoundedMax(vector<int> A, int L, int R)
     {
         return util(A, R) - util(A, L - 1);
     }
@@ -29,7 +29,6 @@ public:
 int main()
 {
     Solution a;
-    vector<int> input = {2, 1, 4, 3};
-    cout << a.numSubarrayBoundedMax(input, 2, 3) << endl;
+    cout << a.numSubarrayBoundedMax({2, 1, 4, 3}, 2, 3) << "\n";
     return 0;
 }

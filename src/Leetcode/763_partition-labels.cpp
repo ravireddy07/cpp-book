@@ -11,7 +11,6 @@ public:
     {
         int n = s.size();
         vector<int> ans;
-
         if (n == 0)
             return ans;
 
@@ -33,7 +32,6 @@ public:
             minp = max(minp, lp);
             // Increase the len of this partition.
             ++plen;
-
             // if the current pos of a character equals
             // the min pos we need to enclose in the current partition,
             // then we have reached the end of this partition.
