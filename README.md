@@ -1,4 +1,4 @@
-# Competative Programming Problems
+# Competitive Programming Problems
 
 <br/>
 
