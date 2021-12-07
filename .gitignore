@@ -4,3 +4,4 @@ imp.md
 *.javac
 *.class
 .project
+.DS_Store
