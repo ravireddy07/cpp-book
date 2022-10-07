@@ -1,7 +1,6 @@
-setup/***
 *.exe
-imp.md
 *.javac
 *.class
 .project
 .DS_Store
+.cph/
